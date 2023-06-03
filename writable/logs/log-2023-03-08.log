@@ -1,0 +1,113 @@
+CRITICAL - 2023-03-08 08:28:24 --> Invalid file: "admin/dataSampah.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dataSampah.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dataSampah', [], true)
+ 3 APPPATH\Controllers\Admin.php(23): view('admin/dataSampah')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dataSampah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-08 08:28:33 --> Invalid file: "admin/dataSampah.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dataSampah.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dataSampah', [], true)
+ 3 APPPATH\Controllers\Admin.php(23): view('admin/dataSampah')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dataSampah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-08 08:28:39 --> Invalid file: "admin/dataSampah.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dataSampah.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dataSampah', [], true)
+ 3 APPPATH\Controllers\Admin.php(23): view('admin/dataSampah')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dataSampah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-08 08:32:25 --> Request URI segment is out of range: "4"
+in SYSTEMPATH\HTTP\URI.php on line 549.
+ 1 SYSTEMPATH\HTTP\URI.php(549): CodeIgniter\HTTP\Exceptions\HTTPException::forURISegmentOutOfRange(4)
+ 2 APPPATH\Views\partials\sidebar.php(38): CodeIgniter\HTTP\URI->getSegment(4)
+ 3 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\partials\\sidebar.php')
+ 4 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 5 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('partials/sidebar', [], true)
+ 6 APPPATH\Controllers\Admin.php(42): view('partials/sidebar')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dataNasabah()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-08 08:33:22 --> Invalid file: "admin/dataSampah.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dataSampah.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dataSampah', [], true)
+ 3 APPPATH\Controllers\Admin.php(23): view('admin/dataSampah')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dataSampah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-08 08:33:24 --> Invalid file: "admin/dataSampah.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dataSampah.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dataSampah', [], true)
+ 3 APPPATH\Controllers\Admin.php(23): view('admin/dataSampah')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dataSampah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-08 08:33:26 --> Invalid file: "admin/dataSampah.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dataSampah.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dataSampah', [], true)
+ 3 APPPATH\Controllers\Admin.php(23): view('admin/dataSampah')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dataSampah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-08 08:33:30 --> Invalid file: "admin/dataSampah.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dataSampah.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dataSampah', [], true)
+ 3 APPPATH\Controllers\Admin.php(23): view('admin/dataSampah')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dataSampah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-08 08:33:46 --> Invalid file: "admin/dataSampah.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dataSampah.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dataSampah', [], true)
+ 3 APPPATH\Controllers\Admin.php(23): view('admin/dataSampah')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dataSampah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-08 08:33:50 --> Invalid file: "admin/dataSampah.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dataSampah.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dataSampah', [], true)
+ 3 APPPATH\Controllers\Admin.php(23): view('admin/dataSampah')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dataSampah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-03-08 08:33:55 --> Invalid file: "admin/dataSampah.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dataSampah.php')
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/dataSampah', [], true)
+ 3 APPPATH\Controllers\Admin.php(23): view('admin/dataSampah')
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dataSampah()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
