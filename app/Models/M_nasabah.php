@@ -8,6 +8,5 @@ class M_nasabah extends Model
 {
     protected $table = "nasabah";
     protected $primaryKey           = 'id';
-    protected $allowedFields        = ['id','nama'];
-   
+    protected $allowedFields        = ['id','nama','alamat','kode'];
 }

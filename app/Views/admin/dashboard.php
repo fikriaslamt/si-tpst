@@ -65,7 +65,7 @@
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-                <h3>65</h3>
+                <h3><?= $totalNasabah;?></h3>
 
                 <p>NASABAH</p>
               </div>
@@ -73,7 +73,7 @@
               <i class="ion ion-person-add"></i>
                 
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?=base_url('admin/nasabah/data-nasabah')?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -135,7 +135,9 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                <div>
+                  <canvas id="myChart"></canvas>
+                </div>
               </div>
              
             </div>
@@ -143,7 +145,7 @@
            
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Komposisi Sampah Berdasarkan Sumper Sampah</h3>
+                <h3 class="card-title">Komposisi Sampah Berdasarkan Sumber Sampah</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -168,3 +170,34 @@
     <!-- /.content -->
   </div>
 
+
+  <script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [{
+        label: 'Data Sampah',
+        data: [12, 19, 3, 7, 9, 5],
+        backgroundColor: [
+      '#FF0000',
+      '#0000FF',
+      '#FFFF00',
+      '#00FF00',
+      '#FF00FF',
+      '#FFA500'
+    ],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>

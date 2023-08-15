@@ -1,4 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"  rel="stylesheet" />
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"  rel="stylesheet" />
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+
+    <script src="<?=base_url('chart/Chart.js')?>"></script>
+
+</head>
+<body>
 <?php if (session()->getFlashdata('error')) { ?>
            
     <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4" role="alert">
@@ -8,7 +36,7 @@
     
             
  <?php } ?>
-<div class="container lg:mx-auto py-5 lg:flex lg:justify-center bg-gradient-to-br from-cyan-500 to-blue-500">
+<div class="container  lg:mx-auto py-5 lg:flex lg:justify-center bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
 
 <div class="flex flex-col items-center justify-center lg:w-5/12 px-6 py-8 mx-auto md:h-screen lg:py-0">
       <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-slate-800 dark:border-gray-700">
@@ -34,6 +62,14 @@
           </div>
       </div>
   </div>
+
+  </body>
+</html>
+
+<script>
+  // jQuery code to handle button click events
+
+</script>
 
 
 

@@ -1,0 +1,283 @@
+INFO - 2023-08-06 09:44:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:44:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:44:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:44:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:44:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:44:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:44:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 09:44:28 --> Undefined variable: data
+in APPPATH\Views\admin\sampah\pengangkutanSampah.php on line 101.
+ 1 APPPATH\Views\admin\sampah\pengangkutanSampah.php(101): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: data', 'APPPATH\\Views\\admin\\sampah\\pengangkutanSampah.php', 101, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\sampah\\pengangkutanSampah.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/sampah/pengangkutanSampah', [], true)
+ 5 APPPATH\Controllers\Admin.php(77): view('admin/sampah/pengangkutanSampah')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->pengangkutanSampah()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 09:44:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:44:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:44:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:44:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:45:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:45:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:45:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 09:50:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:01:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:04:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:04:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:04:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:07:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:07:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:07:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:07:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:08:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:12:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 10:12:12 --> Call to undefined method App\Models\M_setoran::get_field
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Admin.php(97): CodeIgniter\Model->__call('get_field', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->riwayatTransaksi()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 10:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:12:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:12:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:12:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 10:31:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 10:32:08 --> Class 'Ramsey\Uuid\Uuid' not found
+in APPPATH\ThirdParty\codeigniter4-uuid\src\Uuid.php on line 97.
+ 1 APPPATH\Controllers\Tabungan.php(28): Michalsn\Uuid\Uuid->uuid4()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->tambahSetoran()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 10:47:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 10:47:31 --> Call to undefined function App\Controllers\uuid()
+in APPPATH\Controllers\Tabungan.php on line 27.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->tambahSetoran()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 10:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 10:55:15 --> Class 'Ramsey\Uuid\Uuid' not found
+in APPPATH\Helpers\uuid_helper.php on line 9.
+ 1 APPPATH\Controllers\Tabungan.php(29): generate_uuid()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->tambahSetoran()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 10:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 10:57:47 --> Class 'Ramsey\Uuid\Uuid' not found
+in APPPATH\Helpers\uuid_helper.php on line 9.
+ 1 APPPATH\Controllers\Tabungan.php(29): generate_uuid()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->tambahSetoran()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 10:58:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 10:58:23 --> Class 'Ramsey\Uuid\Uuid' not found
+in APPPATH\Helpers\uuid_helper.php on line 9.
+ 1 APPPATH\Controllers\Tabungan.php(29): uuid()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->tambahSetoran()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:07:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:07:53 --> Class 'Ramsey\Uuid\Uuid' not found
+in APPPATH\Helpers\uuid_helper.php on line 10.
+ 1 APPPATH\Controllers\Tabungan.php(29): uuid()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->tambahSetoran()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:09:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:09:27 --> main(): Failed opening required 'C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\app\Libraries/Ramsey/Uuid/src/UuidInterface.php' (include_path='C:\xampp\php\PEAR')
+in APPPATH\ThirdParty\Ramsey\Uuid\Uuid.php on line 5.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+INFO - 2023-08-06 11:19:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:20:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:20:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:20:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:24:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:26:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:26:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:26:18 --> Call to undefined method App\Models\M_tabungan::get_field
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Admin.php(164): CodeIgniter\Model->__call('get_field', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->tabungan()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:26:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:26:45 --> Call to undefined method App\Models\M_tabungan::get_field
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Admin.php(164): CodeIgniter\Model->__call('get_field', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->tabungan()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:27:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:27:30 --> array_splice() expects parameter 1 to be array, null given
+in APPPATH\Controllers\Admin.php on line 167.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_splice() expects parameter 1 to be array, null given', 'APPPATH\\Controllers\\Admin.php', 167, [...])
+ 2 APPPATH\Controllers\Admin.php(167): array_splice(null, 0, 5)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->tabungan()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:27:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:27:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:27:33 --> array_splice() expects parameter 1 to be array, null given
+in APPPATH\Controllers\Admin.php on line 167.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_splice() expects parameter 1 to be array, null given', 'APPPATH\\Controllers\\Admin.php', 167, [...])
+ 2 APPPATH\Controllers\Admin.php(167): array_splice(null, 0, 5)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->tabungan()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:28:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:28:50 --> Undefined variable: daftarSampah
+in APPPATH\Views\admin\nasabah\tabungan.php on line 141.
+ 1 APPPATH\Views\admin\nasabah\tabungan.php(141): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: daftarSampah', 'APPPATH\\Views\\admin\\nasabah\\tabungan.php', 141, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\nasabah\\tabungan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/nasabah/tabungan', [], true)
+ 5 APPPATH\Controllers\Admin.php(179): view('admin/nasabah/tabungan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->tabungan()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:29:33 --> Undefined variable: sampah
+in APPPATH\Views\admin\nasabah\tabungan.php on line 219.
+ 1 APPPATH\Views\admin\nasabah\tabungan.php(219): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: sampah', 'APPPATH\\Views\\admin\\nasabah\\tabungan.php', 219, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\nasabah\\tabungan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/nasabah/tabungan', [], true)
+ 5 APPPATH\Controllers\Admin.php(179): view('admin/nasabah/tabungan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->tabungan()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:29:57 --> Undefined variable: sampah
+in APPPATH\Views\admin\nasabah\tabungan.php on line 219.
+ 1 APPPATH\Views\admin\nasabah\tabungan.php(219): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: sampah', 'APPPATH\\Views\\admin\\nasabah\\tabungan.php', 219, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\nasabah\\tabungan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/nasabah/tabungan', [], true)
+ 5 APPPATH\Controllers\Admin.php(179): view('admin/nasabah/tabungan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->tabungan()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:31:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:31:18 --> Undefined variable: dataSampah
+in APPPATH\Views\admin\nasabah\tabungan.php on line 182.
+ 1 APPPATH\Views\admin\nasabah\tabungan.php(182): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: dataSampah', 'APPPATH\\Views\\admin\\nasabah\\tabungan.php', 182, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\nasabah\\tabungan.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/nasabah/tabungan', [], true)
+ 5 APPPATH\Controllers\Admin.php(179): view('admin/nasabah/tabungan', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->tabungan()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:31:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:31:48 --> Call to undefined method App\Models\M_tabungan::get_field
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Admin.php(164): CodeIgniter\Model->__call('get_field', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->tabungan()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:33:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:33:00 --> Call to undefined method App\Models\M_setoran::get_field
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\Admin.php(97): CodeIgniter\Model->__call('get_field', [])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->riwayatTransaksi()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:33:31 --> array_splice() expects parameter 1 to be array, null given
+in APPPATH\Controllers\Admin.php on line 101.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_splice() expects parameter 1 to be array, null given', 'APPPATH\\Controllers\\Admin.php', 101, [...])
+ 2 APPPATH\Controllers\Admin.php(101): array_splice(null, 0, 5)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->riwayatTransaksi()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:33:49 --> Undefined variable: daftarSampah
+in APPPATH\Views\admin\nasabah\riwayatTransaksi.php on line 130.
+ 1 APPPATH\Views\admin\nasabah\riwayatTransaksi.php(130): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: daftarSampah', 'APPPATH\\Views\\admin\\nasabah\\riwayatTransaksi.php', 130, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\nasabah\\riwayatTransaksi.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/nasabah/riwayatTransaksi', [], true)
+ 5 APPPATH\Controllers\Admin.php(130): view('admin/nasabah/riwayatTransaksi', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->riwayatTransaksi()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-06 11:36:45 --> Undefined variable: data
+in APPPATH\Views\admin\sampah\pengangkutanSampah.php on line 101.
+ 1 APPPATH\Views\admin\sampah\pengangkutanSampah.php(101): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: data', 'APPPATH\\Views\\admin\\sampah\\pengangkutanSampah.php', 101, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\sampah\\pengangkutanSampah.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/sampah/pengangkutanSampah', [], true)
+ 5 APPPATH\Controllers\Admin.php(77): view('admin/sampah/pengangkutanSampah')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->pengangkutanSampah()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-08-06 11:36:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:37:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:37:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:37:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:38:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:45:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:45:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-06 11:45:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

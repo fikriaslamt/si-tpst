@@ -2,7 +2,7 @@
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       
-      <span class="brand-text font-weight-light">SIPS UNILA</span>
+      <span class="brand-text font-weight-light font-bold ml-2">TPST UNILA</span>
     </a>
 
     <!-- Sidebar -->
@@ -47,21 +47,44 @@
                   <p>Daftar Sampah</p>
                 </a>
               </li>
+             
               <li class="nav-item">
-                <a href="<?=base_url('admin/sampah/limbah')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(3)=='limbah'?'active':''?>">
-                <i class="far  nav-icon"></i>
-
-                  <p>Limbah</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url('admin/sampah/pengangkutan-sampah')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(3)=='pengangkutan-sampah'?'active':''?>">
+                <a  class="nav-link <?=\Config\Services::request()->getUri()->getSegment(3)=='pengangkutan-sampah'?'active':''?>">
                 <i class="far  nav-icon"></i>
 
                   <p>Pengangkutan Sampah</p>
                 </a>
               </li>
          
+            </ul>
+          </li>
+
+          <li class="nav-item <?=\Config\Services::request()->getUri()->getSegment(2)=='limbah'?'menu-open':''?>">
+            <a href="#" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(2)=='limbah'?'active':''?>">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                Limbah
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+
+              <li class="nav-item">
+                <a href="<?=base_url('admin/limbah/data-limbah')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(3)=='data-limbah'?'active':''?>">
+                <i class="far  nav-icon"></i>
+
+                  <p>Data Limbah</p>
+                </a>
+              </li>
+
+              <li class="nav-item ">
+                <a href="<?=base_url('admin/limbah/daftar-limbah')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(3)=='daftar-limbah'?'active':''?> ">
+                <i class="far nav-icon"></i>
+
+                  <p>Daftar Limbah</p>
+                </a>
+              </li>
+
             </ul>
           </li>
 

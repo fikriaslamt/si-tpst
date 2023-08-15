@@ -30,17 +30,22 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+$routes->get('/auth', 'Auth::index');
+$routes->get('/post', 'Auth::post');
 $routes->get('/', 'Home::index');
 $routes->get('/login', 'Login::index');
 $routes->get('/logout', 'Login::logout');
+
 $routes->post('/login/process', 'Login::process');
 
+// $routes->get('/daftarLimbah', 'Pagination::getData');
 
 $routes->get('/admin/dashboard', 'Admin::dashboard');
 
 $routes->get('/admin/sampah/data-sampah', 'Admin::dataSampah');
 $routes->get('/admin/sampah/daftar-sampah', 'Admin::daftarSampah');
-$routes->get('/admin/sampah/limbah', 'Admin::limbah');
+$routes->get('/admin/limbah/data-limbah', 'Admin::dataLimbah');
+$routes->get('/admin/limbah/daftar-limbah', 'Admin::daftarLimbah');
 $routes->get('/admin/sampah/pengangkutan-sampah', 'Admin::pengangkutanSampah');
 
 

@@ -1,0 +1,161 @@
+INFO - 2023-06-26 07:40:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:40:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:40:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:41:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:41:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:41:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:42:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:42:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:42:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:42:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:42:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:42:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:43:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:43:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:44:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:44:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:44:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:44:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:44:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:44:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:44:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:44:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:45:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:46:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:48:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:48:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:48:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:48:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:49:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:49:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:50:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 07:50:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-26 07:50:18 --> Undefined variable: data
+in APPPATH\Views\admin\sampah\pengangkutanSampah.php on line 100.
+ 1 APPPATH\Views\admin\sampah\pengangkutanSampah.php(100): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: data', 'APPPATH\\Views\\admin\\sampah\\pengangkutanSampah.php', 100, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\sampah\\pengangkutanSampah.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/sampah/pengangkutanSampah', [], true)
+ 5 APPPATH\Controllers\Admin.php(68): view('admin/sampah/pengangkutanSampah')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->pengangkutanSampah()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-06-26 08:01:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-26 08:01:53 --> Undefined variable: data
+in APPPATH\Views\admin\sampah\pengangkutanSampah.php on line 101.
+ 1 APPPATH\Views\admin\sampah\pengangkutanSampah.php(101): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: data', 'APPPATH\\Views\\admin\\sampah\\pengangkutanSampah.php', 101, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\sampah\\pengangkutanSampah.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/sampah/pengangkutanSampah', [], true)
+ 5 APPPATH\Controllers\Admin.php(68): view('admin/sampah/pengangkutanSampah')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->pengangkutanSampah()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-06-26 08:02:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-26 08:02:43 --> Undefined variable: data
+in APPPATH\Views\admin\sampah\pengangkutanSampah.php on line 101.
+ 1 APPPATH\Views\admin\sampah\pengangkutanSampah.php(101): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: data', 'APPPATH\\Views\\admin\\sampah\\pengangkutanSampah.php', 101, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\sampah\\pengangkutanSampah.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/sampah/pengangkutanSampah', [], true)
+ 5 APPPATH\Controllers\Admin.php(68): view('admin/sampah/pengangkutanSampah')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->pengangkutanSampah()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-06-26 08:02:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:03:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:03:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:03:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:03:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:03:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:03:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:03:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:03:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:03:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:06:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:06:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:08:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-26 08:08:08 --> Undefined variable: data
+in APPPATH\Views\admin\konten\konten.php on line 98.
+ 1 APPPATH\Views\admin\konten\konten.php(98): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: data', 'APPPATH\\Views\\admin\\konten\\konten.php', 98, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\konten\\konten.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/konten/konten', [], true)
+ 5 APPPATH\Controllers\Admin.php(158): view('admin/konten/konten')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->konten()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-06-26 08:11:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:16:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:21:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:21:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-06-26 08:22:32 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`db_tpst`.`konten`, CONSTRAINT `konten_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`id`)) in C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\Database\MySQLi\Connection.php(295): mysqli->query('INSERT INTO `ko...', 0)
+#1 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `ko...')
+#2 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `ko...')
+#3 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `ko...', Array, false)
+#4 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\app\Controllers\Konten.php(18): CodeIgniter\Model->insert(Array)
+#8 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\CodeIgniter.php(934): App\Controllers\Konten->tambahKonten()
+#9 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Konten))
+#10 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Fikri ...')
+#13 {main}
+CRITICAL - 2023-06-26 08:22:32 --> Cannot add or update a child row: a foreign key constraint fails (`db_tpst`.`konten`, CONSTRAINT `konten_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `admin` (`id`))
+in SYSTEMPATH\Database\BaseConnection.php on line 645.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `konten` (`judul`, `link`, `tanggal`) VALUES (:judul:, :link:, :tanggal:)', [...], false)
+ 2 SYSTEMPATH\Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\Konten.php(18): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Konten->tambahKonten()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Konten))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-06-26 08:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:23:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:23:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-06-26 08:23:05 --> Undefined index: nama
+in APPPATH\Views\admin\konten\konten.php on line 133.
+ 1 APPPATH\Views\admin\konten\konten.php(133): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: nama', 'APPPATH\\Views\\admin\\konten\\konten.php', 133, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\admin\\konten\\konten.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('admin/konten/konten', [], true)
+ 5 APPPATH\Controllers\Admin.php(164): view('admin/konten/konten', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->konten()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-06-26 08:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:28:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:28:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:28:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:33:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:33:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:33:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:33:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:33:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-06-26 08:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

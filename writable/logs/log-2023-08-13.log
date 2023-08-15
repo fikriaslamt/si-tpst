@@ -1,0 +1,346 @@
+INFO - 2023-08-13 07:49:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 07:49:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 07:49:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 07:49:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 07:49:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 07:49:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 07:49:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 07:49:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 07:49:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 07:50:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 07:50:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 07:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 12:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 12:58:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 12:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 12:58:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 12:59:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 12:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 12:59:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 12:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 12:59:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 12:59:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-13 12:59:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-13 15:23:18 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('POST', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token/')
+ 5 APPPATH\Controllers\Auth.php(37): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token/')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 15:23:48 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('POST', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token/')
+ 5 APPPATH\Controllers\Auth.php(37): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token/')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 15:28:38 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('GET', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('get', 'https://api.instagram.com/oauth/access_token/')
+ 5 SYSTEMPATH\HTTP\CURLRequest.php(167): CodeIgniter\HTTP\CURLRequest->request('get', 'https://api.instagram.com/oauth/access_token/', [...])
+ 6 APPPATH\Controllers\Auth.php(34): CodeIgniter\HTTP\CURLRequest->get('https://api.instagram.com/oauth/access_token/', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 15:29:59 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('POST', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token/')
+ 5 SYSTEMPATH\HTTP\CURLRequest.php(207): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token/', [...])
+ 6 APPPATH\Controllers\Auth.php(34): CodeIgniter\HTTP\CURLRequest->post('https://api.instagram.com/oauth/access_token/', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 15:33:00 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('POST', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token/')
+ 5 APPPATH\Controllers\Auth.php(33): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token/', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 15:34:30 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('POST', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token/')
+ 5 APPPATH\Controllers\Auth.php(38): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token/', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 15:39:28 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('POST', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token')
+ 5 APPPATH\Controllers\Auth.php(33): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 15:39:31 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('POST', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token')
+ 5 APPPATH\Controllers\Auth.php(33): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 15:41:28 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('POST', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token')
+ 5 APPPATH\Controllers\Auth.php(33): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 15:57:46 --> 22 : The requested URL returned error: 400 
+in SYSTEMPATH\HTTP\CURLRequest.php on line 666.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(666): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested URL returned error: 400 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(372): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('get', 'https://graph.instagram.com/998801324488596/media?access_token=IGQVJYTGRfZAm9kekJZAbml2OTUxU2lSVG5maDhCVVdtTVBTOGJwU3hJeDBOdGlXMU9aUmJVM1dtWnBXcGRlUGowVmM3TXlMSjZAPM250ZA3hUeUV3RnUzMTZA0Q0ZAXMVFEQjlZAV0drRDAzNHhuZA19pTlhNXwZDZD')
+ 4 APPPATH\Controllers\Auth.php(29): CodeIgniter\HTTP\CURLRequest->request('get', 'https://graph.instagram.com/998801324488596/media?access_token=IGQVJYTGRfZAm9kekJZAbml2OTUxU2lSVG5maDhCVVdtTVBTOGJwU3hJeDBOdGlXMU9aUmJVM1dtWnBXcGRlUGowVmM3TXlMSjZAPM250ZA3hUeUV3RnUzMTZA0Q0ZAXMVFEQjlZAV0drRDAzNHhuZA19pTlhNXwZDZD')
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 16:05:53 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('POST', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token')
+ 5 APPPATH\Controllers\Auth.php(33): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 16:07:06 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('POST', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token')
+ 5 SYSTEMPATH\HTTP\CURLRequest.php(207): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token', [...])
+ 6 APPPATH\Controllers\Auth.php(34): CodeIgniter\HTTP\CURLRequest->post('https://api.instagram.com/oauth/access_token', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 16:07:08 --> strlen() expects parameter 1 to be string, array given
+in SYSTEMPATH\HTTP\CURLRequest.php on line 435.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'strlen() expects parameter 1 to be string, array given', 'SYSTEMPATH\\HTTP\\CURLRequest.php', 435, [...])
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(435): strlen([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(364): CodeIgniter\HTTP\CURLRequest->applyMethod('POST', [...])
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token')
+ 5 SYSTEMPATH\HTTP\CURLRequest.php(207): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token', [...])
+ 6 APPPATH\Controllers\Auth.php(34): CodeIgniter\HTTP\CURLRequest->post('https://api.instagram.com/oauth/access_token', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 16:09:57 --> 22 : The requested URL returned error: 400 
+in SYSTEMPATH\HTTP\CURLRequest.php on line 666.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(666): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested URL returned error: 400 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(372): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(207): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token', [...])
+ 5 APPPATH\Controllers\Auth.php(34): CodeIgniter\HTTP\CURLRequest->post('https://api.instagram.com/oauth/access_token', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 16:11:08 --> 22 : The requested URL returned error: 400 
+in SYSTEMPATH\HTTP\CURLRequest.php on line 666.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(666): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested URL returned error: 400 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(372): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('post', 'https://api.instagram.com/oauth/access_token')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(207): CodeIgniter\HTTP\CURLRequest->request('post', 'https://api.instagram.com/oauth/access_token', [...])
+ 5 APPPATH\Controllers\Auth.php(34): CodeIgniter\HTTP\CURLRequest->post('https://api.instagram.com/oauth/access_token', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 16:47:11 --> Illegal string offset 'caption'
+in APPPATH\Controllers\Auth.php on line 39.
+ 1 APPPATH\Controllers\Auth.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption\'', 'APPPATH\\Controllers\\Auth.php', 39, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 16:50:46 --> Illegal string offset 'caption'
+in APPPATH\Controllers\Auth.php on line 39.
+ 1 APPPATH\Controllers\Auth.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'caption\'', 'APPPATH\\Controllers\\Auth.php', 39, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->post()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 17:01:38 --> Undefined index: data
+in APPPATH\Controllers\Auth.php on line 34.
+ 1 APPPATH\Controllers\Auth.php(34): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: data', 'APPPATH\\Controllers\\Auth.php', 34, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Auth->Index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 17:11:58 --> Undefined variable: dataPostingan
+in APPPATH\Views\home\home.php on line 44.
+ 1 APPPATH\Views\home\home.php(44): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: dataPostingan', 'APPPATH\\Views\\home\\home.php', 44, [])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\home\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('home/home.php', [], true)
+ 5 APPPATH\Controllers\Home.php(45): view('home/home.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 17:12:49 --> Illegal string offset 'media_url'
+in APPPATH\Views\home\home.php on line 46.
+ 1 APPPATH\Views\home\home.php(46): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string offset \'media_url\'', 'APPPATH\\Views\\home\\home.php', 46, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\home\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('home/home.php', [], true)
+ 5 APPPATH\Controllers\Home.php(45): view('home/home.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 17:31:53 --> Undefined index: thumbnail_url
+in APPPATH\Views\home\home.php on line 46.
+ 1 APPPATH\Views\home\home.php(46): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: thumbnail_url', 'APPPATH\\Views\\home\\home.php', 46, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\home\\home.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('home/home.php', [], true)
+ 5 APPPATH\Controllers\Home.php(46): view('home/home.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 17:38:05 --> Undefined offset: 3
+in APPPATH\Controllers\Home.php on line 38.
+ 1 APPPATH\Controllers\Home.php(38): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 3', 'APPPATH\\Controllers\\Home.php', 38, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 18:27:39 --> 22 : The requested URL returned error: 403 
+in SYSTEMPATH\HTTP\CURLRequest.php on line 666.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(666): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested URL returned error: 403 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(372): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('get', 'https://graph.instagram.com/v17.0/18000275218187776?fields=caption,media_type,media_url,permalink&access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(167): CodeIgniter\HTTP\CURLRequest->request('get', 'https://graph.instagram.com/v17.0/18000275218187776?fields=caption,media_type,media_url,permalink&access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB', [])
+ 5 APPPATH\Controllers\Home.php(38): CodeIgniter\HTTP\CURLRequest->get('https://graph.instagram.com/v17.0/18000275218187776?fields=caption,media_type,media_url,permalink&access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 18:27:45 --> 22 : The requested URL returned error: 403 
+in SYSTEMPATH\HTTP\CURLRequest.php on line 666.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(666): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested URL returned error: 403 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(372): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('get', 'https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(167): CodeIgniter\HTTP\CURLRequest->request('get', 'https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB', [])
+ 5 APPPATH\Controllers\Home.php(27): CodeIgniter\HTTP\CURLRequest->get('https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 18:27:47 --> 22 : The requested URL returned error: 403 
+in SYSTEMPATH\HTTP\CURLRequest.php on line 666.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(666): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested URL returned error: 403 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(372): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('get', 'https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(167): CodeIgniter\HTTP\CURLRequest->request('get', 'https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB', [])
+ 5 APPPATH\Controllers\Home.php(27): CodeIgniter\HTTP\CURLRequest->get('https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 18:28:48 --> 22 : The requested URL returned error: 403 
+in SYSTEMPATH\HTTP\CURLRequest.php on line 666.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(666): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested URL returned error: 403 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(372): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('get', 'https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(167): CodeIgniter\HTTP\CURLRequest->request('get', 'https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB', [])
+ 5 APPPATH\Controllers\Home.php(27): CodeIgniter\HTTP\CURLRequest->get('https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 18:37:51 --> 22 : The requested URL returned error: 403 
+in SYSTEMPATH\HTTP\CURLRequest.php on line 666.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(666): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested URL returned error: 403 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(372): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('get', 'https://graph.instagram.com/v17.0/18083852146027283?fields=caption,media_type,media_url,permalink&access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(167): CodeIgniter\HTTP\CURLRequest->request('get', 'https://graph.instagram.com/v17.0/18083852146027283?fields=caption,media_type,media_url,permalink&access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB', [])
+ 5 APPPATH\Controllers\Home.php(38): CodeIgniter\HTTP\CURLRequest->get('https://graph.instagram.com/v17.0/18083852146027283?fields=caption,media_type,media_url,permalink&access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-13 18:44:52 --> 22 : The requested URL returned error: 403 
+in SYSTEMPATH\HTTP\CURLRequest.php on line 666.
+ 1 SYSTEMPATH\HTTP\CURLRequest.php(666): CodeIgniter\HTTP\Exceptions\HTTPException::forCurlError('22', 'The requested URL returned error: 403 ')
+ 2 SYSTEMPATH\HTTP\CURLRequest.php(372): CodeIgniter\HTTP\CURLRequest->sendRequest([...])
+ 3 SYSTEMPATH\HTTP\CURLRequest.php(134): CodeIgniter\HTTP\CURLRequest->send('get', 'https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 4 SYSTEMPATH\HTTP\CURLRequest.php(167): CodeIgniter\HTTP\CURLRequest->request('get', 'https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB', [])
+ 5 APPPATH\Controllers\Home.php(27): CodeIgniter\HTTP\CURLRequest->get('https://graph.instagram.com/v17.0/6412466355467917/media?access_token=IGQVJXQXhuR3pmMHdwQnZALdUxOS1d2YTIzMDhJcWhkZA2R4ZAW1mUkVfY3ZAxdjdFTXNFWURhWXROZA284UEZA5d0Q5X2ZAZAWnI5Q1B4dTBXT0lzb1kwVWZAZARThfbHYyS0dIWHlCQW1fb2RB')
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')

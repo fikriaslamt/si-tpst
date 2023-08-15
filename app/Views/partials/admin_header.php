@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?=$title?></title>
 
+   <!-- jQuery Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+  <!-- Datatable CSS -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"/>
+
+
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -25,13 +32,21 @@
   <link rel="stylesheet" href="<?=base_url('adminlte/plugins/daterangepicker/daterangepicker.css')?>">
   <!-- summernote -->
   <link rel="stylesheet" href="<?=base_url('adminlte/plugins/summernote/summernote-bs4.min.css')?>">
+  
+ 
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"  rel="stylesheet" />
 
-</head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
+  <script src="https://cdn.tailwindcss.com/3.3.0"></script>
+  <script src="<?=base_url('chart/Chart.js')?>"></script>
 
+
+</head>
+<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

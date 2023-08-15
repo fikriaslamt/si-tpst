@@ -12,9 +12,9 @@ class Login extends BaseController
         $data = [
             'title' => 'Login Admin'
         ];
-        echo view('partials/header',$data);
-        echo view('admin/login');
-        echo view('partials/footer');
+       
+        echo view('admin/login',$data);
+ 
         
     }
 
