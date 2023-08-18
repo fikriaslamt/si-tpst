@@ -17,12 +17,7 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Data Sampah</h1>
-          </div><!-- /.col -->
-     
-        </div><!-- /.row -->
+    
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -32,22 +27,23 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row d-flex justify-content-center">
-          <div class="col-lg-3 col-6">
+          <div class="col-12 col-sm-6 col-md-3">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
+                
+                <h3><?= $timbulan;?><sup style="font-size: 20px">(ton)</sup></h3>
                 <p>TIMBULAN SAMPAH</p>
-                <h3>19<sup style="font-size: 20px">(ton / bulan)</sup></h3>
               </div>
        
             </div>
           </div>
           <!-- ./col -->
-          <div class="col-lg-3 col-6">
+          <div class="col-12 col-sm-6 col-md-3">
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>77.89<sup style="font-size: 20px">%</sup></h3>
+                <h3><?= $persentaseTerkelola;?><sup style="font-size: 20px">%</sup></h3>
 
                 <p>SAMPAH TERKELOLA</p>
               </div>
@@ -57,11 +53,11 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-6">
+          <div class="col-12 col-sm-6 col-md-3">
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>22.11<sup style="font-size: 20px">%</sup></h3>
+                <h3><?= $persentasetidakTerkelola;?><sup style="font-size: 20px">%</sup></h3>
 
 
                 <p>SAMPAH TIDAK TERKELOLA</p>
@@ -84,8 +80,8 @@
           </div>
 
               <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+              <div class="card-body overflow-auto">
+                <table id="example1" class="table table-striped">
                   <thead>
                   <tr>
                              
@@ -188,7 +184,7 @@
                     </div>
                     <div>
                         <label for="total_berat" class="block mb-2 text-sm font-medium text-blue-900">Total Berat</label>
-                        <input type="number" name="total_berat" id="total_berat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <input type="number" name="total_berat" id="total_berat" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
                     <!-- <div>
                         <label for="status" class="block mb-2 text-sm font-medium text-blue-900">Status</label>
@@ -247,7 +243,7 @@
                     </div>
                     <div>
                         <label for="total_berat" class="block mb-2 text-sm font-medium text-blue-900">Total Berat</label>
-                        <input type="number" name="total_berat" id="total_berat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <input type="number" name="total_berat" id="total_berat" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
                    
                

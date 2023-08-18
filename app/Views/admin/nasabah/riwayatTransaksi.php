@@ -2,12 +2,7 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Riwayat Transaksi</h1>
-          </div><!-- /.col -->
-     
-        </div><!-- /.row -->
+       
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -19,11 +14,11 @@
         <div class="row d-flex justify-content-center">
         <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box mb-3">
-              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+              <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-receipt"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Total Transaksi</span>
-                <span class="info-box-number">41</span>
+              <span class="info-box-text">Total Transaksi</span>
+              <span class="info-box-number text-l"><?= $totalTransaksi;?></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -32,11 +27,11 @@
 
         <div class="col-12 col-sm-6 col-md-3">
           <div class="info-box mb-3">
-            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-handshake"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Total Setoran</span>
-              <span class="info-box-number">41</span>
+              <span class="info-box-number text-l"><?= $setoran;?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -45,11 +40,11 @@
 
         <div class="col-12 col-sm-6 col-md-3">
           <div class="info-box mb-3">
-            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-thumbs-up"></i></span>
+            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-handshake-slash"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Total Penarikan</span>
-              <span class="info-box-number">41</span>
+              <span class="info-box-number"><?= $penarikan;?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -76,14 +71,14 @@
             </div>
 
                 <!-- /.card-header -->
-                <div class="card-body">
-                  <table  class="table table-bordered table-striped">
+                <div class="card-body overflow-auto">
+                  <table  class="table  table-striped">
                     <thead>
                     <tr>
                       <th>No</th>
                       <th>Tanggal</th>
                       <th>No Tabungan</th>
-           
+                      <th>Jenis Sampah</th>
                       <th>Berat Total (kg)</th>        
                       <th>Total Harga</th>        
                     </tr>
@@ -94,7 +89,7 @@
                       <td><?= $data["id"]; ?></td>
                       <td><?= $data["tanggal"]; ?></td>
                       <td class="w-1/6"><?= $data["nasabah_id"];?></td>
-                  
+                      <td class="w-1/6"><?= $data["jenis"];?></td>
                       <td class="w-1/6"><?= $data["total_berat"]; echo "\t";echo $data["satuan"];?></td>
                       <td><?= $data["total_harga"]; ?></td>
 
@@ -125,29 +120,38 @@
           </div>
 
               <!-- /.card-header -->
-              <div class="card-body">
-                <table  class="table table-bordered table-striped">
+              <div class="card-body overflow-auto">
+                <table  class="table table-striped">
                   <thead>
                   <tr>
                     <th>No</th>
                     <th>Tanggal</th>
                     <th>No Tabungan</th>
-                    <th>Berat</th>        
-                    <th>Harga</th>        
+                    <th>Total Penarikan</th>             
                   </tr>
                   </thead>
                   <tbody>
+                  <?php foreach ($data2 as $index => $data) : ?>
+                    <tr>
+                      <td><?= $data["id"]; ?></td>
+                      <td><?= $data["tanggal"]; ?></td>
+                      <td class="w-1/6"><?= $data["nasabah_id"];?></td>
+                      <td class="w-1/6"><?= $data["total_penarikan"];?></td>
+
+                    </tr>
+                    
                  
+                  <?php endforeach; ?>
                   </tbody>
                  
                 </table>
 
                 <div class="mt-2 float-left">
-                  <i>Total entries :  <?= $pager->getTotal(); ?> Data</i>
+                  <i>Total entries :  <?= $pager2->getTotal(); ?> Data</i>
                 </div> 
 
                 <div class="mt-2 float-right">
-                  <?= $pager->links('default','pagination')?>
+                  <?= $pager2->links('default','pagination')?>
                 </div>
               </div>
               <!-- /.card-body -->

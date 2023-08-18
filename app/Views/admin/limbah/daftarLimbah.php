@@ -17,12 +17,7 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Daftar Limbah</h1>
-          </div><!-- /.col -->
-     
-        </div><!-- /.row -->
+        
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -31,48 +26,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <p>TIMBULAN SAMPAH</p>
-                <h3>19<sup style="font-size: 20px">(ton / bulan)</sup></h3>
-              </div>
-       
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>77.89<sup style="font-size: 20px">%</sup></h3>
 
-                <p>SAMPAH TERKELOLA</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>22.11<sup style="font-size: 20px">%</sup></h3>
-
-
-                <p>SAMPAH TIDAK TERKELOLA</p>
-              </div>
-              <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-              </div>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
         <!-- /.row -->
         <!-- Main row -->
         <div class="card">
@@ -84,8 +38,21 @@
           </div>
 
             <!-- /.card-header -->
-            <div class="card-body">
-           
+            <div class="card-body overflow-auto">
+            <form class="flex items-center lg:w-1/4 md:w-1/3  float-right" id="searchForm" action="" method="get">   
+                  <label for="simple-search" class="sr-only">Search</label>
+                  <div class="relative w-full">
+                      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                          <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                      </div>
+                      <?php $request = \Config\Services::request(); ?>
+                      <input type="text" id="searchInput" name="search" value="<?= $request->getGet('search');?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  " placeholder=" Search Keyword">
+                  </div>
+                  <button  type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-gray-700 rounded-lg border border-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                      <span class="sr-only">Search</span>
+                  </button>
+              </form>
               <table id="limbahTable" class="table table-striped">
                 <thead>
                 <tr>
@@ -189,7 +156,7 @@
                   </div>
                   <div>
                       <label for="harga" class="block mb-2 text-sm font-medium text-blue-900 ">Harga</label>
-                      <input type="number" name="harga" id="harga" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  required>
+                      <input type="number" name="harga" id="harga" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  required>
                   </div>
                  
                   <div>
@@ -251,7 +218,7 @@
                     </div>
                     <div>
                         <label for="harga" class="block mb-2 text-sm font-medium text-blue-900 ">Harga</label>
-                        <input type="number" name="harga" id="harga" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                        <input type="number" name="harga" id="harga" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                     </div>
                     <div>
                         <label for="tanggal" class="block mb-2 text-sm font-medium text-blue-900 ">Tanggal Update</label>

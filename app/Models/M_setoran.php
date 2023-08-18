@@ -8,8 +8,15 @@ class M_setoran extends Model
 {
     protected $table = "setoran";
     protected $primaryKey           = 'id';
-    protected $allowedFields        = ['id','id_transaksi','tanggal','nasabah_id','id_sampah','total_berat','total_harga'];
+    protected $allowedFields        = ['id','id_transaksi','tanggal','admin','nasabah_id','id_sampah','total_berat','total_harga'];
 
+    // public function getTotalSetoran(){
+    //     $builder = $this->table('setoran');
+
+    //     $total = $builder->
+        
+
+    // }
 
     // public function __construct()
     // {

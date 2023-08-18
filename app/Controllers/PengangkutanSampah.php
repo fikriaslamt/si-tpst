@@ -18,6 +18,7 @@ class PengangkutanSampah extends BaseController
         $pengangkutanSampah->insert([
             'tanggal' => $this->request->getVar('tanggal'),
             'petugas' => $this->request->getVar('petugas'),
+            
             'total_berat' => $this->request->getVar('total_berat'),
             'total_harga' => $this->request->getVar('total_harga'),
         

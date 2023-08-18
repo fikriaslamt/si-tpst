@@ -17,12 +17,7 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Data Limbah</h1>
-          </div><!-- /.col -->
-     
-        </div><!-- /.row -->
+        
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -31,48 +26,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <p>TIMBULAN SAMPAH</p>
-                <h3>19<sup style="font-size: 20px">(ton / bulan)</sup></h3>
-              </div>
-       
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>77.89<sup style="font-size: 20px">%</sup></h3>
 
-                <p>SAMPAH TERKELOLA</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>22.11<sup style="font-size: 20px">%</sup></h3>
-
-
-                <p>SAMPAH TIDAK TERKELOLA</p>
-              </div>
-              <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-              </div>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
         <!-- /.row -->
         <!-- Main row -->
         <div class="card">
@@ -86,8 +40,8 @@
           </div>
 
               <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+              <div class="card-body overflow-auto">
+                <table id="example1" class="table table-striped">
                   <thead>
                   <tr>
                     <th>No</th>
@@ -95,7 +49,6 @@
                     <th>Jenis Limbah</th>        
                     <th>Berat</th>        
                     <th>Harga</th>        
-                    <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -107,23 +60,7 @@
                       <td><?= $data["total_berat"]; echo "\t";echo $data["satuan"];?></td>
                       <td><?= $data["total_harga"]; ?></td>
 
-                      <td>
-                          <!-- Call to action buttons -->
-                          <ul class="flex flex-row items-center justify-center">  
-                              <li class="mx-1">
-                                  <button data-modal-target="edit-modal" data-modal-toggle="edit-modal" class="bg-yellow-500 btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
-                              </li>
-                              <li class="mx-1">
-                                  <button data-modal-target="delete-modal" data-modal-toggle="delete-modal" class="bg-red-500 btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
-                              </li>
-                          </ul>
-
-                          <!-- Edit Data modal -->
-                      
-
-                          <!-- delete Data modal -->
                
-                      </td>
                     </tr>
                     
                  
@@ -187,8 +124,8 @@
                                                 <?php endforeach; ?>   
                                             </select>                               
                                             
-                                            <input type="number" id="limbah" name="add[][limbah]"  class=" ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
-                                            <p class="block mb-2 text-sm font-bold text-blue-900 ml-2">KG</p>
+                                            <input type="number" id="limbah" name="add[][limbah]" min="0" onkeyup="if(this.value<0)this.value=0"  class=" ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" requiredf>
+                                            <p class="block mb-2 text-sm font-bold text-blue-900 ml-2">Jumlah</p>
                                         
                                             
                                         </div>
@@ -197,18 +134,15 @@
                                 </div>
 
                             </tr>  
-                           
-               
-               
+              
                     </table>
 
-                   
-
-
-
+                    <div class="flex items-center">
+                        <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 " required>
+                        <label for="link-checkbox" class="ml-2 text-sm font-medium text-gray-900">saya bertanggung jawab atas <a  class="text-blue-600  hover:underline">tindakan yang saya lakukan</a>.</label>
+                    </div>
                  
-                   
-               
+                               
                     <button type="submit" class="w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Tambah</button>
                     
                 </form>
@@ -230,7 +164,7 @@ $(document).ready(function(){
           options += '<option>' + dataLimbah[i].jenis_limbah + '</option>';
         }
 
-        $('#dynamic_field').append('<tr id="row'+counter+'" class="dynamic-added"><td> <div class="mt-2 flex flex-col"><div class="flex flex-row items-center"><select id="input" name="addmore[][input]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">' + options + '</select><input type="number" name="add[][limbah]" id="limbah" class=" ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" ><p class="block mb-2 text-sm font-bold text-blue-900 ml-2">KG</p></div></div></td><td><button type="button" name="remove" id="'+counter+'" class="btn btn-danger btn_remove bg-red-700 hover:bg-red-500 ml-2">X</button></td></tr>');
+        $('#dynamic_field').append('<tr id="row'+counter+'" class="dynamic-added"><td> <div class="mt-2 flex flex-col"><div class="flex flex-row items-center"><select id="input" name="addmore[][input]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">' + options + '</select><input type="number" name="add[][limbah]" id="limbah" min="0" onkeyup="if(this.value<0)this.value=0" class=" ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" ><p class="block mb-2 text-sm font-bold text-blue-900 ml-2">Jumlah</p></div></div></td><td><button type="button" name="remove" id="'+counter+'" class="btn btn-danger btn_remove bg-red-700 hover:bg-red-500 ml-2 rounded-lg"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></td></tr>');
     });
 
 

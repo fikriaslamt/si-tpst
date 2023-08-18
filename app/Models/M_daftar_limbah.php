@@ -9,5 +9,19 @@ class M_daftar_limbah extends Model
     protected $table = "daftar_limbah";
     protected $primaryKey           = 'id';
     protected $allowedFields        = ['id','jenis_limbah','harga','tanggal_update','satuan'];
-   
+    
+
+    function getPaginated($num,$keyword = null){
+        $builder = $this->table('daftar_limbah');
+
+        if($keyword != ''){
+            $builder->like('jenis_limbah',$keyword)->orLike('harga',$keyword);
+        }
+
+        return [
+            'data' => $this->paginate($num),
+            'pager' => $this->pager,
+        ];
+    }
+
 }

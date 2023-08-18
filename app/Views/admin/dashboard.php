@@ -2,12 +2,7 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
-     
-        </div><!-- /.row -->
+        
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -21,12 +16,12 @@
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>19,218,650 ton</h3>
+                <h3><?= $timbulan;?> ton</h3>
 
                 <p>TIMBULAN SAMPAH</p>
               </div>
        
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a hhref="<?=base_url('Admin/dataSampah')?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -34,14 +29,14 @@
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>77.89<sup style="font-size: 20px">%</sup></h3>
+                <h3><?= $totalTransaksi;?></h3>
 
-                <p>SAMPAH TERKELOLA</p>
+                <p>TRANSAKSI NASABAH</p>
               </div>
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?=base_url('Admin/riwayatTransaksi')?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -49,15 +44,15 @@
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-                <h3>22.11<sup style="font-size: 20px">%</sup></h3>
+                <h3><?= $totalKonten;?></h3>
 
 
-                <p>SAMPAH TIDAK TERKELOLA</p>
+                <p>KONTEN PUBLIKASI</p>
               </div>
               <div class="icon">
               <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?=base_url('Admin/konten')?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -73,7 +68,7 @@
               <i class="ion ion-person-add"></i>
                 
               </div>
-              <a href="<?=base_url('admin/nasabah/data-nasabah')?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?=base_url('Admin/dataNasabah')?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -92,29 +87,36 @@
                 </h3>
               
               </div><!-- /.card-header -->
-              <div class="card-body">
+              <div class="card-body overflow-auto">
                 <table id="example2" class="table table-bordered table-hover">
-                  <thead>
-                  <tr>
-                    <th>Rendering engine</th>
-                    <th>Browser</th>
-                    <th>Platform(s)</th>
-                    <th>Engine version</th>
-                    <th>CSS grade</th>
+                  <thead class="text-center">
+                  <tr >
+                    <th>No</th>
+                    <th>Tanggal</th>
+                    <th>Jenis Transaksi</th>
+                    <th>Jumlah Transaksi</th>
                   </tr>
                   </thead>
                   <tbody>
+                  <?php $i=1; foreach ($riwayat as $data) : ?>
                   <tr>
-                    <td>Tasman</td>
-                    <td>Internet Explorer 5.2</td>
-                    <td>Mac OS 8-X</td>
-                    <td>1</td>
-                    <td>C</td>
+                    <td class="text-center"><?= $i;$i++;?></td>
+                    <td><?= $data["tanggal"] ?></td>
+                    <td><?= $data["jenis_transaksi"] ?></td>
+                    <td>Rp. <?= $data["jumlah"] ?></td>
                   </tr>
+                  <?php endforeach;?>
                  
                   </tbody>
              
                 </table>
+                <div class="mt-2 float-left">
+                  <i>Total entries :  <?= $pager->getTotal(); ?> Data</i>
+                </div> 
+
+                <div class="mt-2 float-right">
+                  <?= $pager->links('default','pagination')?>
+                </div>
               </div>
             </div>
          
@@ -125,7 +127,7 @@
 
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Komposisi Sampah Berdasarkan Jenis Sampah</h3>
+                <h3 class="card-title">Total Transaksi Berdasarkan Jenis Transaksi</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -135,8 +137,13 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
+                <select id="yearSelect" class="float-right rounded-lg lg:w-1/5 sm:lg-2/5 pl-2">
+                  <?php  foreach($year as $index => $y):?>
+                    <option value="<?= $index;?>" selected><?= $index;?></option>
+                  <?php endforeach;?>
+                </select>
                 <div>
-                  <canvas id="myChart"></canvas>
+                  <canvas id="barChart"></canvas>
                 </div>
               </div>
              
@@ -145,7 +152,7 @@
            
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Komposisi Sampah Berdasarkan Sumber Sampah</h3>
+                <h3 class="card-title">Timbulan Sampah Berdasarkan Status Pengelolaan </h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -155,7 +162,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <canvas id="pieChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                <canvas id="pieChart"></canvas>
               </div>
              
             </div>
@@ -170,27 +177,56 @@
     <!-- /.content -->
   </div>
 
+<script>
+  const ctx = document.getElementById('barChart');  
+  const ctx2 = document.getElementById('pieChart');  
 
-  <script>
-  const ctx = document.getElementById('myChart');
+  setoranChart = <?= json_encode($setoranChart) ?>;
+  penarikanChart = <?= json_encode($penarikanChart) ?>;
+  limbahChart = <?= json_encode($limbahChart) ?>;
+  lastYear = <?= json_encode($lastYear)?>;
+  terkelola = <?= json_encode($Terkelola)?>;
+  tidakTerkelola = <?= json_encode($tidakTerkelola)?>;
+  yearSelect = document.getElementById('yearSelect');
 
-  new Chart(ctx, {
+
+  const chart =  new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [{
-        label: 'Data Sampah',
-        data: [12, 19, 3, 7, 9, 5],
-        backgroundColor: [
-      '#FF0000',
-      '#0000FF',
-      '#FFFF00',
-      '#00FF00',
-      '#FF00FF',
-      '#FFA500'
-    ],
-        borderWidth: 1
-      }]
+      labels  : ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+      datasets: [ {
+          label               : 'Setoran',
+          backgroundColor     : '#00c0ef',
+          borderColor         : 'rgba(60,141,188,0.8)',
+          pointRadius          : false,
+          pointColor          : '#3b8bba',
+          pointStrokeColor    : 'rgba(60,141,188,1)',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(60,141,188,1)',
+          data                : []
+        },
+        {
+          label               : 'Penarikan',
+          backgroundColor     : '#f56954',
+          borderColor         : 'rgba(210, 214, 222, 1)',
+          pointRadius         : false,
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#c1c7d1',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data                : []
+        },
+        {
+          label               : 'Limbah',
+          backgroundColor     : '#00a65a',
+          borderColor         : 'rgba(210, 214, 222, 1)',
+          pointRadius         : false,
+          pointColor          : 'rgba(210, 214, 222, 1)',
+          pointStrokeColor    : '#c1c7d1',
+          pointHighlightFill  : '#fff',
+          pointHighlightStroke: 'rgba(220,220,220,1)',
+          data                : []
+        },]
     },
     options: {
       scales: {
@@ -200,4 +236,67 @@
       }
     }
   });
+
+  const chart2 =  new Chart(ctx2, {
+    type: 'pie',
+    data:{      
+      labels: [
+          'Terkelola',
+          'Tidak Terkelola',
+      ],
+      datasets: [
+        {
+          data: [terkelola,tidakTerkelola],
+          backgroundColor : [ '#00c0ef','#f56954' ],
+        }
+      ]},
+    options: {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: 'top',
+        }
+      }
+    }
+  });
+
+
+
+  function updateChart (selectedYear){
+    const selectedSetoranChart = setoranChart[selectedYear] || {}; // Use empty object if no Chart available
+    const selectedPenarikanChart = penarikanChart[selectedYear] || {};
+    const selectedLimbahChart = limbahChart[selectedYear] || {};
+    
+    // Fill in missing months with zero values
+    for (let i = 1; i <= 12; i++) {
+        if (!selectedSetoranChart[i]) {
+            selectedSetoranChart[i] = 0;
+        }
+        if (!selectedPenarikanChart[i]) {
+            selectedPenarikanChart[i] = 0;
+        }
+        if (!selectedLimbahChart[i]) {
+            selectedLimbahChart[i] = 0;
+        }
+    }
+    
+    // Update the chart Chart for each dataset
+    chart.data.datasets[0].data = Object.values(selectedSetoranChart);
+    chart.data.datasets[1].data = Object.values(selectedPenarikanChart);
+    chart.data.datasets[2].data = Object.values(selectedLimbahChart);
+    
+    // Update the chart
+    chart.update();
+  }
+
+  yearSelect.addEventListener('change', function () {
+      const selectedYear = yearSelect.value;
+
+      updateChart(selectedYear);
+  });
+
+  document.addEventListener('DOMContentLoaded',function () {
+      const selectedYear = lastYear;
+      updateChart(selectedYear);
+    });
 </script>

@@ -5,7 +5,12 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
     </ul>
+    
 
+          <div class="col-sm-6">
+            <h1 class="m-0 bold"><?= $title;?></h1>
+          </div><!-- /.col -->
+ 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Navbar Search -->

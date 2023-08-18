@@ -5,7 +5,7 @@ use App\Models\M_daftar_limbah;
 
 class DaftarLimbah extends BaseController
 {   
-
+   
     public function tambahDaftarLimbah()
     {   
         $daftarLimbah = new M_daftar_limbah();

@@ -17,12 +17,7 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Kelola Akun</h1>
-          </div><!-- /.col -->
-     
-        </div><!-- /.row -->
+        
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -31,48 +26,7 @@
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <!-- <p>TIMBULAN SAMPAH</p> -->
-                <h3>19<sup style="font-size: 20px">(ton / bulan)</sup></h3>
-              </div>
-       
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>77.89<sup style="font-size: 20px">%</sup></h3>
 
-                <!-- <p>SAMPAH TERKELOLA</p> -->
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>22.11<sup style="font-size: 20px">%</sup></h3>
-
-
-                <!-- <p>SAMPAH TIDAK TERKELOLA</p> -->
-              </div>
-              <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-              </div>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
         <!-- /.row -->
         <!-- Main row -->
         <div class="card">
@@ -84,8 +38,8 @@
           </div>
 
               <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+              <div class="card-body overflow-auto">
+                <table id="example1" class="table table-striped">
                   <thead>
                   <tr>
                     <th>Nomor</th>             

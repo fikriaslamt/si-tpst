@@ -7,6 +7,7 @@ use App\Models\M_setoran;
 use App\Models\M_sampah;
 use App\Models\M_limbah;
 use App\Models\M_daftar_limbah;
+use App\Models\M_riwayat_transaksi;
 
 class DataLimbah extends BaseController
 {   
@@ -15,23 +16,26 @@ class DataLimbah extends BaseController
     {   
         $limbah = new M_limbah();
         $daftarLimbah = new M_daftar_limbah();
+        $riwayat = new M_riwayat_transaksi();
 
-
+        $admin = session('name');
         $limbahData = $this->request->getPost('addmore');
         $limbahData2 = $this->request->getPost('add');
 
         $totalBerat = 0.0;
+        $hargaTotal = 0.0;
         $harga = 0.0;
 
        
-
+        $tanggal = date("Y/m/d");
         // $uuid = uniqid();
 
         $data = [
         // 'id_transaksi' => $uuid,
-            'tanggal_masuk' => date("Y/m/d"),
+            'tanggal_masuk' => $tanggal,
             'total_berat' => 0,
             'total_harga' => 0,
+            'admin' => $admin,
         ];
 
         foreach ($limbahData as $index => $s) {
@@ -40,6 +44,7 @@ class DataLimbah extends BaseController
             $harga = $hargaLimbah['harga']* $limbahData2[$index]['limbah'];
 
             $totalBerat = $limbahData2[$index]['limbah'];
+            $hargaTotal += $harga;
             
             $data['jenis_limbah'] = $s['input'];
             $data['total_berat'] = $totalBerat;
@@ -47,7 +52,13 @@ class DataLimbah extends BaseController
     
 
             $limbah->insert($data);
+
+//riwayat transaksi
+            $riwayat->addRiwayat("Limbah",$tanggal,$harga,$admin);
         }
+
+
+
 
         session()->setFlashdata('error', "Data Berhasil Ditambahkan");
         return redirect()->to(base_url('admin/dataLimbah'));

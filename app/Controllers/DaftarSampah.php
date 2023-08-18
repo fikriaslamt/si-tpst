@@ -6,6 +6,7 @@ use App\Models\M_sampah;
 class DaftarSampah extends BaseController
 {   
 
+
     public function tambahDaftarSampah()
     {   
         $daftarSampah = new M_sampah();

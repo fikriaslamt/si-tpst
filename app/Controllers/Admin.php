@@ -11,6 +11,9 @@ use App\Models\M_tabungan;
 use App\Models\M_setoran;
 use App\Models\M_penarikan;
 use App\Models\M_konten;
+use App\Models\M_riwayat_transaksi;
+
+
 
 
 class Admin extends BaseController
@@ -21,15 +24,46 @@ class Admin extends BaseController
     {   
 
         $nasabah = new M_nasabah();
+        $sampahMasuk= new M_sampah_masuk();
+        $setoran= new M_setoran();
+        $penarikan= new M_penarikan();
+        $konten = new M_konten();
+        $riwayat = new M_riwayat_transaksi();
+
+
+
+        $timbulan = $sampahMasuk ->getTimbulan();
+
+        $dataChart = $riwayat->getRiwayatByDate();
+
+        $timbulan = $sampahMasuk->getTimbulan();
+
+        $totalSetoran = $setoran->countAllResults();
+        $totalPenarikan = $penarikan->countAllResults();
+        $totalKonten = $konten->countAllResults();
         $totalNasabah = $nasabah->countAllResults();
 
+        $dataRiwayat = $riwayat->orderBy('tanggal','DESC')->paginate(10);
+
         $data = [
+            'Terkelola' => $timbulan['Terkelola'],
+            'tidakTerkelola' => $timbulan['tidakTerkelola'],
+            'lastYear' => $dataChart['lastYear'],
+            'year' => $dataChart['year'],
+            'setoranChart' => $dataChart['setoranChart'],
+            'penarikanChart' => $dataChart['penarikanChart'],
+            'limbahChart' => $dataChart['limbahChart'],
+            'riwayat' => $dataRiwayat,
+            'pager' => $riwayat->pager,
             'totalNasabah' => $totalNasabah,
+            'timbulan' => $timbulan['timbulan'],
+            'totalTransaksi' => $totalSetoran+$totalPenarikan,
+            'totalKonten' => $totalKonten,
         ];
 
         $header['title']='Dashboard';
         echo view('partials/admin_header',$header);
-        echo view('partials/admin_navbar');
+        echo view('partials/admin_navbar',$header);
         echo view('partials/admin_sidebar');
         echo view('admin/dashboard',$data);
         echo view('partials/admin_footer');
@@ -41,11 +75,17 @@ class Admin extends BaseController
 
         $sampah_masuk = new M_sampah_masuk();
 
-        $data['data'] = $sampah_masuk->orderBy('tanggal_masuk','ASC')->paginate(10);
+        $timbulan = $sampah_masuk ->getTimbulan();
+
+        $data['data'] = $sampah_masuk->orderBy('tanggal_masuk','DESC')->paginate(10);
         $data['pager'] = $sampah_masuk->pager;
+        $data['timbulan'] = $timbulan['timbulan'];
+        $data['persentaseTerkelola'] = $timbulan['persentaseTerkelola'];
+        $data['persentasetidakTerkelola'] = $timbulan['persentasetidakTerkelola'];
+
         $header['title']='Data Sampah';
         echo view('partials/admin_header',$header);
-        echo view('partials/admin_navbar');
+        echo view('partials/admin_navbar',$header);
         echo view('partials/admin_sidebar');
         echo view('admin/sampah/dataSampah',$data);
         echo view('partials/admin_footer');
@@ -54,14 +94,14 @@ class Admin extends BaseController
     public function daftarSampah()
     {  
 
+        $keyword = $this->request->getGet('search');
         $sampah = new M_sampah();
 
-        $data['data'] = $sampah->paginate(10);
-        $data['pager'] = $sampah->pager;
+        $data = $sampah->getPaginated(10,$keyword);
 
         $header['title']='Daftar Sampah';
         echo view('partials/admin_header',$header);
-        echo view('partials/admin_navbar');
+        echo view('partials/admin_navbar',$header);
         echo view('partials/admin_sidebar');
         echo view('admin/sampah/daftarSampah',$data);
         echo view('partials/admin_footer');
@@ -73,7 +113,7 @@ class Admin extends BaseController
     {   
         $header['title']='Pengangkutan Sampah';
         echo view('partials/admin_header',$header);
-        echo view('partials/admin_navbar');
+        echo view('partials/admin_navbar',$header);
         echo view('partials/admin_sidebar');
         echo view('admin/sampah/pengangkutanSampah');
         echo view('partials/admin_footer');
@@ -116,9 +156,9 @@ class Admin extends BaseController
            
         ];
 
-        $header['title']='Limbah';
+        $header['title']='Data Limbah';
         echo view('partials/admin_header',$header);
-        echo view('partials/admin_navbar');
+        echo view('partials/admin_navbar',$header);
         echo view('partials/admin_sidebar');
         echo view('admin/limbah/dataLimbah',$data);
         echo view('partials/admin_footer');
@@ -126,14 +166,14 @@ class Admin extends BaseController
 
     public function daftarLimbah()
     {   
-
+        $keyword = $this->request->getGet('search');
         $daftarLimbah = new M_daftar_limbah();
 
-        $data['data'] = $daftarLimbah->paginate(10);
-        $data['pager'] = $daftarLimbah->pager;
+        $data = $daftarLimbah->getPaginated(10,$keyword);
+    
 
 
-        $header['title']='Limbah';
+        $header['title']='Daftar Limbah';
         echo view('partials/admin_header',$header);
         echo view('partials/admin_navbar');
         echo view('partials/admin_sidebar');
@@ -146,7 +186,18 @@ class Admin extends BaseController
     public function riwayatTransaksi()
     {       
 
+
+        $setoran= new M_setoran();
+        $penarikan= new M_penarikan();
         $sampah = new M_sampah();
+
+        $totalSetoran = $setoran->countAllResults();
+        $totalPenarikan = $penarikan->countAllResults();
+   
+
+
+
+    
         $dataSampah = $sampah->findAll();
 
         $temp=array();
@@ -155,29 +206,18 @@ class Admin extends BaseController
         }
 
 
-        $setoran = new M_setoran();
-
- 
-        
-
-       
-     
-       
-        $dataSetoran = $setoran->paginate(10);
+        $dataPenarikan= $penarikan->orderBy('tanggal','DESC')->paginate(10);
+        $dataSetoran = $setoran->orderBy('tanggal','DESC')->paginate(10);
         $dataSetoran2 = $dataSetoran;
-        
-        // foreach ($dataSetoran as $dt){
-        //     foreach ($daftarSampah as $ds){
-            
-        //         $total[$ds] = $dt[$ds];
-        //      }
-        //      $totalBerat[]=$total;
-        //      $total = array();
-        // }
+
+    
+
 
         foreach ($dataSetoran as $index => $d ){
             $satuan = $sampah->where('id',$d["id_sampah"])->select('satuan')->first();
+            $jenis = $sampah->where('id',$d["id_sampah"])->select('jenis')->first();
             $dataSetoran2[$index]['satuan']=is_null($satuan)?"":$satuan["satuan"];
+            $dataSetoran2[$index]['jenis']=is_null($jenis)?"":$jenis["jenis"];
         }
 
    
@@ -186,9 +226,14 @@ class Admin extends BaseController
 
         $data = [
             'data' => $dataSetoran2,
+            'data2' => $dataPenarikan,
             'dataSampah' => $dataSampah,
             'sampah' => $temp,
             'pager' => $setoran->pager,
+            'pager2' => $penarikan->pager,
+            'totalTransaksi' => $totalSetoran+$totalPenarikan,
+            'setoran' => $totalSetoran,
+            'penarikan' => $totalPenarikan,
             // 'daftarSampah' => $daftarSampah,
             // 'berat'=>$totalBerat,
            
@@ -196,7 +241,7 @@ class Admin extends BaseController
 
         $header['title']='Riwayat Transaksi';
         echo view('partials/admin_header',$header);
-        echo view('partials/admin_navbar');
+        echo view('partials/admin_navbar',$header);
         echo view('partials/admin_sidebar');
         echo view('admin/nasabah/riwayatTransaksi',$data);
         echo view('partials/admin_footer');
@@ -204,14 +249,15 @@ class Admin extends BaseController
 
     public function dataNasabah()
     {   
+        $keyword = $this->request->getGet('search');
         $nasabah = new M_nasabah();
 
-        $data['data'] = $nasabah->paginate(10);
-        $data['pager'] = $nasabah->pager;
+        $data = $nasabah->getPaginated(10,$keyword);
+    
 
         $header['title']='Data Nasabah';
         echo view('partials/admin_header',$header);
-        echo view('partials/admin_navbar');
+        echo view('partials/admin_navbar',$header);
         echo view('partials/admin_sidebar');
         echo view('admin/nasabah/dataNasabah',$data);
         echo view('partials/admin_footer');
@@ -232,22 +278,24 @@ class Admin extends BaseController
 
         $tabungan = new M_tabungan();
 
-
+        $keyword = $this->request->getGet('search');
        
-        $dataTabungan = $tabungan->paginate(10);
+
+    
+       
+        $dataTabungan = $tabungan->getPaginated(10,$keyword);
       
         $data = [
-            'data' => $dataTabungan,
+            'data' => $dataTabungan['data'],
             'dataSampah' => $dataSampah,
             'sampah' => $temp,
-            'pager' => $tabungan->pager,
+            'pager' => $dataTabungan['pager'],
 
-           
         ];
       
         $header['title']='Tabungan';
         echo view('partials/admin_header',$header);
-        echo view('partials/admin_navbar');
+        echo view('partials/admin_navbar',$header);
         echo view('partials/admin_sidebar');
         echo view('admin/nasabah/tabungan',$data);
         echo view('partials/admin_footer');
@@ -257,14 +305,15 @@ class Admin extends BaseController
     public function konten()
     {   
 
+        $keyword = $this->request->getGet('search');
         $konten = new M_konten();
 
-        $data['data'] = $konten->paginate(10);
-        $data['pager'] = $konten->pager;
+        $data = $konten->getPaginated(10,$keyword);
+    
 
         $header['title']='Konten';
         echo view('partials/admin_header',$header);
-        echo view('partials/admin_navbar');
+        echo view('partials/admin_navbar',$header);
         echo view('partials/admin_sidebar');
         echo view('admin/konten/konten',$data);
         echo view('partials/admin_footer');
@@ -281,7 +330,7 @@ class Admin extends BaseController
 
         $header['title']='Kelola Akun';
         echo view('partials/admin_header',$header);
-        echo view('partials/admin_navbar');
+        echo view('partials/admin_navbar',$header);
         echo view('partials/admin_sidebar');
         echo view('admin/akun/akun',$data);
         echo view('partials/admin_footer');
