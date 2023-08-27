@@ -3,11 +3,10 @@
 namespace App\Controllers;
 use App\Models\M_daftar_limbah;
 
-class DaftarLimbah extends BaseController
-{   
+class DaftarLimbah extends BaseController{
    
-    public function tambahDaftarLimbah()
-    {   
+    public function tambahDaftarLimbah(){
+
         $daftarLimbah = new M_daftar_limbah();
 
 
@@ -26,8 +25,8 @@ class DaftarLimbah extends BaseController
 
     }
 
-    public function editDaftarLimbah($id)
-    {   
+    public function editDaftarLimbah($id){
+
        $daftarLimbah = new M_daftar_limbah();
 
        $daftarLimbah->update($id,[
@@ -44,8 +43,8 @@ class DaftarLimbah extends BaseController
 
     }
 
-    public function deleteDaftarLimbah($id)
-    {   
+    public function deleteDaftarLimbah($id){
+
        $daftarLimbah = new M_daftar_limbah();
         
        $daftarLimbah->delete($id);
@@ -57,8 +56,8 @@ class DaftarLimbah extends BaseController
     }
 
 
-    public function getDaftarLimbah()
-    {   
+    public function getDaftarLimbah(){
+
         $request = service("request");
         $postData = $request->getPost();
         $dtpostData = $postData['data'];
@@ -71,7 +70,6 @@ class DaftarLimbah extends BaseController
         $columnSortOrder = $dtpostData['order'][0]['dir'];
         $searchValue = $dtpostData['search']['value'];
 
-
         //total data
         $limbah = new M_daftar_limbah();
         $totalData = $limbah->select('id')->countAllResults();
@@ -81,7 +79,10 @@ class DaftarLimbah extends BaseController
 
 
         $response = array();
-        $records = $limbah->select('*')->orLike('jenis',$searchValue)->orderBy($columnName,$columnSortOrder)->findAll($rowperPage,$start);
+        $records = $limbah->select('*')
+                ->orLike('jenis',$searchValue)
+                ->orderBy($columnName,$columnSortOrder)
+                ->findAll($rowperPage,$start);
 
         $data = array();
         foreach($records as $record){
@@ -92,7 +93,7 @@ class DaftarLimbah extends BaseController
                 'tanggal_update' => $record['tanggal_update'],
 
             );
-        };
+        }
 
         //response
         $response = array(

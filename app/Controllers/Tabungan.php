@@ -22,22 +22,50 @@ class Tabungan extends BaseController
         return $this->response->setJSON($results);
     }
 
+    public function verifyKode(){
+        $kode = $this->request->getPost('searchValue');
+        $tabungan = new M_tabungan(); // Replace with your tabungan
+        
+        // Query the database using your model
+        $nasabah = new M_nasabah(); // Replace with your nasabah
+        $results = $nasabah->searchBykode($kode);
+
+
+        foreach($results as $result){
+            $idNasabah = $result['id'];
+            $nama = $result['nama'];
+            $alamat = $result['alamat'];
+        }
+        $saldo = $tabungan->getSaldo($idNasabah);
+
+        $data = array([
+            'nama' => $nama,
+            'alamat' => $alamat,
+            'saldo' => $saldo,
+        ]);
+        return $this->response->setJSON($data);
+    }
+    
+    
+
+
     public function tambahSetoran()
     {   
+        $nasabah = new M_nasabah();
         $tabungan = new M_tabungan();
         $setoran = new M_setoran();
         $sampah = new M_sampah();
         $riwayat = new M_riwayat_transaksi();
 
-        $admin = session('name');
+        $admin = session('id');
   
         $nomor = $this->request->getPost('nomor');
+        $id = $nasabah->select('id')->where('no_tabungan',$nomor)->first();
 
         $sampahData = $this->request->getPost('addmore');
         $sampahData2 = $this->request->getPost('add');
 
         $totalBerat = 0.0;
-        $hargaSampah = 0.0;
         $hargaTotal = 0.0;
 
        
@@ -47,25 +75,22 @@ class Tabungan extends BaseController
         $data = [
             'id_transaksi' => $uuid,
             'tanggal' => $tanggal,
-            'nasabah_id' => $nomor,
-            'admin' => $admin,
-            'total_berat' => 0,
-            'total_harga' => 0,
-            'id_sampah' => 0,
+            'nasabah_id' => $id['id'],
+            'admin_id' => $admin,
         ];
 
         foreach ($sampahData as $index => $s) {
             
-            $hargaSampah = $sampah->where('jenis',$s['input'])->first();
-            $harga = $hargaSampah['harga_nasabah']* $sampahData2[$index]['sampah'];
+            $daftarSampah = $sampah->where('id',$s['input'])->first();
+            $harga = $daftarSampah['harga_nasabah']* $sampahData2[$index]['sampah'];
 
             $totalBerat = $sampahData2[$index]['sampah'];
             $hargaTotal += $harga;
-            $idSampah = $hargaSampah['id'];
+            $idSampah = $s['input'];
 
             $data['total_berat'] = $totalBerat;
             $data['total_harga'] = $harga;
-            $data['id_sampah'] = $idSampah;
+            $data['sampah_id'] = $idSampah;
 
             $setoran->insert($data);
 
@@ -75,7 +100,7 @@ class Tabungan extends BaseController
 
 
 //tabungan 
-        $dataTabungan = $tabungan->where('nasabah_id',$nomor)->first();
+        $dataTabungan = $tabungan->where('nasabah_id',$id['id'])->first();
         $saldoBaru = $dataTabungan['saldo'] + $hargaTotal;
 
         $data2 = [
@@ -92,27 +117,25 @@ class Tabungan extends BaseController
     }
 
     public function tambahPenarikan()
-    {    
+    {   
+        $nasabah = new M_nasabah();
         $tabungan = new M_tabungan();
         $penarikan = new M_penarikan();
         $riwayat = new M_riwayat_transaksi();
 
-        $admin = session('name');
+        $admin = session('id');
 
         $nomor = $this->request->getPost('nomor');
+
+        $id = $nasabah->select('id')->where('no_tabungan',$nomor)->first();
+        
         $totalPenarikan = $this->request->getPost('saldo');
         $tanggal = date("Y/m/d");
 
-//penarikan
-        $penarikan->insert([
-            'tanggal' => $tanggal,
-            'nasabah_id' => $nomor,
-            'admin' => $admin,
-            'total_penarikan' => $totalPenarikan,
-        ]);
+
 
 //tabungan 
-        $dataTabungan = $tabungan->where('nasabah_id',$nomor)->first();
+        $dataTabungan = $tabungan->where('nasabah_id',$id['id'])->first();
         $saldoBaru = $dataTabungan['saldo'] - $totalPenarikan;
         $SaldoPenarikan = $dataTabungan['penarikan'] + $totalPenarikan;
 
@@ -122,6 +145,14 @@ class Tabungan extends BaseController
         ];
        
         $tabungan->update($dataTabungan['id'],$data2);
+
+//penarikan
+        $penarikan->insert([
+            'tanggal' => $tanggal,
+            'nasabah_id' => $id['id'],
+            'admin_id' => $admin,
+            'total_penarikan' => $totalPenarikan,
+        ]);
 
 //riwayat transaksi
         $riwayat->addRiwayat("Penarikan",$tanggal,$totalPenarikan,$admin);

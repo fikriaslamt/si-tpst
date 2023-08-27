@@ -49,7 +49,7 @@
               </li>
              
               <li class="nav-item">
-                <a  class="nav-link <?=\Config\Services::request()->getUri()->getSegment(3)=='pengangkutan-sampah'?'active':''?>">
+                <a href="<?=base_url('admin/sampah/pengangkutan-sampah')?>"  class="nav-link <?=\Config\Services::request()->getUri()->getSegment(3)=='pengangkutan-sampah'?'active':''?>">
                 <i class="far  nav-icon"></i>
 
                   <p>Pengangkutan Sampah</p>
@@ -122,6 +122,16 @@
          
 
             </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="<?=base_url('Admin/produk')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(2)=='produk'?'active':''?>">
+              <i class="nav-icon fas fa-wallet"></i>
+              <p>
+                Produk
+              </p>
+            </a>
+           
           </li>
 
           <li class="nav-item">

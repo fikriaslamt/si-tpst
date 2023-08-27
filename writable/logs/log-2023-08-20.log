@@ -1,0 +1,154 @@
+CRITICAL - 2023-08-20 08:01:11 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Tabungan.php on line 32.
+ 1 APPPATH\Controllers\Tabungan.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Tabungan.php', 32, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:02:26 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Tabungan.php on line 32.
+ 1 APPPATH\Controllers\Tabungan.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Tabungan.php', 32, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:04:00 --> Undefined index: saldo
+in APPPATH\Controllers\Tabungan.php on line 37.
+ 1 APPPATH\Controllers\Tabungan.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: saldo', 'APPPATH\\Controllers\\Tabungan.php', 37, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:05:02 --> Undefined index: saldo
+in APPPATH\Controllers\Tabungan.php on line 37.
+ 1 APPPATH\Controllers\Tabungan.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: saldo', 'APPPATH\\Controllers\\Tabungan.php', 37, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:05:29 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Tabungan.php on line 32.
+ 1 APPPATH\Controllers\Tabungan.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Tabungan.php', 32, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:11:52 --> Undefined index: saldo
+in APPPATH\Controllers\Tabungan.php on line 37.
+ 1 APPPATH\Controllers\Tabungan.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: saldo', 'APPPATH\\Controllers\\Tabungan.php', 37, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:12:10 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Tabungan.php on line 32.
+ 1 APPPATH\Controllers\Tabungan.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Tabungan.php', 32, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:24:32 --> Undefined index: saldo
+in APPPATH\Controllers\Tabungan.php on line 37.
+ 1 APPPATH\Controllers\Tabungan.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: saldo', 'APPPATH\\Controllers\\Tabungan.php', 37, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:25:03 --> Undefined index: saldo
+in APPPATH\Controllers\Tabungan.php on line 37.
+ 1 APPPATH\Controllers\Tabungan.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: saldo', 'APPPATH\\Controllers\\Tabungan.php', 37, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:25:19 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Tabungan.php on line 32.
+ 1 APPPATH\Controllers\Tabungan.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Tabungan.php', 32, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:30:27 --> Undefined index: id
+in APPPATH\Controllers\Tabungan.php on line 32.
+ 1 APPPATH\Controllers\Tabungan.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: id', 'APPPATH\\Controllers\\Tabungan.php', 32, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:30:46 --> Undefined index: id
+in APPPATH\Controllers\Tabungan.php on line 32.
+ 1 APPPATH\Controllers\Tabungan.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: id', 'APPPATH\\Controllers\\Tabungan.php', 32, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:34:25 --> Undefined index: id
+in APPPATH\Controllers\Tabungan.php on line 32.
+ 1 APPPATH\Controllers\Tabungan.php(32): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: id', 'APPPATH\\Controllers\\Tabungan.php', 32, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:37:33 --> Undefined index: nama
+in APPPATH\Controllers\Tabungan.php on line 37.
+ 1 APPPATH\Controllers\Tabungan.php(37): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: nama', 'APPPATH\\Controllers\\Tabungan.php', 37, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:37:41 --> Undefined offset: 0
+in APPPATH\Controllers\Tabungan.php on line 33.
+ 1 APPPATH\Controllers\Tabungan.php(33): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined offset: 0', 'APPPATH\\Controllers\\Tabungan.php', 33, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:40:27 --> Undefined index: saldo
+in APPPATH\Controllers\Tabungan.php on line 47.
+ 1 APPPATH\Controllers\Tabungan.php(47): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: saldo', 'APPPATH\\Controllers\\Tabungan.php', 47, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:40:36 --> Undefined index: saldo
+in APPPATH\Controllers\Tabungan.php on line 47.
+ 1 APPPATH\Controllers\Tabungan.php(47): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: saldo', 'APPPATH\\Controllers\\Tabungan.php', 47, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:43:43 --> Undefined index: saldo
+in APPPATH\Models\M_tabungan.php on line 35.
+ 1 APPPATH\Models\M_tabungan.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: saldo', 'APPPATH\\Models\\M_tabungan.php', 35, [...])
+ 2 APPPATH\Controllers\Tabungan.php(42): App\Models\M_tabungan->getSaldo('37')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-20 08:43:52 --> Undefined index: saldo
+in APPPATH\Models\M_tabungan.php on line 35.
+ 1 APPPATH\Models\M_tabungan.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: saldo', 'APPPATH\\Models\\M_tabungan.php', 35, [...])
+ 2 APPPATH\Controllers\Tabungan.php(42): App\Models\M_tabungan->getSaldo(0)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tabungan->verifyKode()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tabungan))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')

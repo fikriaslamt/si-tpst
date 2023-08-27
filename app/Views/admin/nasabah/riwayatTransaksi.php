@@ -61,7 +61,7 @@
             </button>
             <!--penarikan toggle -->
             <button id="penarikanButton" class="block ml-2 text-white bg-amber-300  focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center w-1/2 " type="button">
-              PEANARIKAN
+              PENARIKAN
             </button>
           </div>
 
@@ -81,18 +81,19 @@
                       <th>Jenis Sampah</th>
                       <th>Berat Total (kg)</th>        
                       <th>Total Harga</th>        
+                      <th>Admin</th>        
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach ($data as $index => $data) : ?>
+                    <?php $i=1; foreach ($data as $index => $data) : ?>
                     <tr>
-                      <td><?= $data["id"]; ?></td>
+                      <td><?= $i;$i++;?></td>
                       <td><?= $data["tanggal"]; ?></td>
-                      <td class="w-1/6"><?= $data["nasabah_id"];?></td>
+                      <td class="w-1/6"><?= $data["no_tabungan"];?></td>
                       <td class="w-1/6"><?= $data["jenis"];?></td>
                       <td class="w-1/6"><?= $data["total_berat"]; echo "\t";echo $data["satuan"];?></td>
                       <td><?= $data["total_harga"]; ?></td>
-
+                      <td><?= $data["nama"]; ?></td>
                     </tr>
                     
                  
@@ -102,11 +103,11 @@
                   </table>
 
                   <div class="mt-2 float-left">
-                    <i>Total entries :  <?= $pager->getTotal(); ?> Data</i>
+                    <i>Total entries :  <?= $pager->getTotal('group1'); ?> Data</i>
                   </div> 
 
                   <div class="mt-2 float-right">
-                    <?= $pager->links('default','pagination')?>
+                    <?= $pager->links('group1','pagination')?>
                   </div>
 
                   
@@ -116,7 +117,7 @@
 
           <div id="penarikanTable" class="card" >
           <div class="card-header flex flex-row">
-            <h1 class="m-0">Riwayat Penarikan</h1>
+            <h1 class="m-0 text-bold">Riwayat Penarikan</h1>
           </div>
 
               <!-- /.card-header -->
@@ -128,15 +129,17 @@
                     <th>Tanggal</th>
                     <th>No Tabungan</th>
                     <th>Total Penarikan</th>             
+                    <th>Admin</th>             
                   </tr>
                   </thead>
                   <tbody>
-                  <?php foreach ($data2 as $index => $data) : ?>
+                  <?php $i=1; foreach ($data2 as $index => $data) : ?>
                     <tr>
-                      <td><?= $data["id"]; ?></td>
+                      <td><?= $i;$i++;?></td>
                       <td><?= $data["tanggal"]; ?></td>
-                      <td class="w-1/6"><?= $data["nasabah_id"];?></td>
+                      <td class="w-1/6"><?= $data["no_tabungan"];?></td>
                       <td class="w-1/6"><?= $data["total_penarikan"];?></td>
+                      <td class="w-1/6"><?= $data["nama"];?></td>
 
                     </tr>
                     
@@ -145,14 +148,14 @@
                   </tbody>
                  
                 </table>
-
                 <div class="mt-2 float-left">
-                  <i>Total entries :  <?= $pager2->getTotal(); ?> Data</i>
+                  <i>Total entries :  <?= $pager->getTotal('group2'); ?> Data</i>
                 </div> 
 
                 <div class="mt-2 float-right">
-                  <?= $pager2->links('default','pagination')?>
+                  <?= $pager->links('group2','pagination')?>
                 </div>
+              
               </div>
               <!-- /.card-body -->
           </div>

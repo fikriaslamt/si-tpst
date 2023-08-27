@@ -42,16 +42,16 @@
                 <table id="example1" class="table table-striped">
                   <thead>
                   <tr>
-                    <th>Nomor</th>             
+                    <th>No</th>             
                     <th>Nama</th>
                     <th>Username</th>
                     <th>Aksi</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <?php foreach ($data as $data) : ?>
+                  <?php $i=1; foreach ($data as $data) : ?>
                     <tr>
-                      <td><?= $data["id"]; ?></td>
+                      <td><?= $i;$i++ ?></td>
                       <td><?= $data["nama"]; ?></td>
                       <td><?= $data["username"]; ?></td>
                       <td>

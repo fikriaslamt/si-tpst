@@ -28,6 +28,7 @@ class Login extends BaseController
         if ($dataUser) {
             if ($dataUser['password'] == md5($password)) {
                 session()->set([
+                    'id' => $dataUser['id'],
                     'username' => $dataUser['username'],
                     'name' => $dataUser['nama'],
                     'logged_in' => TRUE

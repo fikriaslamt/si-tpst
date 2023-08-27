@@ -18,172 +18,96 @@
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0">Daftar Sampah</h1>
-          </div><!-- /.col -->
+          
      
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+    <section class="flex justify-center connectedSortable">
 
+
+      <div class="card px-5 lg:w-1/2 sm:w-full">
+        <div class="card-header">
+          <h3 class="card-title text-center"> Grafik Data Total Pengangkutan Sampah per Bulan</h3>
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <select id="yearSelect" class="float-right rounded-lg lg:w-1/10 sm:lg-2/5 pl-2">
+              <?php  foreach($year as $index => $y):?>
+                  <option value="<?= $index;?>" selected><?= $index;?></option>
+                <?php endforeach;?>
+          </select>
+          <div>
+            <canvas class="h-max" id="barChart"></canvas>
+          </div>
+        </div>
+        
+      </div>
+
+    </section>
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
-        <div class="row d-flex justify-content-center">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <p>TIMBULAN SAMPAH</p>
-                <h3>19<sup style="font-size: 20px">(ton / bulan)</sup></h3>
-              </div>
-       
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>77.89<sup style="font-size: 20px">%</sup></h3>
-
-                <p>SAMPAH TERKELOLA</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>22.11<sup style="font-size: 20px">%</sup></h3>
-
-
-                <p>SAMPAH TIDAK TERKELOLA</p>
-              </div>
-              <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-              </div>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
+      
         <!-- /.row -->
         <!-- Main row -->
-        <div class="card">
+        <div class="card justify-center">
           <div class="card-header">
             <!-- Tambah Data toggle -->
             <button data-modal-target="tambah-modal" data-modal-toggle="tambah-modal" class="block text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
-              Tambah Data
+              Tambah Data Pengangkutan
             </button>
           </div>
 
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example1" class="table table-striped text-center mb-2">
                   <thead>
                   <tr>
-                    <th>Nomor</th>              
-                    <th>Tanggal</th>             
-                    <th>Nama Petugas</th>             
-                    <th>Jenis Sampah</th>
-                    <th>Berat Sampah</th>                   
-                    <th>Harga</th>                   
-                    <th>Aksi</th>
+                    <th class="w-1/6">No</th>              
+                    <th>Tanggal</th>        
+                    <th class="w-1/6">Aksi</th>                         
                   </tr>
                   </thead>
                   <tbody>
-                  <?php foreach ($data as $data) : ?>
+                    <?php $i=1; foreach ($data as $data) : ?>
                     <tr>
-                      <td><?= $data["id"]; ?></td>
-                      <td><?= $data["tanggal"]; ?></td>
-                      <td>Rp. <?= $data["nama_petugas"]; ?></td>
-                      <td>Rp. <?= $data["jenis_sampah"]; ?></td>
-                      <td><?= $data["berat_sampah"]; ?></td>
-                      <td><?= $data["harga"]; ?></td>
-                      <td>
-                          <!-- Call to action buttons -->
-                          <ul class="flex flex-row items-center justify-center">  
+                      <td class="text-center"><?= $i;$i++;?></td>
+                      <td><?= $data["tanggal"] ?></td>
+                      <td> 
+                        <ul class="flex flex-row items-center justify-center">  
                               <li class="mx-1">
-                                  <button data-modal-target="edit-modal" data-modal-toggle="edit-modal" class="bg-yellow-500 btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Edit"><i class="fa fa-edit"></i></button>
+                                <button data-modal-target="delete-modal"
+                                        data-modal-toggle="delete-modal"
+                                        data-id="<?= $data["id"] ?>"
+                                        class="bg-red-500 btn-sm rounded-0"
+                                        type="button"
+                                        data-toggle="tooltip"
+                                        data-placement="top"
+                                        title="Delete">
+                                    <i class="fa fa-trash text-white"></i>
+                                </button>
                               </li>
-                              <li class="mx-1">
-                                  <button data-modal-target="delete-modal" data-modal-toggle="delete-modal" class="bg-red-500 btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></button>
-                              </li>
-                          </ul>
-
-                          <!-- Edit Data modal -->
-                          <div id="edit-modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                              <div class="relative w-full max-w-md max-h-full">
-                                  <!-- Modal content -->
-                                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                      <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center" data-modal-hide="edit-modal">
-                                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                                
-                                      </button>
-                                
-                                      <div class="px-6 py-6 lg:px-8">
-                                        <h3 class="mb-5 text-lg font-normal text-blue-900 ">Edit Data</h3>
-                                          <form class="space-y-6" action="<?= base_url('DaftarSampah/editDaftarSampah/'.$data["id"])?>" method="POST">
-                                            <div>
-                                                <label for="jenis" class="block mb-2 text-sm font-medium text-blue-900 ">Jenis Sampah</label>
-                                                <input type="text" name="jenis" id="jenis" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="<?= $data["jenis"]; ?>" required>
-                                            </div>
-                                            <div>
-                                                <label for="harga_tpst" class="block mb-2 text-sm font-medium text-blue-900 ">Harga TPST</label>
-                                                <input type="number" name="harga_tpst" id="harga_tpst" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="<?= $data["harga_tpst"]; ?>" required>
-                                            </div>
-                                            <div>
-                                                <label for="harga_nasabah" class="block mb-2 text-sm font-medium text-blue-900 ">Harga Nasabah</label>
-                                                <input type="text" name="harga_nasabah" id="harga_nasabah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="<?= $data["harga_nasabah"]; ?>" required>
-                                            </div>
-                                            <div>
-                                                <label for="tanggal" class="block mb-2 text-sm font-medium text-blue-900 ">Tanggal Update</label>
-                                                <input type="date" name="tanggal" id="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="<?= $data["tanggal_update"]; ?>" required>
-                                            </div>
-                                        
-                                              <button type="submit" class="w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Simpan</button>
-                                              
-                                          </form>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div> 
-
-                          <!-- delete Data modal -->
-                          <div id="delete-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                              <div class="relative w-full max-w-md max-h-full">
-                                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                                      <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="delete-modal">
-                                          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                                      </button>
-                                      <div class="p-6 text-center">
-                                          <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                          <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this ?</h3>
-                                          <a href="<?= base_url('DaftarSampah/deleteDaftarSampah/'.$data["id"])?>">
-                                            <button data-modal-hide="popup-modal" type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                                                Yes, I'm sure
-                                            </button>
-                                          </a>
-                                          <button data-modal-hide="delete-modal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No, cancel</button>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-
-                      </td>
+                          </ul></td>
                     </tr>
-                    
-                 
-                  <?php endforeach; ?>
+                    <?php endforeach;?>
                   </tbody>
                  
                 </table>
+                <div class="mt-2 float-left">
+                  <i>Total entries :  <?= $pager->getTotal(); ?> Data</i>
+                </div> 
+
+                <div class="mt-2 float-right">
+                  <?= $pager->links('default','pagination')?>
+                </div>
               </div>
               <!-- /.card-body -->
             </div>
@@ -209,29 +133,12 @@
 
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-5 text-lg font-normal text-blue-900 ">Tambah Data</h3>
-                <form class="space-y-6" action="<?= base_url('DaftarSampah/tambahDaftarSampah')?>" method="POST">
+                <form class="space-y-6" action="<?= base_url('PengangkutanSampah/tambahPengangkutanSampah')?>" method="POST">
                     <div>
                         <label for="tanggal" class="block mb-2 text-sm font-medium text-blue-900 ">Tanggal</label>
                         <input type="date" name="tanggal" id="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                     </div>
-
-                    <div>
-                        <label for="petugas" class="block mb-2 text-sm font-medium text-blue-900 ">Petugas</label>
-                        <input type="text" name="petugas" id="petugas" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
-                    </div>
-
-                    <div>
-                        <label for="harga_tpst" class="block mb-2 text-sm font-medium text-blue-900 ">Harga</label>
-                        <input type="number" name="harga_tpst" id="harga_tpst" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
-                    </div>
-                    <div>
-                        <label for="harga_nasabah" class="block mb-2 text-sm font-medium text-blue-900 ">Berat</label>
-                        <input type="text" name="harga_nasabah" id="harga_nasabah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
-                    </div>
-
-
-                   
-               
+          
                     <button type="submit" class="w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Tambah</button>
                     
                 </form>
@@ -240,6 +147,104 @@
     </div>
 </div> 
 
+<div id="delete-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative w-full max-w-md max-h-full">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-hide="delete-modal">
+                <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+            </button>
+            <div class="p-6 text-center">
+                <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete this?</h3>
+                <a id="delete-link" href="" data-modal-hide="delete-modal">
+                    <button type="button" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
+                        Yes, I'm sure
+                    </button>
+                </a>
+                <button data-modal-hide="delete-modal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No, cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    chartData = <?= json_encode($chart) ?>;
+    lastYear = <?= json_encode($lastYear)?>;
+    yearSelect = document.getElementById('yearSelect');
+
+    const ctx = document.getElementById('barChart');
+
+    const chart =  new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels  : ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
+                  'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+        datasets: [ {
+            label               : 'Total Pengangkutan',
+            backgroundColor     : '#00c0ef',
+            borderColor         : 'rgba(60,141,188,0.8)',
+            pointRadius          : false,
+            pointColor          : '#3b8bba',
+            pointStrokeColor    : 'rgba(60,141,188,1)',
+            pointHighlightFill  : '#fff',
+            pointHighlightStroke: 'rgba(60,141,188,1)',
+            data                : []
+          }]
+      },
+      options: {
+
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    function updateChart (selectedYear){
+      const selectedChart = chartData[selectedYear] || {}; // Use empty object if no Chart available
+    
+      
+      // Fill in missing months with zero values
+      for (let i = 1; i <= 12; i++) {
+          if (!selectedChart[i]) {
+              selectedChart[i] = 0;
+          }
+      }
+      
+      // Update the chart Chart for each dataset
+      chart.data.datasets[0].data = Object.values(selectedChart);
+      
+      // Update the chart
+      chart.update();
+    }
+
+  yearSelect.addEventListener('change', function () {
+      const selectedYear = yearSelect.value;
+
+      updateChart(selectedYear);
+  });
+
+  document.addEventListener('DOMContentLoaded',function () {
+      const selectedYear = lastYear;
+      updateChart(selectedYear);
+    });
+</script>
 
 
 
+<script>
+    const deleteButtons = document.querySelectorAll('[data-modal-toggle="delete-modal"]');
+    const deleteLink = document.getElementById('delete-link');
+    
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            const dataId = this.getAttribute('data-id');
+            const deleteUrl = `<?= base_url('PengangkutanSampah/deleteDataPengangkutan/') ?>${dataId}`;
+            deleteLink.href = deleteUrl;
+        });
+    });
+</script>

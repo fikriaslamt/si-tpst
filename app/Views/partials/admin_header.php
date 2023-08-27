@@ -8,8 +8,7 @@
    <!-- jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
-  <!-- Datatable CSS -->
-   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"/>
+
 
 
   <!-- Google Font: Source Sans Pro -->
@@ -46,7 +45,7 @@
 
 
 </head>
-<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">

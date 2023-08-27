@@ -3,13 +3,10 @@
 namespace App\Controllers;
 use App\Models\M_admin;
 
-class Akun extends BaseController
-{   
+class Akun extends BaseController {
 
+    public function tambahAkun(){
 
-
-    public function tambahAkun()
-    {   
         $admin = new M_admin();
 
         $admin->insert([
@@ -23,8 +20,8 @@ class Akun extends BaseController
 
     }
 
-    public function editAkun($id)
-    {   
+    public function editAkun($id){
+
         $admin = new M_admin();
 
         $data = $admin->where('id', $id)->first();
@@ -45,14 +42,13 @@ class Akun extends BaseController
             ]);
         }
        
-
         session()->setFlashdata('error', "Data Berhasil Diubah");
         return redirect()->to(base_url('admin/akun'));
 
     }
 
-    public function deleteAkun($id)
-    {   
+    public function deleteAkun($id){
+        
         $admin = new M_admin();
 
         $admin->delete($id);

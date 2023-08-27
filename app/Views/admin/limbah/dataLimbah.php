@@ -21,7 +21,35 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
+    <section class="flex justify-center connectedSortable">
 
+
+      <div class="card px-5 lg:w-1/2 sm:w-full">
+        <div class="card-header">
+          <h3 class="card-title text-center"> Grafik Data Total Limbah per Bulan</h3>
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+          <select id="yearSelect" class="float-right rounded-lg lg:w-1/10 sm:lg-2/5 pl-2">
+              <?php  foreach($year as $index => $y):?>
+                  <option value="<?= $index;?>" selected><?= $index;?></option>
+                <?php endforeach;?>
+          </select>
+          <div>
+            <canvas class="h-max" id="barChart"></canvas>
+          </div>
+        </div>
+        
+      </div>
+
+    </section>
+    
+    
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -52,9 +80,9 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <?php foreach ($data as $index => $data) : ?>
+                  <?php $i=1; foreach ($data as $index => $data) : ?>
                     <tr>
-                      <td><?= $data["id"]; ?></td>
+                      <td><?= $i;$i++; ?></td>
                       <td><?= $data["tanggal_masuk"];?></td>
                       <td><?= $data["jenis_limbah"]; ?></td>
                       <td><?= $data["total_berat"]; echo "\t";echo $data["satuan"];?></td>
@@ -119,12 +147,12 @@
                                         
                                             <select id="input" name="addmore[][input]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                                 <?php foreach ($dataLimbah as $dataLimbah) : ?>
-                                                    <option value="<?= $dataLimbah["jenis_limbah"]; ?>"><?= $dataLimbah["jenis_limbah"]; ?></option>
+                                                    <option value="<?= $dataLimbah["id"]; ?>"><?= $dataLimbah["jenis_limbah"]; ?></option>
                                                     
                                                 <?php endforeach; ?>   
                                             </select>                               
                                             
-                                            <input type="number" id="limbah" name="add[][limbah]" min="0" onkeyup="if(this.value<0)this.value=0"  class=" ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" requiredf>
+                                            <input type="number" step="0.01" id="limbah" name="add[][limbah]" min="0" onkeyup="if(this.value<0)this.value=0"  class=" ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" requiredf>
                                             <p class="block mb-2 text-sm font-bold text-blue-900 ml-2">Jumlah</p>
                                         
                                             
@@ -161,7 +189,7 @@ $(document).ready(function(){
         counter++;  // Increment the counter
         var options = '';
         for (var i = 0; i < dataLimbah.length; i++) {
-          options += '<option>' + dataLimbah[i].jenis_limbah + '</option>';
+          options += '<option value = "'+dataLimbah[i].id +'" >' + dataLimbah[i].jenis_limbah + '</option>';
         }
 
         $('#dynamic_field').append('<tr id="row'+counter+'" class="dynamic-added"><td> <div class="mt-2 flex flex-col"><div class="flex flex-row items-center"><select id="input" name="addmore[][input]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">' + options + '</select><input type="number" name="add[][limbah]" id="limbah" min="0" onkeyup="if(this.value<0)this.value=0" class=" ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" ><p class="block mb-2 text-sm font-bold text-blue-900 ml-2">Jumlah</p></div></div></td><td><button type="button" name="remove" id="'+counter+'" class="btn btn-danger btn_remove bg-red-700 hover:bg-red-500 ml-2 rounded-lg"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></td></tr>');
@@ -174,6 +202,71 @@ $(document).ready(function(){
       });  
   
     });  
+</script>
+
+<script>
+
+    chartData = <?= json_encode($chart) ?>;
+    lastYear = <?= json_encode($lastYear)?>;
+    yearSelect = document.getElementById('yearSelect');
+
+    const ctx = document.getElementById('barChart');
+
+    const chart =  new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels  : ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
+                  'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+        datasets: [ {
+            label               : 'Limbah',
+            backgroundColor     : '#00c0ef',
+            borderColor         : 'rgba(60,141,188,0.8)',
+            pointRadius          : false,
+            pointColor          : '#3b8bba',
+            pointStrokeColor    : 'rgba(60,141,188,1)',
+            pointHighlightFill  : '#fff',
+            pointHighlightStroke: 'rgba(60,141,188,1)',
+            data                : []
+          }]
+      },
+      options: {
+
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    function updateChart (selectedYear){
+      const selectedChart = chartData[selectedYear] || {}; // Use empty object if no Chart available
+    
+      
+      // Fill in missing months with zero values
+      for (let i = 1; i <= 12; i++) {
+          if (!selectedChart[i]) {
+              selectedChart[i] = 0;
+          }
+      }
+      
+      // Update the chart Chart for each dataset
+      chart.data.datasets[0].data = Object.values(selectedChart);
+      
+      // Update the chart
+      chart.update();
+    }
+
+  yearSelect.addEventListener('change', function () {
+      const selectedYear = yearSelect.value;
+
+      updateChart(selectedYear);
+  });
+
+  document.addEventListener('DOMContentLoaded',function () {
+      const selectedYear = lastYear;
+      updateChart(selectedYear);
+    });
 </script>
 
 

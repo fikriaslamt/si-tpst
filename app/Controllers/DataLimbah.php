@@ -18,10 +18,9 @@ class DataLimbah extends BaseController
         $daftarLimbah = new M_daftar_limbah();
         $riwayat = new M_riwayat_transaksi();
 
-        $admin = session('name');
+        $admin = session('id');
         $limbahData = $this->request->getPost('addmore');
         $limbahData2 = $this->request->getPost('add');
-
         $totalBerat = 0.0;
         $hargaTotal = 0.0;
         $harga = 0.0;
@@ -35,22 +34,21 @@ class DataLimbah extends BaseController
             'tanggal_masuk' => $tanggal,
             'total_berat' => 0,
             'total_harga' => 0,
-            'admin' => $admin,
+            'admin_id' => $admin,
         ];
 
         foreach ($limbahData as $index => $s) {
             
-            $hargaLimbah = $daftarLimbah->where('jenis_limbah',$s['input'])->first();
+            $hargaLimbah = $daftarLimbah->where('id',$s['input'])->first();
             $harga = $hargaLimbah['harga']* $limbahData2[$index]['limbah'];
 
             $totalBerat = $limbahData2[$index]['limbah'];
             $hargaTotal += $harga;
             
-            $data['jenis_limbah'] = $s['input'];
+            $data['daftar_limbah_id'] = $s['input'];
             $data['total_berat'] = $totalBerat;
             $data['total_harga'] = $harga;
     
-
             $limbah->insert($data);
 
 //riwayat transaksi

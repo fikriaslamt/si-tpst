@@ -8,7 +8,7 @@ class M_nasabah extends Model
 {
     protected $table = "nasabah";
     protected $primaryKey           = 'id';
-    protected $allowedFields        = ['id','nama','alamat','kode'];
+    protected $allowedFields        = ['id','no_tabungan','nama','alamat','kode'];
 
     function getPaginated($num,$keyword = null){
         $builder = $this->table('nasabah');
@@ -21,5 +21,21 @@ class M_nasabah extends Model
             'data' => $this->paginate($num),
             'pager' => $this->pager,
         ];
+    }
+
+    function searchById($id){
+        $builder = $this->table('nasabah');
+        return $builder->where('no_tabungan', $id)->findAll();
+    }
+
+
+    function searchByKode($id){
+        $builder = $this->table('nasabah');
+        return $builder->where('kode', $id)->findAll();
+    }
+
+    function getTotalNasabah(){
+        $builder = $this->table('nasabah');
+        return $builder->countAll();
     }
 }

@@ -66,7 +66,7 @@
                   <tbody>
                   <?php foreach ($data as $data) : ?>
                     <tr>
-                      <td><?= $data["id"]; ?></td>
+                      <td><?= $data["no_tabungan"]; ?></td>
                       <td><?= $data["nama"]; ?></td>
                       <td><?= $data["alamat"]; ?></td>
                       <td><?= $data["kode"]; ?></td>
@@ -77,6 +77,7 @@
                                 <button data-modal-target="edit-modal"
                                         data-modal-toggle="edit-modal"                         
                                         data-id="<?= $data["id"] ?>"
+                                        data-nota="<?= $data["no_tabungan"] ?>"
                                         data-nama="<?= $data["nama"] ?>"
                                         data-alamat="<?= $data["alamat"] ?>"
                                         class="bg-yellow-500 btn-sm rounded-0"
@@ -143,6 +144,10 @@
                 <h3 class="mb-5 text-lg font-normal text-blue-900">Edit Data</h3>
                 <form class="space-y-6" method="POST">
                     <div>
+                        <label for="nota" class="block mb-2 text-sm font-medium text-blue-900">No Tabungan</label>
+                        <input type="number" name="nota" id="nota" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                    </div>
+                    <div>
                         <label for="nama" class="block mb-2 text-sm font-medium text-blue-900">Nama</label>
                         <input type="text" name="nama" id="nama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
@@ -195,6 +200,10 @@
                 <h3 class="mb-5 text-lg font-normal text-blue-900 ">Tambah Data</h3>
                 <form class="space-y-6" action="<?= base_url('DataNasabah/tambahDataNasabah')?>" method="POST">
                     <div>
+                        <label for="nota" class="block mb-2 text-sm font-medium text-blue-900">No Tabungan</label>
+                        <input type="number" name="nota" id="nota" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                    </div>
+                    <div>
                         <label for="nama" class="block mb-2 text-sm font-medium text-blue-900 ">Nama</label>
                         <input type="text" name="nama" id="nama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                     </div>
@@ -224,6 +233,7 @@
 <script>
     const editButtons = document.querySelectorAll('[data-modal-toggle="edit-modal"]');
     const editForm = document.querySelector('#edit-modal form');
+    const editNotabungan = editForm.querySelector('[name="nota"]');
     const editNamaInput = editForm.querySelector('[name="nama"]');
     const editAlamatInput = editForm.querySelector('[name="alamat"]');
 
@@ -233,11 +243,13 @@
     editButtons.forEach(button => {
         button.addEventListener('click', function () {
             const dataId = this.getAttribute('data-id');
+            const dataNotabungan = this.getAttribute('data-nota');
             const dataNama = this.getAttribute('data-nama');
             const dataAlamat = this.getAttribute('data-alamat');
             const editUrl = `<?= base_url('DataNasabah/editDataNasabah/') ?>${dataId}`;
 
             editForm.action = editUrl;
+            editNotabungan.value = dataNotabungan;
             editNamaInput.value = dataNama;
             editAlamatInput.value = dataAlamat;
         });

@@ -19,7 +19,7 @@ class M_daftar_limbah extends Model
         }
 
         return [
-            'data' => $this->paginate($num),
+            'data' => $this->orderBy('tanggal_update','DESC')->paginate($num),
             'pager' => $this->pager,
         ];
     }

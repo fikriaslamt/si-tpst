@@ -8,43 +8,22 @@ class M_setoran extends Model
 {
     protected $table = "setoran";
     protected $primaryKey           = 'id';
-    protected $allowedFields        = ['id','id_transaksi','tanggal','admin','nasabah_id','id_sampah','total_berat','total_harga'];
+    protected $allowedFields        = ['id','id_transaksi','tanggal','admin_id','nasabah_id','sampah_id','total_berat','total_harga'];
 
-    // public function getTotalSetoran(){
-    //     $builder = $this->table('setoran');
+    function getPaginated($num,$name){
+        $builder = $this->table('setoran');
 
-    //     $total = $builder->
-        
 
-    // }
+        $data = $builder->select('setoran.id, setoran.tanggal, nasabah.no_tabungan, admin.nama, sampah.jenis, sampah.satuan , setoran.total_berat , setoran.total_harga')
+        ->join('sampah','setoran.sampah_id=sampah.id')
+        ->join('nasabah','setoran.nasabah_id=nasabah.id')
+        ->join('admin','setoran.admin_id=admin.id')
+        ->orderBy('tanggal','DESC')
+        ->paginate($num,$name);
 
-    // public function __construct()
-    // {
-    //     parent::__construct();
-    //     $this->allowedFields = $this->db->getFieldNames($this->table);
-    // }
-
-    // public function updateAllowedFields($fields)
-    // {   
-    //     $this->allowedFields = array_merge($this->allowedFields, $fields);
-    // }
-
-    // public function editAllowedField($field, $newValue)
-    // {
-    //     $index = array_search($field, $this->allowedFields);
-    //     if ($index !== false) {
-    //         $this->allowedFields[$index] = $newValue;
-    //     }
-    // }
-
-    // public function deleteAllowedField($field)
-    // {
-    //     $this->allowedFields = array_diff($this->allowedFields, [$field]);
-    // }
-
-    // function get_field()
-    // {
-    //     $result = $this->db->getFieldNames($this->table);
-    //     return $result;
-    // }
+        return [
+            'data' => $data,
+            'pager' => $this->pager,
+        ];
+    }
 }

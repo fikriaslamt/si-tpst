@@ -56,8 +56,7 @@
                 <table id="example1" class="table table-striped mt-5">
                   <thead>
                   <tr>
-                    <th>No</th>             
-   
+                    <th>No</th>
                     <th>Judul</th>
                     <th>Link</th>
                     <th>Tanggal</th>
@@ -65,10 +64,9 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <?php foreach ($data as $data) : ?>
+                  <?php $i=1; foreach ($data as $data) : ?>
                     <tr>
-                      <td><?= $data["id"]; ?></td>
-     
+                      <td><?= $i;$i++; ?></td>
                       <td><p class="lg:truncate lg:w-96 md:truncate md:w-50  sm:truncate sm:w-20 "><?= $data["judul"]; ?></p></td>
                       <td><p class="lg:truncate lg:w-96 md:truncate md:w-50  sm:truncate sm:w-20 "><?= $data["link"]; ?></td>
                       <td><?= $data["tanggal"]; ?></td>
@@ -145,17 +143,23 @@
       
             <div class="px-6 py-6 lg:px-8">
               <h3 class="mb-5 text-lg font-normal text-blue-900 ">Edit Data</h3>
-                <form class="space-y-6"  method="POST">
+                <form class="space-y-6"  method="POST" enctype="multipart/form-data">
 
                       <div>
                           <label for="judul" class="block mb-2 text-sm font-medium text-blue-900 ">Judul</label>
-                          <input type="text" name="judul" id="judul" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="<?= $data["judul"]; ?>" required>
+                          <input type="text" name="judul" id="judul" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="<?= $data["judul"]; ?>" maxlength = "90" required>
                       </div>
 
                       <div>
                           <label for="link" class="block mb-2 text-sm font-medium text-blue-900 ">link</label>
                           <input type="text" name="link" id="link" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="<?= $data["link"]; ?>" required>
                       </div>
+
+                      <div>
+                          <label class="block mb-2 text-sm font-medium text-blue-900" for="image">Upload Gambar Thumbnail</label>
+                          <input name="image" accept=".jpg, .png, .jpeg" class="block w-full text-sm text-blue-900 border border-blue-300 rounded-lg cursor-pointer bg-blue-50 " id="image" type="file">
+                      </div>
+
                       <div>
                           <label for="tanggal" class="block mb-2 text-sm font-medium text-blue-900 ">Tanggal</label>
                           <input type="date" name="tanggal" id="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " value="<?= $data["tanggal"]; ?>" required>
@@ -204,17 +208,23 @@
 
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-5 text-lg font-normal text-blue-900 ">Tambah Data</h3>
-                <form class="space-y-6" action="<?= base_url('Konten/tambahKonten')?>" method="POST">
+                <form class="space-y-6" action="<?= base_url('Konten/tambahKonten')?>" method="POST" enctype="multipart/form-data">
       
                     <div>
                         <label for="judul" class="block mb-2 text-sm font-medium text-blue-900 ">Judul</label>
-                        <input type="text" name="judul" id="judul" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " maxlength = "175" required>
+                        <input type="text" name="judul" id="judul" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " maxlength = "90" required>
                     </div>
 
                     <div>
                         <label for="link" class="block mb-2 text-sm font-medium text-blue-900 ">link</label>
                         <input type="text" name="link" id="link" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                     </div>
+
+                    <div>
+                        <label class="block mb-2 text-sm font-medium text-blue-900" for="image">Upload Gambar Thumbnail</label>
+                        <input name="image" accept=".jpg, .png, .jpeg" class="block w-full text-sm text-blue-900 border border-blue-300 rounded-lg cursor-pointer bg-blue-50 " id="image" type="file" required>
+                    </div>
+
                     <div>
                         <label for="tanggal" class="block mb-2 text-sm font-medium text-blue-900 ">Tanggal</label>
                         <input type="date" name="tanggal" id="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>

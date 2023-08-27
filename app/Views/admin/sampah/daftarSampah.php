@@ -58,7 +58,7 @@
                 <table id="example1" class="table table-striped ">
                   <thead>
                   <tr>
-                    <th>Nomor</th>              
+                    <th>No</th>              
                     <th>Jenis Sampah</th>             
                     <th>Harga TPST</th>             
                     <th>Harga Nasabah</th>
@@ -67,9 +67,9 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <?php foreach ($data as $data) : ?>
+                  <?php $i=1; foreach ($data as $data) : ?>
                     <tr>
-                      <td><?= $data["id"]; ?></td>
+                      <td><?= $i;$i++;?></td>
                       <td><?= $data["jenis"]; ?></td>
                       <td>Rp. <?= $data["harga_tpst"]; ?></td>
                       <td>Rp. <?= $data["harga_nasabah"]; ?></td>
@@ -154,6 +154,10 @@
                       <input type="text" name="jenis" id="jenis" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                   </div>
                   <div>
+                        <label for="satuan" class="block mb-2 text-sm font-medium text-blue-900 ">Satuan</label>
+                        <input type="text" name="satuan" id="satuan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                    </div>
+                  <div>
                       <label for="harga_tpst" class="block mb-2 text-sm font-medium text-blue-900 ">Harga TPST</label>
                       <input type="number" name="harga_tpst" id="harga_tpst" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  required>
                   </div>
@@ -212,6 +216,10 @@
                     <div>
                         <label for="jenis" class="block mb-2 text-sm font-medium text-blue-900 ">Jenis Sampah</label>
                         <input type="text" name="jenis" id="jenis" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                    </div>
+                    <div>
+                        <label for="satuan" class="block mb-2 text-sm font-medium text-blue-900 ">Satuan</label>
+                        <input type="text" name="satuan" id="satuan" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                     </div>
                     <div>
                         <label for="harga_tpst" class="block mb-2 text-sm font-medium text-blue-900 ">Harga TPST</label>

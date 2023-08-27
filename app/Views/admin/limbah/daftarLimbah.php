@@ -56,7 +56,7 @@
               <table id="limbahTable" class="table table-striped">
                 <thead>
                 <tr>
-                  <th>Nomor</th>              
+                  <th>No</th>              
                   <th>Jenis Limbah</th>             
                   <th>Harga</th>             
                   <th>Tanggal Update</th>                   
@@ -64,9 +64,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                  <?php foreach ($data as $data) : ?>
+                  <?php $i=1; foreach ($data as $data) : ?>
                   <tr>
-                    <td><?= $data["id"]; ?></td>
+                    <td><?= $i;$i++; ?></td>
                     <td><?= $data["jenis_limbah"]; ?></td>
                     <td>Rp. <?= $data["harga"]; ?></td>
                     <td><?= $data["tanggal_update"]; ?></td>

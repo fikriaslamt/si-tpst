@@ -1,0 +1,88 @@
+INFO - 2023-08-19 04:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-19 04:16:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-19 04:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-19 04:16:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-08-19 04:35:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-08-19 05:05:57 --> date_diff() expects parameter 1 to be DateTimeInterface, string given
+in APPPATH\Controllers\Home.php on line 21.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date_diff() expects parameter 1 to be DateTimeInterface, string given', 'APPPATH\\Controllers\\Home.php', 21, [...])
+ 2 APPPATH\Controllers\Home.php(21): date_diff('2023/08/19', null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-19 05:08:42 --> date_diff() expects parameter 1 to be DateTimeInterface, string given
+in APPPATH\Controllers\Home.php on line 21.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date_diff() expects parameter 1 to be DateTimeInterface, string given', 'APPPATH\\Controllers\\Home.php', 21, [...])
+ 2 APPPATH\Controllers\Home.php(21): date_diff('2023/08/19', null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-19 05:10:53 --> date_diff() expects parameter 2 to be DateTimeInterface, null given
+in APPPATH\Controllers\Home.php on line 21.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date_diff() expects parameter 2 to be DateTimeInterface, null given', 'APPPATH\\Controllers\\Home.php', 21, [...])
+ 2 APPPATH\Controllers\Home.php(21): date_diff(Object(DateTime), null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-19 05:11:32 --> date_diff() expects parameter 2 to be DateTimeInterface, null given
+in APPPATH\Controllers\Home.php on line 21.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date_diff() expects parameter 2 to be DateTimeInterface, null given', 'APPPATH\\Controllers\\Home.php', 21, [...])
+ 2 APPPATH\Controllers\Home.php(21): date_diff(Object(DateTime), null)
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-19 05:14:14 --> date_diff() expects parameter 2 to be DateTimeInterface, array given
+in APPPATH\Controllers\Home.php on line 23.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date_diff() expects parameter 2 to be DateTimeInterface, array given', 'APPPATH\\Controllers\\Home.php', 23, [...])
+ 2 APPPATH\Controllers\Home.php(23): date_diff(Object(DateTime), [...])
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-19 05:15:31 --> date_create() expects parameter 1 to be string, array given
+in APPPATH\Controllers\Home.php on line 20.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'date_create() expects parameter 1 to be string, array given', 'APPPATH\\Controllers\\Home.php', 20, [...])
+ 2 APPPATH\Controllers\Home.php(20): date_create([...])
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-19 05:20:52 --> Call to a member function countAllResult() on array
+in APPPATH\Models\M_media_ig.php on line 24.
+ 1 APPPATH\Controllers\Home.php(18): App\Models\M_media_ig->totalPost()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-19 05:21:08 --> Call to undefined method App\Models\M_media_ig::countAllResult
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Models\M_media_ig.php(24): CodeIgniter\Model->__call('countAllResult', [])
+ 2 APPPATH\Controllers\Home.php(18): App\Models\M_media_ig->totalPost()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->index()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-08-19 05:39:50 --> Trying to access array offset on value of type null
+in APPPATH\Views\home\searchbar.php on line 26.
+ 1 APPPATH\Views\home\searchbar.php(26): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\home\\searchbar.php', 26, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\home\\searchbar.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('home/searchbar.php', [], true)
+ 5 APPPATH\Controllers\Home.php(96): view('home/searchbar.php', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->search()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')

@@ -8,7 +8,7 @@ class M_konten extends Model
 {
     protected $table = "konten";
     protected $primaryKey           = 'id';
-    protected $allowedFields        = ['id','admin_id','jenis_konten','judul','link','tanggal'];
+    protected $allowedFields        = ['id','admin_id','image','judul','link','tanggal'];
     
     function getPaginated($num,$keyword = null){
         $builder = $this->table('konten');

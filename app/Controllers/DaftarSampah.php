@@ -19,6 +19,7 @@ class DaftarSampah extends BaseController
 
         $daftarSampah->insert([
             'jenis' => $jenis,
+            'satuan' => $this->request->getVar('satuan'),
             'harga_tpst' => $this->request->getVar('harga_tpst'),
             'harga_nasabah' => $this->request->getVar('harga_nasabah'),
             'tanggal_update' => $this->request->getVar('tanggal'),
@@ -43,6 +44,7 @@ class DaftarSampah extends BaseController
 
         $daftarSampah->update($id,[
             'jenis' => $this->request->getVar('jenis'),
+            'satuan' => $this->request->getVar('satuan'),
             'harga_tpst' => $this->request->getVar('harga_tpst'),
             'harga_nasabah' => $this->request->getVar('harga_nasabah'),
             'tanggal_update' => $this->request->getVar('tanggal'),

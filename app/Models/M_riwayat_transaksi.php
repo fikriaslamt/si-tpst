@@ -8,7 +8,7 @@ class M_riwayat_transaksi extends Model
 {
     protected $table = "riwayat_transaksi";
     protected $primaryKey           = 'id';
-    protected $allowedFields        = ['id','tanggal','jenis_transaksi','jumlah','admin'];
+    protected $allowedFields        = ['id','tanggal','jenis_transaksi','jumlah','admin_id'];
     
 
     function addRiwayat($jenis,$tanggal,$jumlah,$admin){
@@ -18,7 +18,7 @@ class M_riwayat_transaksi extends Model
             'tanggal' => $tanggal,
             'jenis_transaksi' => $jenis,
             'jumlah' => $jumlah,
-            'admin' => $admin,
+            'admin_id' => $admin,
         ]);
     }
 
@@ -32,7 +32,8 @@ class M_riwayat_transaksi extends Model
         $penarikanChart = [];
         $limbahChart = [];
 
-        $chartData = $builder->select('YEAR(tanggal) AS year, MONTH(tanggal) AS month, COUNT(id) AS total, jenis_transaksi AS jenis')->groupBy('YEAR(tanggal), MONTH(tanggal), jenis_transaksi')->findAll();
+        $chartData = $builder->select('YEAR(tanggal) AS year, MONTH(tanggal) AS month, COUNT(id) AS total, jenis_transaksi AS jenis')
+        ->groupBy('YEAR(tanggal), MONTH(tanggal), jenis_transaksi')->findAll();
 
         foreach ($chartData as $row) {
             $year = $row['year'];

@@ -14,12 +14,14 @@ class DataNasabah extends BaseController
         $nasabah = new M_nasabah();
         $tabungan = new M_tabungan();
 
+        $nota = $this->request->getVar('nota');
         $nama = $this->request->getVar('nama');
         $alamat = $this->request->getVar('alamat');
 
        
 
         $nasabah->insert([
+            'no_tabungan' => $nota,
             'nama' => $nama,
             'alamat' => $alamat,
         ]);
@@ -37,7 +39,6 @@ class DataNasabah extends BaseController
 
         $tabungan->insert([
             'nasabah_id' => $temp['id'],
-            'nama' => trim($nama),
         ]);
 
         session()->setFlashdata('error', "Data Berhasil Ditambahkan");
@@ -48,18 +49,16 @@ class DataNasabah extends BaseController
     public function editDataNasabah($id)
     {   
         $nasabah = new M_nasabah();
-        $tabungan = new M_tabungan();
 
+        $nota = $this->request->getPost('nota');
         $nama = $this->request->getPost('nama');
         $alamat = $this->request->getPost('alamat');
 
         $nasabah->update($id,[
+            'no_tabungan' => $nota,
             'nama' => $nama,
             'alamat' => $alamat,
         ]);
-
-        $tabungan->set('nama',$nama)->where('nasabah_id',$id)->update();
-
 
         session()->setFlashdata('error', "Data Berhasil Diubah");
         return redirect()->to(base_url('admin/dataNasabah'));

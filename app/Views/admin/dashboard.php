@@ -21,7 +21,9 @@
                 <p>TIMBULAN SAMPAH</p>
               </div>
        
-              <a hhref="<?=base_url('Admin/dataSampah')?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?=base_url('Admin/dataSampah')?>" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+              </a>
             </div>
           </div>
           <!-- ./col -->
@@ -36,7 +38,9 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="<?=base_url('Admin/riwayatTransaksi')?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?=base_url('Admin/riwayatTransaksi')?>" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+              </a>
             </div>
           </div>
           <!-- ./col -->
@@ -45,14 +49,14 @@
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3><?= $totalKonten;?></h3>
-
-
                 <p>KONTEN PUBLIKASI</p>
               </div>
               <div class="icon">
-              <i class="ion ion-pie-graph"></i>
+                <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="<?=base_url('Admin/konten')?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?=base_url('Admin/konten')?>" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+              </a>
             </div>
           </div>
           <!-- ./col -->
@@ -61,14 +65,14 @@
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3><?= $totalNasabah;?></h3>
-
                 <p>NASABAH</p>
               </div>
               <div class="icon">
               <i class="ion ion-person-add"></i>
-                
               </div>
-              <a href="<?=base_url('Admin/dataNasabah')?>" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?=base_url('Admin/dataNasabah')?>" class="small-box-footer">
+                More info <i class="fas fa-arrow-circle-right"></i>
+              </a>
             </div>
           </div>
           <!-- ./col -->
@@ -112,7 +116,7 @@
                 </table>
                 <div class="mt-2 float-left">
                   <i>Total entries :  <?= $pager->getTotal(); ?> Data</i>
-                </div> 
+                </div>
 
                 <div class="mt-2 float-right">
                   <?= $pager->links('default','pagination')?>
@@ -178,8 +182,8 @@
   </div>
 
 <script>
-  const ctx = document.getElementById('barChart');  
-  const ctx2 = document.getElementById('pieChart');  
+  const ctx = document.getElementById('barChart');
+  const ctx2 = document.getElementById('pieChart');
 
   setoranChart = <?= json_encode($setoranChart) ?>;
   penarikanChart = <?= json_encode($penarikanChart) ?>;
@@ -193,7 +197,8 @@
   const chart =  new Chart(ctx, {
     type: 'bar',
     data: {
-      labels  : ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+      labels  : ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
+                'Agustus', 'September', 'Oktober', 'November', 'Desember'],
       datasets: [ {
           label               : 'Setoran',
           backgroundColor     : '#00c0ef',
@@ -239,7 +244,7 @@
 
   const chart2 =  new Chart(ctx2, {
     type: 'pie',
-    data:{      
+    data:{
       labels: [
           'Terkelola',
           'Tidak Terkelola',

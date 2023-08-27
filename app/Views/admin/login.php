@@ -36,10 +36,10 @@
     
             
  <?php } ?>
-<div class="container  lg:mx-auto py-5 lg:flex lg:justify-center bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+<div class=" flex bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
 
-<div class="flex flex-col items-center justify-center lg:w-5/12 px-6 py-8 mx-auto md:h-screen lg:py-0">
-      <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-slate-800 dark:border-gray-700">
+    <div class="flex  items-center  justify-center py-8  h-screen w-full">
+      <div class=" bg-white rounded-lg shadow dark:border lg:w-1/2 w-1/2 md:mt-0 sm:max-w-md xl:p-0 dark:bg-slate-800 dark:border-gray-700">
           <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                  LOGIN ADMIN
@@ -61,7 +61,7 @@
               </form>
           </div>
       </div>
-  </div>
+</div>
 
   </body>
 </html>
