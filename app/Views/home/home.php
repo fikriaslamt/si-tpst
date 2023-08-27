@@ -265,7 +265,7 @@
   </div>
 </div>
 
-<div class="relative flex justify-start md:justify-center md:items-end lg:pt-40 bg-gradient-to-r from-indigo-600 to-blue-500 pb-5 mt-36">
+<div class="relative flex justify-start md:justify-center md:items-end lg:pt-40 bg-gradient-to-r from-indigo-600 to-blue-500 py-20 mt-36">
         <div class="flex    px-4   xl:px-20 flex-col justify-start items-start md:justify-center md:items-center relative z-10">
             <div class="flex  flex-col items-start justify-start xl:justify-center xl:space-x-8 xl:flex-row">
                 <div class="flex justify-start items-center space-x-4">
