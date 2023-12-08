@@ -1,19 +1,28 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      
-      <span class="brand-text font-weight-light font-bold ml-2">TPST UNILA</span>
-    </a>
+  
+     
+ 
 
     <!-- Sidebar -->
     <div class="sidebar">
     
 
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
+      <nav class="">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+
+            <li class="nav-item my-2 py-0 border rounded-lg">
+            <a  class="nav-link ">
+              <i class="nav-icon far fa-user-circle"></i>
+              <p>
+                <?=$admin;?>
+              </p>
+            </a>
+          
+          </li>
+    
           <li class="nav-item">
             <a href="<?=base_url('admin/dashboard')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(2)=='dashboard'?'active':''?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -23,6 +32,8 @@
             </a>
            
           </li>
+
+
        
           <li class="nav-item <?=\Config\Services::request()->getUri()->getSegment(2)=='sampah'?'menu-open':''?>">
             <a href="#" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(2)=='sampah'?'active':''?>">
@@ -124,24 +135,60 @@
             </ul>
           </li>
 
-          <li class="nav-item">
-            <a href="<?=base_url('Admin/produk')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(2)=='produk'?'active':''?>">
+          <li class="nav-item <?=\Config\Services::request()->getUri()->getSegment(2)=='produk'?'menu-open':''?>">
+            <a href="#" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(2)=='produk'?'active':''?>">
               <i class="nav-icon fas fa-wallet"></i>
               <p>
                 Produk
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-           
+            <ul class="nav nav-treeview">
+              <li class="nav-item ">
+                <a href="<?=base_url('admin/produk/daftar-produk')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(3)=='daftar-produk'?'active':''?> ">
+                <i class="far nav-icon"></i>
+
+                  <p>Daftar Produk</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('admin/produk/data-produk')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(3)=='data-produk'?'active':''?>">
+                <i class="far  nav-icon"></i>
+
+                  <p>Data Produk</p>
+                </a>
+              </li>
+             
+         
+            </ul>
           </li>
 
-          <li class="nav-item">
-            <a href="<?=base_url('admin/konten')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(2)=='konten'?'active':''?>">
-              <i class="nav-icon far fa-images"></i>
+          <li class="nav-item <?=\Config\Services::request()->getUri()->getSegment(2)=='konten'?'menu-open':''?>">
+            <a href="#" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(2)=='konten'?'active':''?>">
+              <i class="nav-icon 	fas fa-file-image"></i>
               <p>
                 Konten
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
-           
+            <ul class="nav nav-treeview">
+              <li class="nav-item ">
+                <a href="<?=base_url('admin/konten/kegiatan')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(3)=='kegiatan'?'active':''?> ">
+                <i class="far nav-icon"></i>
+
+                  <p>Kegiatan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url('admin/konten/publikasi')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(3)=='publikasi'?'active':''?>">
+                <i class="far  nav-icon"></i>
+
+                  <p>Publikasi</p>
+                </a>
+              </li>
+             
+         
+            </ul>
           </li>
 
           <li class="nav-item">

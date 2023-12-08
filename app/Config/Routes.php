@@ -49,11 +49,15 @@ $routes->get('/admin/limbah/daftar-limbah', 'Admin::daftarLimbah');
 $routes->get('/admin/sampah/pengangkutan-sampah', 'Admin::pengangkutanSampah');
 
 
-$routes->get('/admin/nasabah/riwayat-transaksi', 'Admin::riwayatTransaksi');
+$routes->get('/admin/nasabah/riwayat-transaksi', 'Admin::riwayatSetoran');
 $routes->get('/admin/nasabah/data-nasabah', 'Admin::dataNasabah');
 $routes->get('/admin/nasabah/tabungan', 'Admin::tabungan');
 
-$routes->get('/admin/konten', 'Admin::konten');
+$routes->get('/admin/produk/data-produk', 'Admin::produk');
+$routes->get('/admin/produk/daftar-produk', 'Admin::daftarProduk');
+
+$routes->get('/admin/konten/kegiatan', 'Admin::kegiatan');
+$routes->get('/admin/konten/publikasi', 'Admin::publikasi');
 
 $routes->get('/admin/akun', 'Admin::akun');
 

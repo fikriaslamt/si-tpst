@@ -8,17 +8,21 @@ class M_limbah extends Model
 {
     protected $table = "limbah";
     protected $primaryKey           = 'id';
-    protected $allowedFields        = ['id','tanggal_masuk','daftar_limbah_id','total_berat','total_harga','admin_id'];
+    protected $allowedFields        = ['id','tanggal_masuk','daftar_limbah_id','instansi','total_berat','total_harga','admin_id'];
     
 
-    function getPaginated($num,$keyword = null){
+    function getPaginated($num,$keyword = null,$startDate=null,$endDate=null){
         $builder = $this->table('limbah');
 
         if($keyword != ''){
-            $builder->like('jenis_limbah',$keyword)->orLike('total_harga',$keyword);
+            $builder->like('daftar_limbah.jenis_limbah',$keyword)->orLike('limbah.instansi',$keyword);
         }
 
-        $data = $builder->select('limbah.id, limbah.tanggal_masuk, daftar_limbah.jenis_limbah, daftar_limbah.satuan , limbah.total_berat , limbah.total_harga')
+        if ($startDate != "" && $endDate != ""){
+            $builder->where('limbah.tanggal_masuk >=', $startDate)->where('limbah.tanggal_masuk <=', $endDate);
+        }
+
+        $data = $builder->select('limbah.id, limbah.tanggal_masuk, daftar_limbah.jenis_limbah, limbah.instansi, daftar_limbah.satuan , limbah.total_berat , limbah.total_harga')
         ->join('daftar_limbah','limbah.daftar_limbah_id=daftar_limbah.id')
         ->orderBy('limbah.tanggal_masuk','DESC')
         ->paginate($num);
@@ -29,6 +33,20 @@ class M_limbah extends Model
             'data' => $data,
             'pager' => $this->pager,
         ];
+    }
+
+    function getAllData(){
+        $builder = $this->table('limbah');
+
+
+        $data = $builder->select('limbah.id, limbah.tanggal_masuk, daftar_limbah.jenis_limbah, limbah.instansi, daftar_limbah.satuan , limbah.total_berat , limbah.total_harga')
+        ->join('daftar_limbah','limbah.daftar_limbah_id=daftar_limbah.id')
+        ->orderBy('limbah.tanggal_masuk','DESC')
+        ->findAll();
+
+      
+
+        return $data;
     }
 
     function getDataByDate(){

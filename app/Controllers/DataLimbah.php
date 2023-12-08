@@ -21,6 +21,7 @@ class DataLimbah extends BaseController
         $admin = session('id');
         $limbahData = $this->request->getPost('addmore');
         $limbahData2 = $this->request->getPost('add');
+        $instansi = $this->request->getPost('instansi');
         $totalBerat = 0.0;
         $hargaTotal = 0.0;
         $harga = 0.0;
@@ -32,6 +33,7 @@ class DataLimbah extends BaseController
         $data = [
         // 'id_transaksi' => $uuid,
             'tanggal_masuk' => $tanggal,
+            'instansi' => $instansi,
             'total_berat' => 0,
             'total_harga' => 0,
             'admin_id' => $admin,

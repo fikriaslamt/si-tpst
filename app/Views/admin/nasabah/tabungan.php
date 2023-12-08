@@ -24,6 +24,57 @@
   </div>
   <!-- /.content-header -->
 
+  <section class="lg:grid md:grid sm:row grid-cols-6 justify-center">
+
+    <div class="px-5 lg:col-span-2 sm:col-span-2">
+      <div class="">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-hand-holding-usd"></i></span>
+
+            <div class="info-box-content">
+            <span class="info-box-text">Total Debit</span>
+            <span class="info-box-number text-l">Rp. <?= $totalDebit;?></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+      </div>
+      
+    </div>
+    <div class="px-5 lg:col-span-2 sm:col-span-2">
+      <div class="">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-coins"></i></span>
+
+            <div class="info-box-content">
+            <span class="info-box-text">Total Kredit</span>
+            <span class="info-box-number text-l">Rp. <?= $totalKredit;?></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+      </div>
+      
+    </div>
+
+    <div class="px-5 lg:col-span-2 sm:col-span-2">
+      <div class="">
+          <div class="info-box mb-3">
+            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-receipt"></i></span>
+
+            <div class="info-box-content">
+            <span class="info-box-text">Total Saldo</span>
+            <span class="info-box-number text-l">Rp. <?= $totalSaldo;?></span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+      </div>
+      
+    </div>
+
+    
+  </section>
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
@@ -53,7 +104,7 @@
             </button>
             <div class="px-6 py-6 lg:px-8">
               <h3 class="mb-5 text-lg font-normal text-blue-900 ">Tambah Data</h3>
-              <form name="add_more" class="space-y-6" action="<?= base_url('Tabungan/tambahSetoran') ?>" method="POST">
+              <form name="add_more" class="space-y-6" action="<?= base_url('Tabungan/tambahSetoran') ?>" method="POST" enctype="multipart/form-data">
                 <div>
                   <label for="nomor" class="block mb-2 text-sm font-medium text-blue-900">Nomor Tabungan <span>
                       <div id="searchResult"></div>
@@ -95,6 +146,11 @@
 
                 </table>
 
+                <div>
+                  <label class="block mb-2 text-sm font-medium text-blue-900" for="imageSetoran">Upload Bukti</label>
+                  <input name="imageSetoran" accept=".jpg, .png, .jpeg" class="block w-full text-sm text-blue-900 border border-blue-300 rounded-lg cursor-pointer bg-blue-50 " id="imageSetoran" type="file" required>
+                </div>
+
                 <div class="flex items-center">
                   <input id="link-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 " required>
                   <label for="link-checkbox" class="ml-2 text-sm font-medium text-gray-900">saya bertanggung jawab atas <a class="text-blue-600  hover:underline">tindakan yang saya lakukan</a>.</label>
@@ -117,7 +173,7 @@
             </button>
             <div class="px-6 py-6 lg:px-8">
               <h3 class="mb-5 text-lg font-normal text-blue-900 ">Tarik Saldo</h3>
-              <form name="add_more" class="space-y-6" action="<?= base_url('Tabungan/tambahPenarikan') ?>" method="POST">
+              <form name="add_more" class="space-y-6" action="<?= base_url('Tabungan/tambahPenarikan') ?>" method="POST" enctype="multipart/form-data">
                 <div>
                   <label for="nomor2" class="block mb-2 text-sm font-medium text-blue-900">Nomor Tabungan </label>
                   <input type="number" name="nomor" id="nomor2" onkeyup="searchDatabase2()" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
@@ -126,6 +182,11 @@
                 <div>
                   <label for="saldo" class="block mb-2 text-sm font-medium text-blue-900">Jumlah</label>
                   <input type="number" name="saldo" id="saldo" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
+                </div>
+
+                <div>
+                  <label class="block mb-2 text-sm font-medium text-blue-900" for="imagePenarikan">Upload Bukti</label>
+                  <input name="imagePenarikan" accept=".jpg, .png, .jpeg" class="block w-full text-sm text-blue-900 border border-blue-300 rounded-lg cursor-pointer bg-blue-50 " id="imagePenarikan" type="file" required>
                 </div>
 
                 <div class="flex items-center">
@@ -140,10 +201,13 @@
           </div>
         </div>
 
-
-        <!-- /.card-header -->
-        <div class="card-body overflow-auto">
-          <form class="flex items-center lg:w-1/4 md:w-1/3  float-right" id="searchForm" action="" method="get">
+        <div class="card-header lg:flex lg:flex-row w-full ">       
+          <a href="<?=base_url('Export/exportDataTabungan')?>" class=" float-left lg:mb-0 mb-2 mr-4 sm:mx-auto sm:my-auto rounded px-2 py-2 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+              <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+              <i class="fa fa-file-excel"></i>
+              <span class="relative"> Export</span>
+          </a>
+          <form class="flex items-center lg:mt-0 mt-2 lg:w-1/4 md:w-1/3 float-right" id="searchForm" action="" method="get">
             <label for="simple-search" class="sr-only">Search</label>
             <div class="relative w-full">
               <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -154,20 +218,27 @@
               <?php $request = \Config\Services::request(); ?>
               <input type="text" id="searchInput" name="search" value="<?= $request->getGet('search'); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  " placeholder=" Search Keyword">
             </div>
-            <button type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-gray-700 rounded-lg border border-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+            <button type="submit" class=" p-2.5 ml-2 text-sm font-medium text-white bg-gray-700 rounded-lg border border-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
               </svg>
               <span class="sr-only">Search</span>
             </button>
           </form>
+        </div>
+
+        <!-- /.card-header -->
+        <div class="card-body overflow-auto">
+
           <table id="example1" class="table table-striped">
             <thead>
               <tr>
                 <th>No Tabungan</th>
                 <th>Nama</th>
+                <th>Debit</th>
+                <th>Kredit</th>
                 <th>Saldo</th>
-                <th>Penarikan</th>
+                
               </tr>
             </thead>
             <tbody>
@@ -176,8 +247,9 @@
                   <td><?= $data["no_tabungan"]; ?></td>
                   <td><?= $data["nama"]; ?></td>
 
-                  <td><?= $data["saldo"]; ?></td>
-                  <td><?= $data["penarikan"]; ?></td>
+                  <td>Rp. <?= number_format($data["debit"],2,',','.'); ?></td>
+                  <td>Rp. <?= number_format($data["kredit"],2,',','.'); ?></td>
+                  <td>Rp. <?= number_format($data["saldo"],2,',','.');?></td>
 
 
                 </tr>

@@ -13,6 +13,7 @@ class PengangkutanSampah extends BaseController
 
         $pengangkutanSampah->insert([
             'tanggal' => $this->request->getVar('tanggal'),
+            'pengangkut' => $this->request->getVar('pengangkut'),
         ]);
 
   

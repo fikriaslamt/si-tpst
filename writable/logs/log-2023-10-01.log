@@ -1,0 +1,175 @@
+INFO - 2023-10-01 13:18:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:18:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:18:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:22:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:22:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:23:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:24:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:36:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:36:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 13:38:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-01 13:38:52 --> Trying to access array offset on value of type null
+in APPPATH\Views\export\riwayatSetoran.php on line 27.
+ 1 APPPATH\Views\export\riwayatSetoran.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\export\\riwayatSetoran.php', 27, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\export\\riwayatSetoran.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('export/riwayatSetoran', [], true)
+ 5 APPPATH\Controllers\Export.php(19): view('export/riwayatSetoran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-10-01 13:38:53 --> Trying to access array offset on value of type null
+in APPPATH\Views\export\riwayatSetoran.php on line 27.
+ 1 APPPATH\Views\export\riwayatSetoran.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\export\\riwayatSetoran.php', 27, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\export\\riwayatSetoran.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('export/riwayatSetoran', [], true)
+ 5 APPPATH\Controllers\Export.php(19): view('export/riwayatSetoran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-10-01 13:38:58 --> Trying to access array offset on value of type null
+in APPPATH\Views\export\riwayatSetoran.php on line 27.
+ 1 APPPATH\Views\export\riwayatSetoran.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\export\\riwayatSetoran.php', 27, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\export\\riwayatSetoran.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('export/riwayatSetoran', [], true)
+ 5 APPPATH\Controllers\Export.php(19): view('export/riwayatSetoran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-10-01 13:39:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-01 13:39:02 --> Trying to access array offset on value of type null
+in APPPATH\Views\export\riwayatSetoran.php on line 27.
+ 1 APPPATH\Views\export\riwayatSetoran.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\export\\riwayatSetoran.php', 27, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\export\\riwayatSetoran.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('export/riwayatSetoran', [], true)
+ 5 APPPATH\Controllers\Export.php(19): view('export/riwayatSetoran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-10-01 13:39:04 --> Trying to access array offset on value of type null
+in APPPATH\Views\export\riwayatSetoran.php on line 27.
+ 1 APPPATH\Views\export\riwayatSetoran.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\export\\riwayatSetoran.php', 27, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\export\\riwayatSetoran.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('export/riwayatSetoran', [], true)
+ 5 APPPATH\Controllers\Export.php(19): view('export/riwayatSetoran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-10-01 13:39:09 --> Trying to access array offset on value of type null
+in APPPATH\Views\export\riwayatSetoran.php on line 27.
+ 1 APPPATH\Views\export\riwayatSetoran.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\export\\riwayatSetoran.php', 27, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\export\\riwayatSetoran.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('export/riwayatSetoran', [], true)
+ 5 APPPATH\Controllers\Export.php(19): view('export/riwayatSetoran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-10-01 13:39:25 --> Trying to access array offset on value of type null
+in APPPATH\Views\export\riwayatSetoran.php on line 27.
+ 1 APPPATH\Views\export\riwayatSetoran.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\export\\riwayatSetoran.php', 27, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\export\\riwayatSetoran.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('export/riwayatSetoran', [], true)
+ 5 APPPATH\Controllers\Export.php(19): view('export/riwayatSetoran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-10-01 13:39:29 --> Trying to access array offset on value of type null
+in APPPATH\Views\export\riwayatSetoran.php on line 27.
+ 1 APPPATH\Views\export\riwayatSetoran.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\export\\riwayatSetoran.php', 27, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\export\\riwayatSetoran.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('export/riwayatSetoran', [], true)
+ 5 APPPATH\Controllers\Export.php(19): view('export/riwayatSetoran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-10-01 14:19:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-01 14:19:38 --> Trying to access array offset on value of type null
+in APPPATH\Views\export\riwayatSetoran.php on line 27.
+ 1 APPPATH\Views\export\riwayatSetoran.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\export\\riwayatSetoran.php', 27, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\export\\riwayatSetoran.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('export/riwayatSetoran', [], true)
+ 5 APPPATH\Controllers\Export.php(19): view('export/riwayatSetoran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+CRITICAL - 2023-10-01 14:19:39 --> Trying to access array offset on value of type null
+in APPPATH\Views\export\riwayatSetoran.php on line 27.
+ 1 APPPATH\Views\export\riwayatSetoran.php(27): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Views\\export\\riwayatSetoran.php', 27, [...])
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\export\\riwayatSetoran.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('export/riwayatSetoran', [], true)
+ 5 APPPATH\Controllers\Export.php(19): view('export/riwayatSetoran', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-10-01 14:25:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 14:33:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-01 14:33:13 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Export.php on line 35.
+ 1 APPPATH\Controllers\Export.php(35): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Export.php', 35, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-10-01 14:33:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 14:34:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 14:35:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 14:36:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 14:36:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 14:36:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-01 14:36:21 --> A non-numeric value encountered
+in APPPATH\Controllers\Export.php on line 41.
+ 1 APPPATH\Controllers\Export.php(41): CodeIgniter\Debug\Exceptions->errorHandler(2, 'A non-numeric value encountered', 'APPPATH\\Controllers\\Export.php', 41, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-10-01 14:36:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 14:37:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 14:38:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 14:38:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 14:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-10-01 14:38:58 --> Argument 3 passed to PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::setCellValue() must implement interface PhpOffice\PhpSpreadsheet\Cell\IValueBinder or be null, string given, called in C:\Users\Fikri Aslam\Desktop\KULIAH\SKRIPSI\sistem-informasi-tpst\app\Controllers\Export.php on line 42
+in VENDORPATH\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php on line 1176.
+ 1 APPPATH\Controllers\Export.php(42): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValue('E2', '10', 'KG')
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportRiwayatSetoran()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2023-10-01 14:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-10-01 14:39:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

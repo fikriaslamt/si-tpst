@@ -37,22 +37,35 @@
             </button>
           </div>
 
+            <div class="card-header lg:flex lg:flex-row w-full ">       
+                <a href="<?=base_url('Export/exportDataNasabah')?>" class=" float-left lg:mb-0 mb-2 mr-4 sm:mx-auto sm:my-auto rounded px-2 py-2 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                    <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                    <i class="fa fa-file-excel"></i>
+                    <span class="relative"> Export</span>
+                </a>
+                <form class="flex items-center lg:mt-0 mt-2 lg:w-1/4 md:w-1/3 float-right" id="searchForm" action="" method="get">
+                    <label for="simple-search" class="sr-only">Search</label>
+                    <div class="relative w-full">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                    <?php $request = \Config\Services::request(); ?>
+                    <input type="text" id="searchInput" name="search" value="<?= $request->getGet('search'); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  " placeholder=" Search Keyword">
+                    </div>
+                    <button type="submit" class=" p-2.5 ml-2 text-sm font-medium text-white bg-gray-700 rounded-lg border border-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <span class="sr-only">Search</span>
+                    </button>
+                </form>
+            </div>
+
               <!-- /.card-header -->
               <div class="card-body overflow-auto">
-              <form class="flex items-center lg:w-1/4 md:w-1/3  float-right" id="searchForm" action="" method="get">   
-                  <label for="simple-search" class="sr-only">Search</label>
-                  <div class="relative w-full">
-                      <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                          <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
-                      </div>
-                      <?php $request = \Config\Services::request(); ?>
-                      <input type="text" id="searchInput" name="search" value="<?= $request->getGet('search');?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  " placeholder=" Search Keyword">
-                  </div>
-                  <button  type="submit" class="p-2.5 ml-2 text-sm font-medium text-white bg-gray-700 rounded-lg border border-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-                      <span class="sr-only">Search</span>
-                  </button>
-              </form>
+
                 <table id="example1" class="table table-striped">
                   <thead>
                   <tr>
@@ -144,9 +157,10 @@
                 <h3 class="mb-5 text-lg font-normal text-blue-900">Edit Data</h3>
                 <form class="space-y-6" method="POST">
                     <div>
-                        <label for="nota" class="block mb-2 text-sm font-medium text-blue-900">No Tabungan</label>
-                        <input type="number" name="nota" id="nota" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <label for="Enota" class="block mb-2 text-sm font-medium text-blue-900">No Tabungan</label>
+                        <input type="number" name="nota" id="Enota" onkeyup="searchDatabase2()" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
+                    <div id="searchResult2"></div>
                     <div>
                         <label for="nama" class="block mb-2 text-sm font-medium text-blue-900">Nama</label>
                         <input type="text" name="nama" id="nama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
@@ -155,7 +169,7 @@
                         <label for="alamat" class="block mb-2 text-sm font-medium text-blue-900">Alamat</label>
                         <input type="text" name="alamat" id="alamat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
-                    <button type="submit" class="w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Simpan</button>
+                    <button type="submit" class="disable-on-edit w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Simpan</button>
                 </form>
             </div>
         </div>
@@ -200,9 +214,10 @@
                 <h3 class="mb-5 text-lg font-normal text-blue-900 ">Tambah Data</h3>
                 <form class="space-y-6" action="<?= base_url('DataNasabah/tambahDataNasabah')?>" method="POST">
                     <div>
-                        <label for="nota" class="block mb-2 text-sm font-medium text-blue-900">No Tabungan</label>
-                        <input type="number" name="nota" id="nota" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                        <label for="Tnota" class="block mb-2 text-sm font-medium text-blue-900">No Tabungan</label>
+                        <input type="number" name="nota" id="Tnota" onkeyup="searchDatabase()" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
+                    <div id="searchResult"></div>
                     <div>
                         <label for="nama" class="block mb-2 text-sm font-medium text-blue-900 ">Nama</label>
                         <input type="text" name="nama" id="nama" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
@@ -213,7 +228,7 @@
                     </div>
                    
                
-                    <button type="submit" class="w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Tambah</button>
+                    <button type="submit" class="disable-on-tambah w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Tambah</button>
                     
                 </form>
             </div>
@@ -262,4 +277,73 @@
             deleteLink.href = deleteUrl;
         });
     });
+</script>
+
+<script>
+    function searchDatabase() {
+        var searchValue = document.getElementById("Tnota").value;
+        var submitButton = document.querySelector(".disable-on-tambah[type='submit']");
+
+        if (searchValue.trim() !== "") {
+        $.ajax({
+            type: "POST",
+            url: "<?= base_url('DataNasabah/searchNasabah') ?>",
+            data: {
+            searchValue: searchValue
+            },
+            success: function(response) {
+            var resultHtml = "";
+            if (response.length > 0) {
+                resultHtml += "<p class ='text-red-700 text-xs'>No Tabungan Sudah Digunakan</p>";
+                submitButton.setAttribute("disabled", "disabled"); // Disable the submit button
+
+                
+            } else {
+                resultHtml = "<p class ='text-blue-700 text-xs'>No Tabungan Dapat Digunakan</p>";
+                submitButton.removeAttribute("disabled"); // Enable the submit button
+            }
+            document.getElementById("searchResult").innerHTML = resultHtml;
+            }
+        });
+        } else {
+        document.getElementById("searchResult").innerHTML = "";
+        submitButton.removeAttribute("disabled"); // Enable the submit button
+        }
+    }
+
+</script>
+
+<script>
+    function searchDatabase2() {
+        var searchValue = document.getElementById("Enota").value;
+        var submitButton = document.querySelector(".disable-on-edit[type='submit']");
+
+        if (searchValue.trim() !== "") {
+        $.ajax({
+            type: "POST",
+            url: "<?= base_url('DataNasabah/searchNasabah') ?>",
+            data: {
+            searchValue: searchValue
+            },
+            success: function(response) {
+            var resultHtml = "";
+            if (response.length > 0) {
+              
+                resultHtml += "<p class ='text-red-700 text-xs'>No Tabungan Sudah Digunakan</p>";
+                submitButton.setAttribute("disabled", "disabled"); // Disable the submit button
+                
+                
+            } else {
+                resultHtml = "<p class ='text-blue-700 text-xs'>No Tabungan Dapat Digunakan</p>";
+                submitButton.removeAttribute("disabled"); // Enable the submit button
+            }
+            document.getElementById("searchResult2").innerHTML = resultHtml;
+            }
+        });
+        } else {
+        document.getElementById("searchResult2").innerHTML = "";
+        submitButton.removeAttribute("disabled"); // Enable the submit button
+        }
+    }
+
 </script>

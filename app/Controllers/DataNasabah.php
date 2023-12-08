@@ -8,6 +8,16 @@ class DataNasabah extends BaseController
 {   
 
 
+    public function searchNasabah(){
+        $searchValue = $this->request->getPost('searchValue');
+
+        // Query the database using your model
+        $nasabah = new M_nasabah(); // Replace with your nasabah
+        $results = $nasabah->searchById($searchValue);
+
+        // Return the results as JSON
+        return $this->response->setJSON($results);
+    }
 
     public function tambahDataNasabah()
     {   

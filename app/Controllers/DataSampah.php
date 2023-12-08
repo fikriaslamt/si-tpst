@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\M_sampah_masuk;
-use App\Models\M_sampah_terkelola;
+use App\Models\M_kelola_sampah;
 use App\Models\M_sampah_tidak_terkelola;
 
 
@@ -10,7 +10,7 @@ class DataSampah extends BaseController
 {   
 
     public function getDataKelola($id){
-        $sampahTerkelola = new M_sampah_terkelola();
+        $sampahTerkelola = new M_kelola_sampah();
         $data = $sampahTerkelola -> where('sampah_masuk_id',$id)->first();
 
         return $this->response->setJSON($data);
@@ -20,8 +20,7 @@ class DataSampah extends BaseController
     {   
 
         $sampahMasuk = new M_sampah_masuk();
-        $sampahTerkelola = new M_sampah_terkelola();
-        $sampahTidakTerkelola = new M_sampah_tidak_terkelola();
+        $sampahTerkelola = new M_kelola_sampah();
    
         $tanggalMasuk = $this->request->getVar('tanggal_masuk');
         $instansi = $this->request->getVar('instansi');
@@ -41,17 +40,11 @@ class DataSampah extends BaseController
 
         $sampahTerkelola->insert([
             'sampah_masuk_id' => $idSampahMasuk,
-            'tanggal_masuk' => $tanggalMasuk,
             'tanggal_update' => $tanggalMasuk,
-            'total_berat' => 0,
+            'terkelola' => 0,
+            'tidak_terkelola' => 0,
         ]);
 
-        $sampahTidakTerkelola->insert([
-            'sampah_masuk_id' => $idSampahMasuk,
-            'tanggal_masuk' => $tanggalMasuk,
-            'tanggal_update' => $tanggalMasuk,
-            'total_berat' => 0,
-        ]);
 
         session()->setFlashdata('error', "Data Berhasil Ditambahkan");
         return redirect()->to(base_url('admin/dataSampah'));
@@ -82,8 +75,7 @@ class DataSampah extends BaseController
     public function setKelola($id)
     {   
         $sampahMasuk = new M_sampah_masuk();
-        $sampahTerkelola = new M_sampah_terkelola();
-        $sampahTidakTerkelola = new M_sampah_tidak_terkelola();
+        $sampahTerkelola = new M_kelola_sampah();
 
         $sisaKelola = $sampahMasuk->select('total_berat')->where('id',$id)->first();
 
@@ -98,15 +90,12 @@ class DataSampah extends BaseController
 
         $sampahTerkelola->where('sampah_masuk_id',$id)->set([
             'tanggal_update' => $day,
-            'total_berat' => $totalBerat,
+            'terkelola' => $totalBerat,
             'berat_kompos' => $kompos,
-            'berat_maggot' => $maggot
+            'berat_maggot' => $maggot,
+            'tidak_terkelola' => $sisa
         ])->update();
         
-        $sampahTidakTerkelola->where('sampah_masuk_id',$id)->set([
-            'tanggal_update' => $day,
-            'total_berat' => $sisa,
-        ])->update();
 
         $sampahMasuk->update($id,[
             'status' => 'Terkelola',

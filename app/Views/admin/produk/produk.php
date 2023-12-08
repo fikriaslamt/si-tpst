@@ -17,9 +17,9 @@
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
-        
       </div><!-- /.container-fluid -->
     </div>
+    
     <!-- /.content-header -->
     <section class="lg:grid md:grid sm:row grid-cols-4 justify-center">
       <div class="px-5 lg:col-span-2 sm:col-span-2">
@@ -71,11 +71,58 @@
               Tambah Produk
             </button>
             <!--penarikan toggle -->
-           
+            <div class="absolute my-2 right-5">
+              <span>Riwayat Transaksi</span>
+              <a href="<?= base_url('Admin/transaksiProduk')?>" class="rounded-full  p-2 bg-orange-500 active:bg-orange-300 hover:bg-orange-300">
+                <button>
+                  <i class="fa fa-history text-white" ></i>
+                </button>
+              </a>
+              
+            </div>
+
           </div>
+
+          <div class="card-header lg:flex lg:flex-row w-full ">
+
+              <form class="lg:flex md:flex mb-2 mt-2 lg:m-0 " action="<?= base_url('Admin/produk'); ?>" method="POST">
+                <input class="rounded-lg "  name="start_date" type="date" required>
+                <h2 class="my-auto mx-2 " >s/d</h2>
+                <input class="rounded-lg "  name="end_date" type="date" required>
+                <button type="submit" class="p-2.5 ml-2 mr-4 text-sm font-medium text-white bg-amber-400 rounded-lg border hover:bg-amber-600" >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" > <path d="M6 8C6 7.44772 6.44772 7 7 7H17C17.5523 7 18 7.44772 18 8C18 8.55228 17.5523 9 17 9H7C6.44772 9 6 8.55228 6 8Z" fill="currentColor" /> <path d="M8 12C8 11.4477 8.44772 11 9 11H15C15.5523 11 16 11.4477 16 12C16 12.5523 15.5523 13 15 13H9C8.44772 13 8 12.5523 8 12Z" fill="currentColor" /> <path d="M11 15C10.4477 15 10 15.4477 10 16C10 16.5523 10.4477 17 11 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H11Z" fill="currentColor" /> </svg>
+                </button>            
+              </form>          
+              <a href="<?=base_url('Export/exportDataProduk')?>" class=" float-left lg:mb-0 mb-2 mr-4 sm:mx-auto sm:my-auto rounded px-2 py-2 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                  <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                  <i class="fa fa-file-excel"></i>
+                  <span class="relative"> Export</span>
+              </a>
+              <form class="flex items-center lg:mt-0 mt-2 lg:w-1/4 md:w-1/3 float-right" id="searchForm" action="" method="get">
+                <label for="simple-search" class="sr-only">Search</label>
+                <div class="relative w-full">
+                  <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <?php $request = \Config\Services::request(); ?>
+                  <input type="text" id="searchInput" name="search" value="<?= $request->getGet('search'); ?>" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  " placeholder=" Search Keyword">
+                </div>
+                <button type="submit" class=" p-2.5 ml-2 text-sm font-medium text-white bg-gray-700 rounded-lg border border-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                  </svg>
+                  <span class="sr-only">Search</span>
+                </button>
+              </form>
+          </div>
+
+          
 
               <!-- /.card-header -->
               <div class="card-body overflow-auto">
+
                 <table id="example1" class="table table-striped text-center">
                   <thead >
                   <tr>
@@ -83,7 +130,7 @@
                     <th>Tanggal Update</th>
                     <th>Produk</th>        
                     <th>Harga</th>        
-                    <th>Stok</th>        
+                    <th>Sisa Stok</th>        
                     <th>Terjual</th>               
                     <th>Aksi</th>        
                   </tr>
@@ -94,8 +141,8 @@
                       <td><?= $i;$i++;?></td>
                       <td><?= $data["tanggal_update"]; ?></td>
                       <td><?= $data["jenis_produk"]; ?></td>
-                      <td>Rp. <?= $data["harga"]; ?></td>
-                      <td><?= $data["total_stok"]; ?> pcs</td>
+                      <td>Rp. <?=  number_format($data["harga"],2,',','.'); ?></td>
+                      <td><?= $data["sisa_stok"]; ?> pcs</td>
                       <td><?= $data["total_penjualan"]; ?> pcs</td>
                       <td>
                         <!-- Call to action buttons -->
@@ -103,7 +150,7 @@
                           <li class="mx-1">
 
                             <span>
-                              <button data-modal-target="kelola-modal" data-modal-toggle="kelola-modal" data-id="<?= $data["id"] ?>" data-total_stok="<?= $data["total_stok"]  ?>" data-harga="<?= $data["harga"]  ?>" class="bg-green-500 btn-sm rounded-50" type="button" data-toggle="tooltip" data-placement="top" title="Update Penjualan">
+                              <button data-modal-target="kelola-modal" data-modal-toggle="kelola-modal" data-id="<?= $data["id"] ?>" data-sisa_stok="<?= $data["sisa_stok"]  ?>" data-harga="<?= $data["harga"]  ?>" class="bg-green-500 btn-sm rounded-50" type="button" data-toggle="tooltip" data-placement="top" title="Update Penjualan">
                                 <i class=" fas fa-share-square"></i>
                               </button>
                             </span>
@@ -112,7 +159,7 @@
 
 
                           <li class="mx-1">
-                            <button data-modal-target="edit-modal" data-modal-toggle="edit-modal" data-id="<?= $data["id"] ?>" data-stok="<?= $data["total_stok"] ?>" data-harga="<?= $data["harga"] ?>"   class="bg-yellow-500 btn-sm rounded-0" type="button" data-toggle="edit-modal" data-placement="top" title="Edit">
+                            <button data-modal-target="edit-modal" data-modal-toggle="edit-modal" data-id="<?= $data["id"] ?>" data-stok="<?= $data["sisa_stok"] ?>" data-harga="<?= $data["harga"] ?>"   class="bg-yellow-500 btn-sm rounded-0" type="button" data-toggle="edit-modal" data-placement="top" title="Edit">
                               <i class="fa fa-edit"></i>
                             </button>
                           </li>
@@ -161,11 +208,12 @@
                         <div class="grid grid-col-2 items-center">
                       
                               <div>
-                                <label for="produk" class="block mb-2 text-sm font-medium text-blue-900 ">Jenis Produk</label>
-                                <select id="produk" name="produk" class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
+                                <label for="jenis" class="block mb-2 text-sm font-medium text-blue-900 ">Jenis Produk</label>
+                                <select id="jenis" name="jenis" class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 ">
                                   <option selected>Pilih Jenis Produk</option>
-                                  <option value="Kompos">Kompos</option>
-                                  <option value="Maggot">Maggot</option>
+                                  <?php $i=1; foreach ($daftar as $daftar) : ?>
+                                  <option value="<?= $daftar["id"];?>"><?= $daftar["jenis_produk"];?></option>
+                                  <?php endforeach; ?>
                                 </select>
                               </div>
                             
@@ -174,10 +222,6 @@
                                 <input type="number" name="stok" id="stok" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 mb-6 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                               </div>
 
-                              <div>
-                                <label for="harga" class="block mb-2 text-sm font-medium text-blue-900">Harga</label>
-                                <input type="number" name="harga" id="harga" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
-                              </div>
                   
                       
                         </div>
@@ -203,7 +247,7 @@
             <h3 class="mb-5 text-lg font-normal text-blue-900">Tambah Penjualan</h3>
 
             <p class="text-xs mb-4 ml-2 font-bold text-black">Stok Tersedia : <span id="totalStok"></span> pcs</p>
-            <form class="space-y-6" method="POST">
+            <form class="space-y-6" method="POST"  enctype="multipart/form-data">
               
               <div class="flex flex-row items-center">
                 <p id="" class="block mb-2 text-sm font-bold text-blue-900 ml-2 w-2/3">Stok Terjual </p>
@@ -212,7 +256,10 @@
           
               <p class="text-xs mb-4 mt-4 ml-2 font-bold text-emerald-700">Total Harga : Rp. <span id="totalNominal"></span></p>
 
-
+              <div>
+                <label class="block mb-2 text-sm font-medium text-blue-900" for="image">Upload Bukti</label>
+                <input name="image" accept=".jpg, .png, .jpeg" class="block w-full text-sm text-blue-900 border border-blue-300 rounded-lg cursor-pointer bg-blue-50 " id="image" type="file" required>
+              </div>                    
                 <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm  px-5 py-2.5 text-center mr-2">
                   Update
                 </button>
@@ -242,10 +289,7 @@
                 <label for="stok" class="block mb-2 text-sm font-medium text-blue-900">Stok</label>
                 <input type="number" step="0.01" name="stok" id="stok" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
               </div>
-              <div>
-                <label for="harga" class="block mb-2 text-sm font-medium text-blue-900">Harga</label>
-                <input type="number" step="0.01" name="harga" id="harga" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
-              </div>
+
 
               <button type="submit" class="w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Simpan</button>
             </form>
@@ -305,7 +349,7 @@
 
     button.addEventListener('click', function() {
       
-      var dataTotalStok= this.getAttribute('data-total_stok');
+      var dataTotalStok= this.getAttribute('data-sisa_stok');
       var dataHarga = this.getAttribute('data-harga');
 
       totalStok = dataTotalStok;

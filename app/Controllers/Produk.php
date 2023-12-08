@@ -12,12 +12,18 @@ class Produk extends BaseController
     {   
         $produk = new M_produk();
         
-        $tanggal = date("Y/m/d");
+
+        date_default_timezone_set("Asia/Jakarta");
+        $tanggal = date("Y-m-d h:i:sa");
+
+        $admin = session('id');
+
+        $daftarProdukId = $this->request->getVar('jenis');
 
         $produk->insert([
                 'tanggal_update' => $tanggal,
-                'jenis_produk' => $this->request->getVar('produk'),
-                'harga' => $this->request->getVar('harga'),
+                'daftar_produk_id' => $daftarProdukId, 
+                'admin_id' => $admin, 
                 'total_stok' => $this->request->getVar('stok'),
                 'total_penjualan' => 0,
                 'nominal_penjualan' => 0,
@@ -33,29 +39,39 @@ class Produk extends BaseController
         $produk = new M_produk();
         $admin = session('id');
 
-        $oldData = $produk->where('id',$id)->first();
+        $file = $this->request->getFile('image');
+        if($file->isValid() && !$file->hasMoved()){
+            $imageName = $file->getRandomName();
+            $file->move('uploads/buktiPenjualan/',$imageName);
+        }
+
+        $oldData = $produk->getById($id);
         
         $terjual = $this->request->getVar('stokTerjual');
         $pendapatan =  $oldData['harga'] * $terjual;
 
-        $tanggal = date("Y/m/d");
+        date_default_timezone_set("Asia/Jakarta");
+        $tanggal = date("Y-m-d h:i:sa");
+
         $penjualan = $oldData['total_penjualan'] + $terjual;
         $sisaStok = $oldData['total_stok'] - $terjual;
         $keuntungan = $oldData['nominal_penjualan'] + $pendapatan;
 
         $produk->update($id,[
             'tanggal_update' => $tanggal,
+            'admin_id' => $admin, 
             'total_stok' => $sisaStok,
             'total_penjualan' => $penjualan,
             'nominal_penjualan' => $keuntungan,
         ]);
 
         $penjualanProduk->insert([
-            'produk_id' => $id,
+            'daftar_produk_id' => $oldData["daftar_produk_id"],
             'admin_id' => $admin,
             'tanggal' => $tanggal,
             'total_terjual' => $terjual,
             'nominal_penjualan' => $pendapatan,
+            'image_bukti' => $imageName,
         ]);
        
 
@@ -66,11 +82,17 @@ class Produk extends BaseController
 
     public function editProduk($id)
     {   
+        date_default_timezone_set("Asia/Jakarta");
+        $tanggal = date("Y-m-d h:i:sa");
+
+        $admin = session('id');
+
         $produk = new M_produk();
 
            $produk->update($id,[
-                'harga' => $this->request->getVar('harga'),
+                'tanggal_update' => $tanggal,
                 'total_stok' => $this->request->getVar('stok'),
+                'admin_id' => $admin, 
             ]);
        
 

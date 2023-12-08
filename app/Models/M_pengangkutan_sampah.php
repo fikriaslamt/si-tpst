@@ -8,7 +8,28 @@ class M_pengangkutan_sampah extends Model
 {
     protected $table = "pengangkutan_sampah";
     protected $primaryKey           = 'id';
-    protected $allowedFields        = ['id','tanggal','total_berat'];
+    protected $allowedFields        = ['id','tanggal','pengangkut'];
+
+    function getPaginated($num,$keyword = null,$startDate=null,$endDate=null){
+        $builder = $this->table('pengangkutan_sampah');
+
+        
+        if($keyword != ''){
+            $builder->like('pengangkut',$keyword);
+        }
+
+        if ($startDate != "" && $endDate != ""){
+            $builder->where('tanggal >=', $startDate)->where('tanggal <=', $endDate);
+        }
+
+        $data = $builder->orderBy('tanggal','DESC')
+        ->paginate($num);
+
+        return [
+            'data' => $data,
+            'pager' => $this->pager,
+        ];
+    }
 
     function getDataByDate(){
         $builder = $this->table('pengangkutan_sampah');
@@ -37,6 +58,12 @@ class M_pengangkutan_sampah extends Model
             'chart' => $chart
         ];
         
+    }
+
+    function getAllData(){
+        $builder = $this->table('pengangkutan_sampah');
+
+        return $builder->orderBy('tanggal','DESC')->findAll();
     }
    
 }

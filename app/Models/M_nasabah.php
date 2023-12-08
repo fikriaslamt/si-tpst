@@ -38,4 +38,9 @@ class M_nasabah extends Model
         $builder = $this->table('nasabah');
         return $builder->countAll();
     }
+
+    function getAllData(){
+        $builder = $this->table('nasabah');
+        return $builder->findAll();
+    }
 }

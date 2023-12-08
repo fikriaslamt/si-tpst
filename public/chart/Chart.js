@@ -4990,6 +4990,7 @@ var controller_line = core_datasetController.extend({
 			pointStyle: options.pointStyle,
 			rotation: options.rotation,
 			backgroundColor: options.backgroundColor,
+			borderJoinStyle: options.borderJoinStyle,
 			borderColor: options.borderColor,
 			borderWidth: options.borderWidth,
 			tension: valueOrDefault$5(custom.tension, lineModel ? lineModel.tension : 0),
@@ -5021,6 +5022,7 @@ var controller_line = core_datasetController.extend({
 
 		var ELEMENT_OPTIONS = {
 			backgroundColor: 'pointBackgroundColor',
+			borderJoinStyle: 'pointBorderJoinStyle',
 			borderColor: 'pointBorderColor',
 			borderWidth: 'pointBorderWidth',
 			hitRadius: 'pointHitRadius',

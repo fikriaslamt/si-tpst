@@ -24,7 +24,9 @@ class Tabungan extends BaseController
 
     public function verifyKode(){
         $kode = $this->request->getPost('searchValue');
-        $tabungan = new M_tabungan(); // Replace with your tabungan
+        $tabungan = new M_tabungan(); 
+        $setoran = new M_setoran(); 
+        $penarikan = new M_penarikan(); 
         
         // Query the database using your model
         $nasabah = new M_nasabah(); // Replace with your nasabah
@@ -36,12 +38,19 @@ class Tabungan extends BaseController
             $nama = $result['nama'];
             $alamat = $result['alamat'];
         }
+
         $saldo = $tabungan->getSaldo($idNasabah);
 
+        $dataSetoran = $setoran->getDataById($idNasabah);
+        $dataPenarikan = $penarikan->getDataById($idNasabah);
+
+      
         $data = array([
             'nama' => $nama,
             'alamat' => $alamat,
             'saldo' => $saldo,
+            'setoran' => $dataSetoran,
+            'penarikan' => $dataPenarikan,
         ]);
         return $this->response->setJSON($data);
     }
@@ -60,6 +69,13 @@ class Tabungan extends BaseController
         $admin = session('id');
   
         $nomor = $this->request->getPost('nomor');
+
+        $file = $this->request->getFile('imageSetoran');
+        if($file->isValid() && !$file->hasMoved()){
+            $imageName = $file->getRandomName();
+            $file->move('uploads/buktiSetoran/',$imageName);
+        }
+
         $id = $nasabah->select('id')->where('no_tabungan',$nomor)->first();
 
         $sampahData = $this->request->getPost('addmore');
@@ -77,6 +93,7 @@ class Tabungan extends BaseController
             'tanggal' => $tanggal,
             'nasabah_id' => $id['id'],
             'admin_id' => $admin,
+            'image_bukti' => $imageName,
         ];
 
         foreach ($sampahData as $index => $s) {
@@ -102,9 +119,11 @@ class Tabungan extends BaseController
 //tabungan 
         $dataTabungan = $tabungan->where('nasabah_id',$id['id'])->first();
         $saldoBaru = $dataTabungan['saldo'] + $hargaTotal;
+        $debitBaru = $dataTabungan['debit'] + $hargaTotal;
 
         $data2 = [
             'saldo' => $saldoBaru,
+            'debit' => $debitBaru,
         ];
 
         $tabungan->update($dataTabungan['id'],$data2);
@@ -127,6 +146,12 @@ class Tabungan extends BaseController
 
         $nomor = $this->request->getPost('nomor');
 
+        $file = $this->request->getFile('imagePenarikan');
+        if($file->isValid() && !$file->hasMoved()){
+            $imageName = $file->getRandomName();
+            $file->move('uploads/buktiPenarikan/',$imageName);
+        }
+
         $id = $nasabah->select('id')->where('no_tabungan',$nomor)->first();
         
         $totalPenarikan = $this->request->getPost('saldo');
@@ -137,11 +162,11 @@ class Tabungan extends BaseController
 //tabungan 
         $dataTabungan = $tabungan->where('nasabah_id',$id['id'])->first();
         $saldoBaru = $dataTabungan['saldo'] - $totalPenarikan;
-        $SaldoPenarikan = $dataTabungan['penarikan'] + $totalPenarikan;
+        $SaldoPenarikan = $dataTabungan['kredit'] + $totalPenarikan;
 
         $data2 = [
             'saldo' => $saldoBaru,
-            'penarikan' => $SaldoPenarikan,
+            'kredit' => $SaldoPenarikan,
         ];
        
         $tabungan->update($dataTabungan['id'],$data2);
@@ -152,6 +177,7 @@ class Tabungan extends BaseController
             'nasabah_id' => $id['id'],
             'admin_id' => $admin,
             'total_penarikan' => $totalPenarikan,
+            'image_bukti' => $imageName,
         ]);
 
 //riwayat transaksi

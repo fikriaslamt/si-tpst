@@ -16,13 +16,15 @@ class DaftarSampah extends BaseController
         $newData = array();
         $newData[]=$jenis;
 
+        $tanggal = date("Y/m/d");
+
 
         $daftarSampah->insert([
             'jenis' => $jenis,
             'satuan' => $this->request->getVar('satuan'),
             'harga_tpst' => $this->request->getVar('harga_tpst'),
             'harga_nasabah' => $this->request->getVar('harga_nasabah'),
-            'tanggal_update' => $this->request->getVar('tanggal'),
+            'tanggal_update' => $tanggal,
         
         ]);
 
@@ -40,14 +42,15 @@ class DaftarSampah extends BaseController
         $daftarSampah = new M_sampah();
 
      
- 
+        $tanggal = date("Y/m/d");
+
 
         $daftarSampah->update($id,[
             'jenis' => $this->request->getVar('jenis'),
             'satuan' => $this->request->getVar('satuan'),
             'harga_tpst' => $this->request->getVar('harga_tpst'),
             'harga_nasabah' => $this->request->getVar('harga_nasabah'),
-            'tanggal_update' => $this->request->getVar('tanggal'),
+            'tanggal_update' => $tanggal,
         ]);
 
        

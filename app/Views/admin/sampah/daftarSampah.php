@@ -39,9 +39,22 @@
             </button>
           </div>
 
-              <!-- /.card-header -->
-              <div class="card-body overflow-auto">
-              <form class="flex items-center lg:w-1/4 md:w-1/3  float-right" id="searchForm" action="" method="get">   
+          <div class="card-header lg:flex lg:flex-row w-full ">
+
+            <form class="lg:flex md:flex mb-2 mt-2 lg:m-0 " action="<?= base_url('Admin/daftarSampah'); ?>" method="POST">
+              <input class="rounded-lg "  name="start_date" type="date" required>
+              <h2 class="my-auto mx-2 " >s/d</h2>
+              <input class="rounded-lg "  name="end_date" type="date" required>
+              <button type="submit" class="p-2.5 ml-2 mr-4 text-sm font-medium text-white bg-amber-400 rounded-lg border hover:bg-amber-600" >
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" > <path d="M6 8C6 7.44772 6.44772 7 7 7H17C17.5523 7 18 7.44772 18 8C18 8.55228 17.5523 9 17 9H7C6.44772 9 6 8.55228 6 8Z" fill="currentColor" /> <path d="M8 12C8 11.4477 8.44772 11 9 11H15C15.5523 11 16 11.4477 16 12C16 12.5523 15.5523 13 15 13H9C8.44772 13 8 12.5523 8 12Z" fill="currentColor" /> <path d="M11 15C10.4477 15 10 15.4477 10 16C10 16.5523 10.4477 17 11 17H13C13.5523 17 14 16.5523 14 16C14 15.4477 13.5523 15 13 15H11Z" fill="currentColor" /> </svg>
+              </button>            
+            </form>          
+            <a href="<?=base_url('Export/exportDaftarSampah')?>" class=" float-left lg:mb-0 mb-2 mr-4 sm:mx-auto sm:my-auto rounded px-2 py-2 overflow-hidden group bg-green-500 relative hover:bg-gradient-to-r hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300">
+                <span class="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+                <i class="fa fa-file-excel"></i>
+                <span class="relative"> Export</span>
+            </a>
+            <form class="flex items-center lg:w-1/4 md:w-1/3  float-right" id="searchForm" action="" method="get">   
                   <label for="simple-search" class="sr-only">Search</label>
                   <div class="relative w-full">
                       <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
@@ -55,6 +68,11 @@
                       <span class="sr-only">Search</span>
                   </button>
               </form>
+          </div>
+
+              <!-- /.card-header -->
+              <div class="card-body overflow-auto">
+
                 <table id="example1" class="table table-striped ">
                   <thead>
                   <tr>
@@ -71,8 +89,8 @@
                     <tr>
                       <td><?= $i;$i++;?></td>
                       <td><?= $data["jenis"]; ?></td>
-                      <td>Rp. <?= $data["harga_tpst"]; ?></td>
-                      <td>Rp. <?= $data["harga_nasabah"]; ?></td>
+                      <td>Rp. <?= number_format($data["harga_tpst"],2,',','.'); ?></td>
+                      <td>Rp. <?= number_format($data["harga_nasabah"],2,',','.'); ?></td>
                       <td><?= $data["tanggal_update"]; ?></td>
                       <td>
                           <!-- Call to action buttons -->
@@ -165,10 +183,7 @@
                       <label for="harga_nasabah" class="block mb-2 text-sm font-medium text-blue-900 ">Harga Nasabah</label>
                       <input type="text" name="harga_nasabah" id="harga_nasabah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  required>
                   </div>
-                  <div>
-                      <label for="tanggal" class="block mb-2 text-sm font-medium text-blue-900 ">Tanggal Update</label>
-                      <input type="date" name="tanggal" id="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "  required>
-                  </div>
+
               
                     <button type="submit" class="w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Simpan</button>
                     
@@ -229,10 +244,10 @@
                         <label for="harga_nasabah" class="block mb-2 text-sm font-medium text-blue-900 ">Harga Nasabah</label>
                         <input type="text" name="harga_nasabah" id="harga_nasabah" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
                     </div>
-                    <div>
+                    <!-- <div>
                         <label for="tanggal" class="block mb-2 text-sm font-medium text-blue-900 ">Tanggal Update</label>
                         <input type="date" name="tanggal" id="tanggal" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
-                    </div>
+                    </div> -->
 
                    
                
@@ -253,7 +268,6 @@
     const editJenisInput = editForm.querySelector('[name="jenis"]');
     const editHargaTpstInput = editForm.querySelector('[name="harga_tpst"]');
     const editHargaNasabahInput = editForm.querySelector('[name="harga_nasabah"]');
-    const editTanggalInput = editForm.querySelector('[name="tanggal"]');
 
     const deleteButtons = document.querySelectorAll('[data-modal-toggle="delete-modal"]');
     const deleteLink = document.getElementById('delete-link');
@@ -264,7 +278,6 @@
             const dataJenis = this.getAttribute('data-jenis');
             const dataHargaTpst = this.getAttribute('data-HargaTpst');
             const dataHargaNasabah = this.getAttribute('data-HargaNasabah');
-            const dataTanggal = this.getAttribute('data-Tanggal');
           
             const editUrl = `<?= base_url('DaftarSampah/editDaftarSampah/') ?>${dataId}`;
 
@@ -272,7 +285,6 @@
             editJenisInput.value = dataJenis;
             editHargaTpstInput.value = dataHargaTpst;
             editHargaNasabahInput.value = dataHargaNasabah;
-            editTanggalInput.value = dataTanggal;
             
         });
     });

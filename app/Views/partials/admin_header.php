@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title><?=$title?></title>
-
+  
+  <link rel="icon" type="image/png" href="<?=base_url('images/unila.png')?>"/>
    <!-- jQuery Library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
@@ -34,14 +35,18 @@
   
  
 
-  <script src="https://cdn.tailwindcss.com"></script>
+
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"  rel="stylesheet" />
 
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/tw-elements.min.css" />
-  <script src="https://cdn.tailwindcss.com/3.3.0"></script>
-  <script src="<?=base_url('chart/Chart.js')?>"></script>
+  <link rel="stylesheet" href="/css/app.css" />
+
+
+
+  <script src="<?=base_url('chart/package/dist/chart.js')?>"></script>
+  <script src="<?=base_url('chart/package/dist/chart.umd.js')?>"></script>
+
 
 
 </head>

@@ -9,14 +9,14 @@ class DaftarLimbah extends BaseController{
 
         $daftarLimbah = new M_daftar_limbah();
 
-
+        $tanggal = date("Y/m/d");
         $jenis = $this->request->getVar('jenis');
 
 
         $daftarLimbah->insert([
             'jenis_limbah' => $jenis,
             'harga' => $this->request->getVar('harga'),
-            'tanggal_update' => $this->request->getVar('tanggal'),
+            'tanggal_update' => $tanggal,
             'satuan'  => $this->request->getVar('satuan'),
         ]);
 
@@ -29,10 +29,12 @@ class DaftarLimbah extends BaseController{
 
        $daftarLimbah = new M_daftar_limbah();
 
+       $tanggal = date("Y/m/d");
+
        $daftarLimbah->update($id,[
             'jenis_limbah' => $this->request->getVar('jenis'),
             'harga' => $this->request->getVar('harga'),
-            'tanggal_update' => $this->request->getVar('tanggal'),
+            'tanggal_update' => $tanggal,
             'satuan'  => $this->request->getVar('satuan'),
         ]);
 

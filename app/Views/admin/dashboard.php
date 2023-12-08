@@ -81,6 +81,79 @@
         <!-- Main row -->
         <div class="row">
           <!-- Left col -->
+          <section class="col-lg-5 connectedSortable">
+
+      
+                      
+
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Grafik Pengelolaan Sampah Masuk</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <select id="yearSelectSampah" class="float-right rounded-lg lg:w-1/5 sm:lg-2/5 pl-2">
+                  <?php  foreach($yearSampah as $index => $y):?>
+                    <option value="<?= $index;?>" selected><?= $index;?></option>
+                  <?php endforeach;?>
+                </select>
+                <div>
+                  <canvas id="lineChart"></canvas>
+                </div>
+              
+              </div>
+            
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Grafik Kumulatif Pengelolaan Sampah Masuk</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <select id="kumulatifyearSelectSampah" class="float-right rounded-lg lg:w-1/5 sm:lg-2/5 pl-2">
+                  <?php  foreach($kumulatifyearSampah as $index => $y):?>
+                    <option value="<?= $index;?>" selected><?= $index;?></option>
+                  <?php endforeach;?>
+                </select>
+                <div>
+                  <canvas id="lineChart2"></canvas>
+                </div>
+              
+              </div>
+            
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Timbulan Sampah Berdasarkan Status Pengelolaan </h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <canvas id="pieChart"></canvas>
+              </div>
+            
+            </div>
+
+          </section>
           <section class="col-lg-7 connectedSortable">
             <!-- Custom tabs (Charts with tabs)-->
             <div class="card">
@@ -127,51 +200,7 @@
           </section>
           <!-- /.Left col -->
           <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5 connectedSortable">
 
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Total Transaksi Berdasarkan Jenis Transaksi</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <select id="yearSelect" class="float-right rounded-lg lg:w-1/5 sm:lg-2/5 pl-2">
-                  <?php  foreach($year as $index => $y):?>
-                    <option value="<?= $index;?>" selected><?= $index;?></option>
-                  <?php endforeach;?>
-                </select>
-                <div>
-                  <canvas id="barChart"></canvas>
-                </div>
-              </div>
-             
-            </div>
-      
-           
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Timbulan Sampah Berdasarkan Status Pengelolaan </h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <canvas id="pieChart"></canvas>
-              </div>
-             
-            </div>
-          
-          </section>
     
           <!-- right col -->
         </div>
@@ -182,65 +211,34 @@
   </div>
 
 <script>
-  const ctx = document.getElementById('barChart');
   const ctx2 = document.getElementById('pieChart');
+  const ctx3 = document.getElementById('lineChart');
+  const ctx4 = document.getElementById('lineChart2');
 
-  setoranChart = <?= json_encode($setoranChart) ?>;
-  penarikanChart = <?= json_encode($penarikanChart) ?>;
-  limbahChart = <?= json_encode($limbahChart) ?>;
-  lastYear = <?= json_encode($lastYear)?>;
+  timbulan = <?= json_encode($timbulan) ?>;
+
+
+
   terkelola = <?= json_encode($Terkelola)?>;
   tidakTerkelola = <?= json_encode($tidakTerkelola)?>;
-  yearSelect = document.getElementById('yearSelect');
+
+  sampahMasukChart = <?= json_encode($sampahMasukChart) ?>;
+  komposChart = <?= json_encode($komposChart) ?>;
+  maggotChart = <?= json_encode($maggotChart) ?>;
+  tidakTerkelolaChart = <?= json_encode($tidakTerkelolaChart) ?>;
+  lastYearSampah = <?= json_encode($lastYearSampah)?>;
+  
+  kumulatifsampahMasukChart = <?= json_encode($kumulatifsampahMasukChart) ?>;
+  kumulatifkomposChart = <?= json_encode($kumulatifkomposChart) ?>;
+  kumulatifmaggotChart = <?= json_encode($kumulatifmaggotChart) ?>;
+  kumulatiftidakTerkelolaChart = <?= json_encode($kumulatiftidakTerkelolaChart) ?>;
+  kumulatiflastYearSampah = <?= json_encode($kumulatiflastYearSampah)?>;
+
+  yearSelectSampah = document.getElementById('yearSelectSampah');
+  kumulatifyearSelectSampah = document.getElementById('kumulatifyearSelectSampah');
 
 
-  const chart =  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels  : ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli',
-                'Agustus', 'September', 'Oktober', 'November', 'Desember'],
-      datasets: [ {
-          label               : 'Setoran',
-          backgroundColor     : '#00c0ef',
-          borderColor         : 'rgba(60,141,188,0.8)',
-          pointRadius          : false,
-          pointColor          : '#3b8bba',
-          pointStrokeColor    : 'rgba(60,141,188,1)',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(60,141,188,1)',
-          data                : []
-        },
-        {
-          label               : 'Penarikan',
-          backgroundColor     : '#f56954',
-          borderColor         : 'rgba(210, 214, 222, 1)',
-          pointRadius         : false,
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#c1c7d1',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : []
-        },
-        {
-          label               : 'Limbah',
-          backgroundColor     : '#00a65a',
-          borderColor         : 'rgba(210, 214, 222, 1)',
-          pointRadius         : false,
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#c1c7d1',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : []
-        },]
-    },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
+
 
   const chart2 =  new Chart(ctx2, {
     type: 'pie',
@@ -258,6 +256,17 @@
     options: {
       responsive: true,
       plugins: {
+        title: {
+                display: true,
+                text: 'Total Timbulan : ' + timbulan + ' ton',
+                color: '#000000',
+                position: 'bottom',
+                align : 'end',
+                font: {
+                	family: 'Arial',
+                	size: 12,
+                }
+            },
         legend: {
           position: 'top',
         }
@@ -266,42 +275,246 @@
   });
 
 
+  const chart3 =  new Chart(ctx3, {
+    type: 'line',
+    data: {
+      options : [],
+      labels  : ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul',
+                'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+                datasets: [
+        {
+           
+          label               : 'Sampah Masuk',
+          backgroundColor     : 'rgba(54, 162, 235, 0.2)',
+          borderColor         : 'rgb(54, 162, 235)',
+          pointRadius         : 2,
+          borderWidth         : 2,
+          tension             : 0.4,
+          fill                : true,
+          data                : []
+        },
 
-  function updateChart (selectedYear){
-    const selectedSetoranChart = setoranChart[selectedYear] || {}; // Use empty object if no Chart available
-    const selectedPenarikanChart = penarikanChart[selectedYear] || {};
-    const selectedLimbahChart = limbahChart[selectedYear] || {};
+        {
+          label               : 'Kompos',
+          backgroundColor     : 'rgba(255, 205, 86, 0.2)',
+          borderColor         : 'rgb(255, 205, 86)',
+          pointRadius         : 2,
+          borderWidth         : 2,
+          tension: 0.4,
+          fill                : true,
+          data                : []
+        },
+        {
+          label               : 'Maggot',
+          backgroundColor     : 'rgba(75, 192, 192, 0.2)',
+          borderColor         : 'rgb(75, 192, 192)',
+          pointRadius         : 2,
+          borderWidth         : 2,
+          tension: 0.4,
+          fill                : true,
+          data                : []
+        },
+
+        {
+          label               : 'Sampah Tidak Terkelola',
+          backgroundColor     : 'rgba(255, 99, 132, 0.2)',
+          borderColor         : 'rgb(255, 99, 132)',
+          pointRadius         : 2,
+          borderWidth         : 2,
+          tension: 0.4, 
+          fill                : true,
+          data                : []
+        },
+       ]
+    },
+    options: {
+      plugins: {
+            title: {
+                display: true,
+                text: '( Ton )',
+                color: '#000000',
+                position: 'left',
+                font: {
+                	family: 'Arial',
+                	size: 12,
+                    weight: 'bold',
+                }
+            }
+        },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const chart4 =  new Chart(ctx4, {
+    type: 'line',
+    data: {
+      labels  : ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul',
+                'Agu', 'Sep', 'Okt', 'Nov', 'Des'],
+                datasets: [
+        {
+           
+          label               : 'Sampah Masuk',
+          backgroundColor     : 'rgba(54, 162, 235, 0.2)',
+          borderColor         : 'rgb(54, 162, 235)',
+          pointRadius         : 2,
+          borderWidth         : 2,
+          tension: 0.4,
+          fill                : true,
+          data                : []
+        },
+
+        {
+          label               : 'Kompos',
+          backgroundColor     : 'rgba(255, 205, 86, 0.2)',
+          borderColor         : 'rgb(255, 205, 86)',
+          pointRadius         : 2,
+          borderWidth         : 2,
+          tension: 0.4,
+          fill                : true,
+          data                : []
+        },
+        {
+          label               : 'Maggot',
+          backgroundColor     : 'rgba(75, 192, 192, 0.2)',
+          borderColor         : 'rgb(75, 192, 192)',
+          pointRadius         : 2,
+          borderWidth         : 2,
+          tension: 0.4,
+          fill                : true,
+          data                : []
+        },
+
+        {
+          label               : 'Sampah Tidak Terkelola',
+          backgroundColor     : 'rgba(255, 99, 132, 0.2)',
+          borderColor         : 'rgb(255, 99, 132)',
+          pointRadius         : 2,
+          borderWidth         : 2,
+          tension: 0.4, 
+          fill                : true,
+          data                : []
+        },
+       ]
+    },
+    options: {
+      plugins: {
+            title: {
+                display: true,
+                text: '( Ton )',
+                color: '#000000',
+                position: 'left',
+                font: {
+                	family: 'Arial',
+                	size: 12,
+                    weight: 'bold',
+                }
+            }
+        },
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+
+
+
+
+  function updateChartSampah (selectedYear){
+    const selectedSampahMasukChart = sampahMasukChart[selectedYear] || {}; // Use empty object if no Chart available
+    const selectedKomposChart = komposChart[selectedYear] || {};
+    const selectedMaggotChart = maggotChart[selectedYear] || {};
+    const selectedTidakTerkelolaChart = tidakTerkelolaChart[selectedYear] || {};
     
     // Fill in missing months with zero values
     for (let i = 1; i <= 12; i++) {
-        if (!selectedSetoranChart[i]) {
-            selectedSetoranChart[i] = 0;
+        if (!selectedSampahMasukChart[i]) {
+            selectedSampahMasukChart[i] = 0;
         }
-        if (!selectedPenarikanChart[i]) {
-            selectedPenarikanChart[i] = 0;
+        if (!selectedKomposChart[i]) {
+            selectedKomposChart[i] = 0;
         }
-        if (!selectedLimbahChart[i]) {
-            selectedLimbahChart[i] = 0;
+        if (!selectedMaggotChart[i]) {
+            selectedMaggotChart[i] = 0;
+        }
+    
+        if (!selectedTidakTerkelolaChart[i]) {
+            selectedTidakTerkelolaChart[i] = 0;
         }
     }
     
     // Update the chart Chart for each dataset
-    chart.data.datasets[0].data = Object.values(selectedSetoranChart);
-    chart.data.datasets[1].data = Object.values(selectedPenarikanChart);
-    chart.data.datasets[2].data = Object.values(selectedLimbahChart);
+    chart3.data.datasets[0].data = Object.values(selectedSampahMasukChart);
+    chart3.data.datasets[1].data = Object.values(selectedKomposChart);
+    chart3.data.datasets[2].data = Object.values(selectedMaggotChart);
+    chart3.data.datasets[3].data = Object.values(selectedTidakTerkelolaChart);
     
     // Update the chart
-    chart.update();
-  }
+    chart3.update();
+  };
 
-  yearSelect.addEventListener('change', function () {
-      const selectedYear = yearSelect.value;
+  function updateChartSampahKumulatif (selectedYear){
+    const selectedSampahMasukChart = kumulatifsampahMasukChart[selectedYear] || {}; // Use empty object if no Chart available
+    const selectedKomposChart = kumulatifkomposChart[selectedYear] || {};
+    const selectedMaggotChart = kumulatifmaggotChart[selectedYear] || {};
+    const selectedTidakTerkelolaChart = kumulatiftidakTerkelolaChart[selectedYear] || {};
+    
+    // Fill in missing months with zero values
+    for (let i = 1; i <= 12; i++) {
+        if (!selectedSampahMasukChart[i]) {
+            selectedSampahMasukChart[i] = 0;
+        }
+        if (!selectedKomposChart[i]) {
+            selectedKomposChart[i] = 0;
+        }
+        if (!selectedMaggotChart[i]) {
+            selectedMaggotChart[i] = 0;
+        }
+    
+        if (!selectedTidakTerkelolaChart[i]) {
+            selectedTidakTerkelolaChart[i] = 0;
+        }
+    }
+    
+    // Update the chart Chart for each dataset
+    chart4.data.datasets[0].data = Object.values(selectedSampahMasukChart);
+    chart4.data.datasets[1].data = Object.values(selectedKomposChart);
+    chart4.data.datasets[2].data = Object.values(selectedMaggotChart);
+    chart4.data.datasets[3].data = Object.values(selectedTidakTerkelolaChart);
+    
+    // Update the chart
+    chart4.update();
+  };
 
-      updateChart(selectedYear);
+
+
+
+  yearSelectSampah.addEventListener('change', function () {
+      const selectedYear = yearSelectSampah.value;
+
+      updateChartSampah(selectedYear);
+  });
+
+  kumulatifyearSelectSampah.addEventListener('change', function () {
+      const selectedYear = kumulatifyearSelectSampah.value;
+
+      updateChartSampahKumulatif(selectedYear);
   });
 
   document.addEventListener('DOMContentLoaded',function () {
-      const selectedYear = lastYear;
-      updateChart(selectedYear);
+    
+      const selectedYearSampah = lastYearSampah;
+      const selectedYearSampahKumulatif = kumulatiflastYearSampah;
+
+      updateChartSampah(selectedYearSampah);
+      updateChartSampahKumulatif(selectedYearSampahKumulatif);
+
+
     });
 </script>
