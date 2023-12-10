@@ -197,7 +197,7 @@ $(document).ready(function(){
                     }
                 },
                 success: function(response) {
-                    console.log(response);
+                 
                     if (response.length > 0) {
                       
                         $("#searchResultsTable").removeClass("hidden");

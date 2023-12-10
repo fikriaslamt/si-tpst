@@ -91,7 +91,7 @@ class Produk extends BaseController
 
            $produk->update($id,[
                 'tanggal_update' => $tanggal,
-                'total_stok' => $this->request->getVar('stok'),
+                'sisa_stok' => $this->request->getVar('stok'),
                 'admin_id' => $admin, 
             ]);
        
