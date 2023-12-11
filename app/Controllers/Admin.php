@@ -17,6 +17,7 @@ use App\Models\m_penjualan_produk;
 use App\Models\M_konten_publikasi;
 use App\Models\M_konten_kegiatan;
 use App\Models\M_pengangkutan_sampah;
+use App\Models\M_profil;
 use App\Models\M_riwayat_transaksi;
 use App\Models\M_sampah_terkelola;
 use App\Models\M_sampah_tidak_terkelola;
@@ -505,8 +506,10 @@ class Admin extends BaseController {
         $konten = new M_konten_publikasi();
 
         $data = $konten->getPaginated(10,$keyword);
-       
+        $admin = session("name");
+
         $header['title']='Publikasi';
+        $header['admin']=$admin;
         echo view('partials/admin_header',$header);
         echo view('partials/admin_navbar',$header);
         echo view('partials/admin_sidebar');
@@ -552,5 +555,176 @@ class Admin extends BaseController {
         echo view('partials/admin_sidebar');
         echo view('admin/akun/akun',$data);
         echo view('partials/admin_footer');
+    }
+
+    public function setting(){
+
+    
+        $profil = new M_profil();
+
+        $dataProfil = $profil->findAll();
+
+        $data ['data'] = $dataProfil;
+ 
+        $admin = session("name");
+
+
+        $header['admin']=$admin;
+        $header['title']='Pengaturan';
+        echo view('partials/admin_header',$header);
+        echo view('partials/admin_navbar',$header);
+        echo view('partials/admin_sidebar');
+        echo view('admin/setting',$data);
+        echo view('partials/admin_footer');
+    }
+
+    public function editSetting()
+    {   
+        $profil = new M_profil();
+
+        $oldData = $profil->findAll();
+    
+
+        $oldImageKetua = $oldData[0]['ketua_img'];
+        $oldImageSekretaris = $oldData[0]['sekretaris_img'];
+        $oldImageBendahara = $oldData[0]['bendahara_img'];
+
+        $oldImageBeranda1 = $oldData[0]['beranda1_img'];
+        $oldImageBeranda2 = $oldData[0]['beranda2_img'];
+        $oldImageBeranda3 = $oldData[0]['beranda3_img'];
+
+        //image ketua
+        $file = $this->request->getFile('imageKetua');
+
+        if ($file->isValid() && !$file->hasMoved()) {
+            if (file_exists("uploads/profil/" . $oldImageKetua) && is_file("uploads/profil/" . $oldImageKetua)) {
+                unlink("uploads/profil/" . $oldImageKetua);
+            }
+        
+            $imageNameKetua = $file->getRandomName();
+            $file->move('uploads/profil/', $imageNameKetua);
+        } else {
+            $imageNameKetua = $oldImageKetua;
+        }
+        
+
+        //image sekretaris
+        $file = $this->request->getFile('imageSekretaris');
+        if($file->isValid() && !$file->hasMoved()){
+
+            if(file_exists("uploads/profil/".$oldImageSekretaris)  && is_file("uploads/profil/" . $oldImageSekretaris)){
+                unlink("uploads/profil/".$oldImageSekretaris);
+            }
+
+            $imageNameSekretaris = $file->getRandomName();
+            $file->move('uploads/profil/',$imageNameSekretaris);
+
+        }else{
+            $imageNameSekretaris = $oldImageSekretaris;
+        }
+
+        //image bendahara
+        $file = $this->request->getFile('imageBendahara');
+        if($file->isValid() && !$file->hasMoved()){
+
+            if(file_exists("uploads/profil/".$oldImageBendahara)  && is_file("uploads/profil/" . $oldImageBendahara)){
+                unlink("uploads/profil/".$oldImageBendahara);
+            }
+
+            $imageNameBendahara = $file->getRandomName();
+            $file->move('uploads/profil/',$imageNameBendahara);
+
+        }else{
+            $imageNameBendahara = $oldImageBendahara;
+        }
+
+        //image beranda1
+        $file = $this->request->getFile('gallery1');
+        if($file->isValid() && !$file->hasMoved()){
+
+            if(file_exists("uploads/profil/".$oldImageBeranda1)  && is_file("uploads/profil/" . $oldImageBeranda1)){
+                unlink("uploads/profil/".$oldImageBeranda1);
+            }
+
+            $imageNameBeranda1 = $file->getRandomName();
+            $file->move('uploads/profil/',$imageNameBeranda1);
+
+        }else{
+            $imageNameBeranda1 = $oldImageBeranda1;
+        }
+
+        //image beranda2
+        $file = $this->request->getFile('gallery2');
+        if($file->isValid() && !$file->hasMoved()){
+
+            if(file_exists("uploads/profil/".$oldImageBeranda2)  && is_file("uploads/profil/" . $oldImageBeranda2)){
+                unlink("uploads/profil/".$oldImageBeranda2);
+            }
+
+            $imageNameBeranda2 = $file->getRandomName();
+            $file->move('uploads/profil/',$imageNameBeranda2);
+
+        }else{
+            $imageNameBeranda2 = $oldImageBeranda2;
+        }
+
+        //image beranda3
+        $file = $this->request->getFile('gallery3');
+        if($file->isValid() && !$file->hasMoved()){
+
+            if(file_exists("uploads/profil/".$oldImageBeranda3)  && is_file("uploads/profil/" . $oldImageBeranda3)){
+                unlink("uploads/profil/".$oldImageBeranda3);
+            }
+
+            $imageNameBeranda3 = $file->getRandomName();
+            $file->move('uploads/profil/',$imageNameBeranda3);
+
+        }else{
+            $imageNameBeranda3 = $oldImageBeranda3;
+        }
+
+
+        $nama = $this->request->getVar('nama');
+        $deskripsi = $this->request->getVar('deskripsi');
+        $alamat = $this->request->getVar('alamat');
+        $visi = $this->request->getVar('visi');
+        $misi = $this->request->getVar('misi');
+        $whatsapp = $this->request->getVar('whatsapp');
+        $instagram = $this->request->getVar('instagram');
+        $facebook = $this->request->getVar('facebook');
+        $youtube = $this->request->getVar('youtube');
+        $email = $this->request->getVar('email');
+        $ketua = $this->request->getVar('ketua');
+        $sekretaris = $this->request->getVar('sekretaris');
+        $bendahara = $this->request->getVar('bendahara');
+
+        
+           $profil->update(1,[
+                'nama' => $nama,
+                'deskripsi' => $deskripsi,
+                'alamat' => $alamat,
+                'visi' => $visi,
+                'misi' => $misi,
+                'whatsapp' => $whatsapp,
+                'instagram' => $instagram,
+                'facebook' => $facebook,
+                'youtube' => $youtube,
+                'email' => $email,
+                'ketua_nama' => $ketua,
+                'sekretaris_nama' => $sekretaris,
+                'bendahara_nama' => $bendahara,
+                'ketua_img' => $imageNameKetua,
+                'sekretaris_img' => $imageNameSekretaris,
+                'bendahara_img' => $imageNameBendahara,
+                'beranda1_img' => $imageNameBeranda1,
+                'beranda2_img' => $imageNameBeranda2,
+                'beranda3_img' => $imageNameBeranda3,
+
+            ]);
+       
+
+        session()->setFlashdata('error', "Data Berhasil Diubah");
+        return redirect()->to(base_url('admin/setting'));
+
     }
 }

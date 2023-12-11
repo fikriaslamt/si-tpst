@@ -4,13 +4,17 @@
             <p class="font-normal text-sm leading-3 text-indigo-700  hover:text-indigo-800 cursor-pointer pb-2">Tentang Kami</p>
               <div class="flex lg:flex-row flex-col lg:gap-8 sm:gap-10 gap-12">
                      <div class="w-full lg:w-6/12 ">
-                            <h2 class="w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9">Tempat Pengolahan Sampah Terpadu (TPST) Universitas Lampung</h2>
-                            <p class="font-normal text-base leading-6 text-gray-600  mt-6 text-justify">Universitas Lampung berkomitmen dengan membangun fasilitas pendukung pengelolaan sampah
-                                   Yaitu Tempat Pengolahan Sampah Terpadu (TPST) Universitas Lampung. </p>
+                            <h2 class="w-full font-bold lg:text-4xl text-3xl lg:leading-10 leading-9"><?=$profil[0]['nama'];?></h2>
+                            <p class="font-normal text-base leading-6 text-gray-600  mt-6 text-justify"><?=$profil[0]['deskripsi'];?></p>
                             <div class="w-full  lg:mt-20 mt-20">
        
-                                   <h2 class="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800">Our Mission</h2>
-                                   <p class="font-normal text-base leading-6 text-gray-600  mt-6 w-full text-justify">Harapannya dengan adanya TPST tersebut, mempu memaksimalkan fasilitas untuk mengurangi jumlah timbulan sampah yang ada di lingkup Universitas Lampung</p>
+                                   <h2 class="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800">Visi</h2>
+                                   <p class="font-normal text-base leading-6 text-gray-600  mt-6 w-full text-justify"><?=$profil[0]['visi'];?></p>
+                            </div>         
+                            <div class="w-full  lg:mt-20 mt-20">
+       
+                                   <h2 class="font-bold lg:text-4xl text-3xl lg:leading-9 leading-7 text-gray-800">Misi</h2>
+                                   <p class="font-normal text-base leading-6 text-gray-600  mt-6 w-full text-justify"><?=$profil[0]['misi'];?></p>
                             </div>         
                      </div>
                      <div>
@@ -23,27 +27,20 @@
                             <h2 class="w-full font-bold lg:text-4xl text-center text-3xl lg:leading-10 leading-9 mb-5">TEAM</h2>
                             <div class="flex lg:flex-row flex-col justify-between gap-8 pt-12">
                                    <div class="w-full ">
-                                          <div class="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-lg rounded-md">
+                                          <div class="grid md:grid-cols-3 sm:grid-cols-1 grid-cols-1 lg:gap-4 shadow-lg rounded-md">
                                                  <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                                                        <img class="md:block hidden" src="https://i.ibb.co/FYTKDG6/Rectangle-118-2.png" alt="Alexa featured Image" />
-                                                        <img class="md:hidden block" src="https://i.ibb.co/zHjXqg4/Rectangle-118.png" alt="Alexa featured Image" />
-                                                        <p class="font-medium text-xl leading-5 text-gray-800 ">Alexa</p>
+                                                        <img class="h-16 w-16 rounded-lg mx-auto" src="<?=base_url('uploads/profil/'.$profil[0]['ketua_img'])?>" alt="" />
+                                                        <p class="font-medium text-xl leading-5 text-gray-800 "><?=$profil[0]['ketua_nama'];?></p>
                                                  </div>
                                                  <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                                                        <img class="md:block hidden" src="https://i.ibb.co/fGmxhVy/Rectangle-119.png" alt="Olivia featured Image" />
-                                                        <img class="md:hidden block" src="https://i.ibb.co/NrWKJ1M/Rectangle-119.png" alt="Olivia featured Image" />
-                                                        <p class="font-medium text-xl leading-5 text-gray-800 ">Olivia</p>
+                                                        <img class="h-16 w-16 rounded-lg mx-auto" src="<?=base_url('uploads/profil/'.$profil[0]['sekretaris_img'])?>" alt="" />
+                                                        <p class="font-medium text-xl leading-5 text-gray-800 "><?=$profil[0]['sekretaris_nama'];?></p>
                                                  </div>
                                                  <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                                                        <img class="md:block hidden" src="https://i.ibb.co/Pc6XVVC/Rectangle-120.png" alt="Liam featued Image" />
-                                                        <img class="md:hidden block" src="https://i.ibb.co/C5MMBcs/Rectangle-120.png" alt="Liam featued Image" />
-                                                        <p class="font-medium text-xl leading-5 text-gray-800 ">Liam</p>
+                                                        <img class="h-16 w-16 rounded-lg mx-auto" src="<?=base_url('uploads/profil/'.$profil[0]['bendahara_img'])?>" alt="" />
+                                                        <p class="font-medium text-xl leading-5 text-gray-800 "><?=$profil[0]['bendahara_nama'];?></p>
                                                  </div>
-                                                 <div class="p-4 pb-6 flex justify-center flex-col items-center">
-                                                        <img class="md:block hidden" src="https://i.ibb.co/7nSJPXQ/Rectangle-121.png" alt="Elijah featured image" />
-                                                        <img class="md:hidden block" src="https://i.ibb.co/ThZBWxH/Rectangle-121.png" alt="Elijah featured image" />
-                                                        <p class="font-medium text-xl leading-5 text-gray-800 ">Elijah</p>
-                                                 </div>
+      
                                           </div>
                                    </div>
                             </div>

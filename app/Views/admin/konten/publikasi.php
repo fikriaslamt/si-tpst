@@ -64,8 +64,8 @@
                   <?php $i=1; foreach ($data as $data) : ?>
                     <tr>
                       <td><?= $i;$i++; ?></td>
-                      <td><p class="lg:truncate lg:w-96 md:truncate md:w-50  sm:truncate sm:w-20 "><?= $data["judul"]; ?></p></td>
-                      <td><p class="lg:truncate lg:w-96 md:truncate md:w-50  sm:truncate sm:w-20 "><?= $data["link"]; ?></td>
+                      <td><p class="truncate hover:text-clip " style=" overflow: hidden; "><?= strlen($data["judul"]) > 30 ? substr($data["judul"], 0, 30) . '...' : $data["judul"]; ?></p></td>
+                      <td><p class="truncate hover:text-clip " style=" overflow: hidden; "><?= strlen($data["link"]) > 30 ? substr($data["link"], 0, 30) . '...' : $data["link"]; ?></p></td>
                       <td><?= $data["tanggal"]; ?></td>
                       <td>
                           <!-- Call to action buttons -->

@@ -201,6 +201,16 @@
            
           </li>
 
+          <li class="nav-item">
+            <a href="<?=base_url('admin/setting')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(2)=='setting'?'active':''?>">
+              <i class="nav-icon 	fas fa-cog"></i>
+              <p>
+                Pengaturan
+              </p>
+            </a>
+           
+          </li>
+
 
         </ul>
       </nav>

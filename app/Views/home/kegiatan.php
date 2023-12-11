@@ -1,11 +1,11 @@
         
 <div id="detailKegiatan" class="">
     <div class="flex justify-center items-center">
-        <div class="2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-full sm:w-auto">
+        <div class="2xl:mx-auto 2xl:container lg:px-20 lg:py-16 md:py-12 md:px-6 py-9 px-4 w-96 sm:w-auto">
             <div role="main" class="flex flex-col items-center justify-center">
                 <h1 class="mb-5 pb-4 text-center text-3xl text-grey-900 font-bold">Semua Kegiatan</h1>
             </div>
-            <div class="lg:flex items-center md:mt-12">
+            <div class="lg:flex items-stretch md:mt-12">
                 
                 <div class=mb-6">
                     <div class="sm:flex lg:grid lg:grid-cols-4 md:grid md:grid-cols-3 items-center justify-between gap-6 ">

@@ -169,8 +169,8 @@
                     <tr>
                       <td><?= $i;$i++; ?></td>
                       <td><?= $data["tanggal"]; ?></td>
-                      <td><p class="lg:truncate lg:w-96 md:truncate md:w-50  sm:truncate sm:w-20 "><?= $data["judul"]; ?></p></td>
-                      <td><p class="lg:truncate lg:w-96 md:truncate md:w-50  sm:truncate sm:w-20 "><?= $data["isi"]; ?></td>
+                      <td><p class="truncate hover:text-clip " style=" overflow: hidden; "><?= strlen($data["judul"]) > 30 ? substr($data["judul"], 0, 30) . '...' : $data["judul"]; ?></p></td>
+                      <td><p class="truncate hover:text-clip " style=" overflow: hidden; "><?= strlen($data["isi"]) > 30 ? substr($data["isi"], 0, 30) . '...' : $data["isi"]; ?></p></td>
                       <td><?= $data["nama"]; ?></td>
                       <td>
                           <!-- Call to action buttons -->

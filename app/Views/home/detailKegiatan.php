@@ -19,7 +19,7 @@
             <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
             <?php $x = 0; $y=1;  foreach($gallery as $g):?>
                 <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide <?=$y++?>"data-carousel-slide-to="<?=$x++?>"></button>
-            <?php $x++; $y++; if( $y > sizeof($gallery)){break;} endforeach;?>
+            <?php if( $y == count($gallery)){break;} endforeach;?>
            
        </div>
        <!-- Slider controls -->

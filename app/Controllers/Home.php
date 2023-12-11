@@ -14,6 +14,7 @@ use App\Models\M_nasabah;
 use App\Models\M_setoran;
 use App\Models\M_penarikan;
 use App\Models\M_riwayat_transaksi;
+use App\Models\M_profil;
 
 
 use App\Controllers\Auth;
@@ -26,6 +27,7 @@ class Home extends BaseController
     {  
 
         $nasabah = new M_nasabah();
+        $profil = new M_profil();
 
         $sampahMasuk = new M_sampah_masuk();
         $sampahTerkelola = new M_kelola_sampah();
@@ -78,7 +80,10 @@ class Home extends BaseController
 
         $dataRiwayat = $riwayat->orderBy('tanggal','DESC')->paginate(10);
 
+        $dataProfil = $profil->findAll();
+
         $data = [
+            'profil' => $dataProfil,
             'Terkelola' => $dataTerkelola,
             'tidakTerkelola' => $dataTidakTerkelola,
 
@@ -122,9 +127,13 @@ class Home extends BaseController
     }
     public function about()
     {   
+        $profil = new M_profil();
+        $dataProfil = $profil->findAll();
+
+        $data['profil'] = $dataProfil;
         $header['title']='Tentang Kami';
         echo view('partials/header',$header);
-        echo view('home/about.php');
+        echo view('home/about.php',$data);
         echo view('partials/footer');
     }
 
@@ -208,9 +217,12 @@ class Home extends BaseController
     public function saldo()
     {   
         $header['title']='Cek Saldo';
+        $profil = new M_profil();
+        $dataProfil = $profil->findAll();
 
+        $data['profil'] = $dataProfil;
         echo view('partials/header',$header);
-        echo view('home/saldo.php');
+        echo view('home/saldo.php',$data);
         echo view('partials/footer');
     }
 
