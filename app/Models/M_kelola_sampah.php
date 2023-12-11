@@ -76,10 +76,9 @@ class M_kelola_sampah extends Model
         $komposChart = [];
         $maggotChart = [];
 
-        $chartData = $builder->select('YEAR(kelola_sampah.tanggal_update) AS year, MONTH(kelola_sampah.tanggal_update) AS month,SUM(sampah_masuk.total_berat) OVER (ORDER BY YEAR(kelola_sampah.tanggal_update), MONTH(kelola_sampah.tanggal_update))  AS totalMasuk, SUM(kelola_sampah.berat_kompos) OVER (ORDER BY YEAR(kelola_sampah.tanggal_update), MONTH(kelola_sampah.tanggal_update))  AS totalKompos, SUM(kelola_sampah.berat_maggot) OVER (ORDER BY YEAR(kelola_sampah.tanggal_update), MONTH(kelola_sampah.tanggal_update))  AS totalMaggot, SUM(kelola_sampah.tidak_terkelola) OVER (ORDER BY YEAR(kelola_sampah.tanggal_update), MONTH(kelola_sampah.tanggal_update))  AS totalSisa')
-        ->join('sampah_masuk' ,'kelola_sampah.sampah_masuk_id=sampah_masuk.id')
-        ->groupBy('YEAR(kelola_sampah.tanggal_update), MONTH(kelola_sampah.tanggal_update)')
-
+        $chartData = $builder->select('YEAR(kelola_sampah.tanggal_update) AS year, MONTH(kelola_sampah.tanggal_update) AS month, SUM(sampah_masuk.total_berat) AS totalMasuk, SUM(kelola_sampah.berat_kompos) AS totalKompos, SUM(kelola_sampah.berat_maggot) AS totalMaggot, SUM(kelola_sampah.tidak_terkelola) AS totalSisa')
+        ->join('sampah_masuk', 'kelola_sampah.sampah_masuk_id = sampah_masuk.id')
+        ->groupBy('YEAR(kelola_sampah.tanggal_update), MONTH(kelola_sampah.tanggal_update), sampah_masuk.id')
         ->findAll();
   
         foreach ($chartData as $row) {
