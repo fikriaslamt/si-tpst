@@ -33,7 +33,7 @@ $routes->setAutoRoute(true);
 // $routes->get('/auth', 'Auth::index');
 // $routes->get('/post', 'Auth::post');
 $routes->get('/', 'Home::index');
-$routes->get('/admin', 'Admin::dashboard');
+
 $routes->get('/login', 'Login::index');
 $routes->get('/logout', 'Login::logout');
 
@@ -41,7 +41,7 @@ $routes->post('/login/process', 'Login::process');
 
 // $routes->get('/daftarLimbah', 'Pagination::getData');
 
-$routes->get('/admin/dashboard', 'Admin::dashboard');
+$routes->get('/admin', 'Admin::dashboard');
 
 
 $routes->get('/admin/sampah/data-sampah', 'Admin::dataSampah');
