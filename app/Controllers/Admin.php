@@ -268,7 +268,7 @@ class Admin extends BaseController {
         echo view('partials/admin_header',$header);
         echo view('partials/admin_navbar');
         echo view('partials/admin_sidebar');
-        echo view('admin/limbah/DaftarLimbah',$data);
+        echo view('admin/limbah/daftarLimbah',$data);
         echo view('partials/admin_footer');
     }
 
