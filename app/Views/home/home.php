@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Sistem Informasi TPST Universitas Lampung">
+    <meta name="keywords" content="sistem, informasi, tpst, tpst unila, unila, universitas lampung, tpst.unila.ac.id, sampah, tempat, pengolahan, , terpadu">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>TPST Unila</title>
     <link rel="icon" type="image/png" href="<?=base_url('images/unila.png')?>"/>
    

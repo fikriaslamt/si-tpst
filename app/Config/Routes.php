@@ -41,7 +41,9 @@ $routes->post('/login/process', 'Login::process');
 
 // $routes->get('/daftarLimbah', 'Pagination::getData');
 
-$routes->get('/admin', 'Admin::dashboard');
+$routes->get('/panel/admin', 'Admin::dashboard');
+$routes->get('/admin/dashboard', 'Admin::dashboard');
+
 
 
 $routes->get('/admin/sampah/data-sampah', 'Admin::dataSampah');

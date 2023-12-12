@@ -33,7 +33,7 @@ class Login extends BaseController
                     'name' => $dataUser['nama'],
                     'logged_in' => TRUE
                 ]);
-                return redirect()->to(base_url('admin'));
+                return redirect()->to(base_url('admin/dashboard'));
             } else {
                 session()->setFlashdata('error', 'Username atau Password Salah');
                 return redirect()->back();

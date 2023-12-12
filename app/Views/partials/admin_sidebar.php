@@ -24,7 +24,7 @@
           </li>
     
           <li class="nav-item">
-            <a href="<?=base_url('admin')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(2)=='dashboard'?'active':''?>">
+            <a href="<?=base_url('admin/dashboard')?>" class="nav-link <?=\Config\Services::request()->getUri()->getSegment(1)=='admin'?'active':''?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
