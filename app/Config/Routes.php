@@ -41,7 +41,7 @@ $routes->post('/login/process', 'Login::process');
 
 // $routes->get('/daftarLimbah', 'Pagination::getData');
 
-$routes->get('/panel/admin', 'Admin::dashboard');
+
 $routes->get('/admin/dashboard', 'Admin::dashboard');
 
 
