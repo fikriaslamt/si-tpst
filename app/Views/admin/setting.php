@@ -159,7 +159,7 @@
                         <label class="block mb-2 text-sm font-medium text-blue-900" for="gallery1">Upload Gambar Beranda 1</label>
                     </div>
                     <div class="col-span-2">
-                        <input name="gallery1" multiple="" accept=".jpg, .png, .jpeg" class="block w-full text-sm text-blue-900 border border-blue-300 rounded-lg cursor-pointer bg-blue-50 " id="gallery1" type="file" >
+                        <input name="gallery1"  accept=".jpg, .png, .jpeg" class="block w-full text-sm text-blue-900 border border-blue-300 rounded-lg cursor-pointer bg-blue-50 " id="gallery1" type="file" >
                     </div>
                 </div>
                 <div class=" grid gap-2 grid-cols-3 mt-4">
@@ -167,7 +167,7 @@
                         <label class="block mb-2 text-sm font-medium text-blue-900" for="gallery2">Upload Gambar Beranda 2</label>
                     </div>
                     <div class="col-span-2">
-                        <input name="gallery2" multiple="" accept=".jpg, .png, .jpeg" class="block w-full text-sm text-blue-900 border border-blue-300 rounded-lg cursor-pointer bg-blue-50 " id="gallery2" type="file" >
+                        <input name="gallery2"  accept=".jpg, .png, .jpeg" class="block w-full text-sm text-blue-900 border border-blue-300 rounded-lg cursor-pointer bg-blue-50 " id="gallery2" type="file" >
                     </div>
                 </div>
                 <div class=" grid gap-2 grid-cols-3 mt-4">
@@ -175,7 +175,7 @@
                         <label class="block mb-2 text-sm font-medium text-blue-900" for="gallery3">Upload Gambar Beranda 3</label>
                     </div>
                     <div class="col-span-2">
-                        <input name="gallery3" multiple="" accept=".jpg, .png, .jpeg" class="block w-full text-sm text-blue-900 border border-blue-300 rounded-lg cursor-pointer bg-blue-50 " id="galler3" type="file" >
+                        <input name="gallery3"  accept=".jpg, .png, .jpeg" class="block w-full text-sm text-blue-900 border border-blue-300 rounded-lg cursor-pointer bg-blue-50 " id="galler3" type="file" >
                     </div>
                 </div>
                 
