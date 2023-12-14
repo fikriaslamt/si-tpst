@@ -142,7 +142,7 @@
                       <td><?= $data["tanggal_update"]; ?></td>
                       <td><?= $data["jenis_produk"]; ?></td>
                       <td>Rp. <?=  number_format($data["harga"],2,',','.'); ?></td>
-                      <td><?= $data["sisa_stok"]; ?> pcs</td>
+                      <td><?= $data["stok"]; ?> pcs</td>
                       <td><?= $data["total_penjualan"]; ?> pcs</td>
                       <td>
                         <!-- Call to action buttons -->
@@ -150,7 +150,7 @@
                           <li class="mx-1">
 
                             <span>
-                              <button data-modal-target="kelola-modal" data-modal-toggle="kelola-modal" data-id="<?= $data["id"] ?>" data-sisa_stok="<?= $data["sisa_stok"]  ?>" data-harga="<?= $data["harga"]  ?>" class="bg-green-500 btn-sm rounded-50" type="button" data-toggle="tooltip" data-placement="top" title="Update Penjualan">
+                              <button data-modal-target="kelola-modal" data-modal-toggle="kelola-modal" data-id="<?= $data["id"] ?>" data-stok="<?= $data["stok"]  ?>" data-harga="<?= $data["harga"]  ?>" class="bg-green-500 btn-sm rounded-50" type="button" data-toggle="tooltip" data-placement="top" title="Update Penjualan">
                                 <i class=" fas fa-share-square"></i>
                               </button>
                             </span>
@@ -159,7 +159,7 @@
 
 
                           <li class="mx-1">
-                            <button data-modal-target="edit-modal" data-modal-toggle="edit-modal" data-id="<?= $data["id"] ?>" data-stok="<?= $data["sisa_stok"] ?>" data-harga="<?= $data["harga"] ?>"   class="bg-yellow-500 btn-sm rounded-0" type="button" data-toggle="edit-modal" data-placement="top" title="Edit">
+                            <button data-modal-target="edit-modal" data-modal-toggle="edit-modal" data-id="<?= $data["id"] ?>" data-stok="<?= $data["stok"] ?>" data-harga="<?= $data["harga"] ?>"   class="bg-yellow-500 btn-sm rounded-0" type="button" data-toggle="edit-modal" data-placement="top" title="Edit">
                               <i class="fa fa-edit"></i>
                             </button>
                           </li>
@@ -349,7 +349,7 @@
 
     button.addEventListener('click', function() {
       
-      var dataTotalStok= this.getAttribute('data-sisa_stok');
+      var dataTotalStok= this.getAttribute('data-stok');
       var dataHarga = this.getAttribute('data-harga');
 
       totalStok = dataTotalStok;
