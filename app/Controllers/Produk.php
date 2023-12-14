@@ -54,7 +54,7 @@ class Produk extends BaseController
         $tanggal = date("Y-m-d h:i:sa");
 
         $penjualan = $oldData['total_penjualan'] + $terjual;
-        $sisaStok = $oldData['total_stok'] - $terjual;
+        $sisaStok = $oldData['stok'] - $terjual;
         $keuntungan = $oldData['nominal_penjualan'] + $pendapatan;
 
         $produk->update($id,[
