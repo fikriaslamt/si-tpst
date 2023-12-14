@@ -24,7 +24,7 @@ class Produk extends BaseController
                 'tanggal_update' => $tanggal,
                 'daftar_produk_id' => $daftarProdukId, 
                 'admin_id' => $admin, 
-                'total_stok' => $this->request->getVar('stok'),
+                'stok' => $this->request->getVar('stok'),
                 'total_penjualan' => 0,
                 'nominal_penjualan' => 0,
             ]);
@@ -60,7 +60,7 @@ class Produk extends BaseController
         $produk->update($id,[
             'tanggal_update' => $tanggal,
             'admin_id' => $admin, 
-            'total_stok' => $sisaStok,
+            'stok' => $sisaStok,
             'total_penjualan' => $penjualan,
             'nominal_penjualan' => $keuntungan,
         ]);
@@ -91,7 +91,7 @@ class Produk extends BaseController
 
            $produk->update($id,[
                 'tanggal_update' => $tanggal,
-                'sisa_stok' => $this->request->getVar('stok'),
+                'stok' => $this->request->getVar('stok'),
                 'admin_id' => $admin, 
             ]);
        

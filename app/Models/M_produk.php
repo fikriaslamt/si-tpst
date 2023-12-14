@@ -8,7 +8,7 @@ class M_produk extends Model
 {
     protected $table = "produk";
     protected $primaryKey           = 'id';
-    protected $allowedFields        = ['id','tanggal_update','daftar_produk_id','admin_id','sisa_stok','total_penjualan','nominal_penjualan'];
+    protected $allowedFields        = ['id','tanggal_update','daftar_produk_id','admin_id','stok','total_penjualan','nominal_penjualan'];
     
     function getPaginated($num,$keyword = null,$startDate=null,$endDate=null){
         $builder = $this->table('produk');
@@ -21,7 +21,7 @@ class M_produk extends Model
             $builder->where('produk.tanggal_update >=', $startDate)->where('produk.tanggal_update <=', $endDate);
         }
 
-        $data = $builder->select('produk.id, produk.tanggal_update, daftar_produk.jenis_produk, produk.sisa_stok, daftar_produk.harga , produk.total_penjualan , produk.nominal_penjualan')
+        $data = $builder->select('produk.id, produk.tanggal_update, daftar_produk.jenis_produk, produk.stok, daftar_produk.harga , produk.total_penjualan , produk.nominal_penjualan')
         ->orderBy('produk.tanggal_update','DESC')
         ->join('daftar_produk','produk.daftar_produk_id=daftar_produk.id')
         ->paginate($num);
@@ -36,7 +36,7 @@ class M_produk extends Model
         $builder = $this->table('produk');
 
 
-        $data = $builder->select('produk.id, daftar_produk.id AS daftar_produk_id, produk.tanggal_update, daftar_produk.jenis_produk, produk.sisa_stok, daftar_produk.harga , produk.total_penjualan , produk.nominal_penjualan')
+        $data = $builder->select('produk.id, daftar_produk.id AS daftar_produk_id, produk.tanggal_update, daftar_produk.jenis_produk, produk.stok, daftar_produk.harga , produk.total_penjualan , produk.nominal_penjualan')
         ->join('daftar_produk','produk.daftar_produk_id=daftar_produk.id')
         ->find($id);
 
@@ -61,7 +61,7 @@ class M_produk extends Model
         $builder = $this->table('produk');
 
 
-        return $builder->select('produk.id, produk.tanggal_update, daftar_produk.jenis_produk, produk.sisa_stok, daftar_produk.harga , produk.total_penjualan , produk.nominal_penjualan')
+        return $builder->select('produk.id, produk.tanggal_update, daftar_produk.jenis_produk, produk.stok, daftar_produk.harga , produk.total_penjualan , produk.nominal_penjualan')
         ->join('daftar_produk','produk.daftar_produk_id=daftar_produk.id')
         ->findAll();
 
