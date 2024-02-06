@@ -30,15 +30,15 @@
                                           <div class="grid md:grid-cols-3 sm:grid-cols-1 grid-cols-1 lg:gap-4 shadow-lg rounded-md">
                                                  <div class="p-4 pb-6 flex justify-center flex-col items-center">
                                                         <img class="h-16 w-16 rounded-lg mx-auto" src="<?=base_url('uploads/profil/'.$profil[0]['ketua_img'])?>" alt="" />
-                                                        <p class="font-medium text-xl leading-5 text-gray-800 "><?=$profil[0]['ketua_nama'];?></p>
+                                                        <p class="font-medium text-m leading-5 text-gray-800 "><?=$profil[0]['ketua_nama'];?></p>
                                                  </div>
                                                  <div class="p-4 pb-6 flex justify-center flex-col items-center">
                                                         <img class="h-16 w-16 rounded-lg mx-auto" src="<?=base_url('uploads/profil/'.$profil[0]['sekretaris_img'])?>" alt="" />
-                                                        <p class="font-medium text-xl leading-5 text-gray-800 "><?=$profil[0]['sekretaris_nama'];?></p>
+                                                        <p class="font-medium text-m leading-5 text-gray-800 "><?=$profil[0]['sekretaris_nama'];?></p>
                                                  </div>
                                                  <div class="p-4 pb-6 flex justify-center flex-col items-center">
                                                         <img class="h-16 w-16 rounded-lg mx-auto" src="<?=base_url('uploads/profil/'.$profil[0]['bendahara_img'])?>" alt="" />
-                                                        <p class="font-medium text-xl leading-5 text-gray-800 "><?=$profil[0]['bendahara_nama'];?></p>
+                                                        <p class="font-medium text-m leading-5 text-gray-800 "><?=$profil[0]['bendahara_nama'];?></p>
                                                  </div>
       
                                           </div>

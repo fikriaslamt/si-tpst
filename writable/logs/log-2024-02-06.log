@@ -51,3 +51,148 @@ INFO - 2024-02-06 02:59:40 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-02-06 03:00:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-02-06 03:00:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-02-06 03:00:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-02-06 03:58:02 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', 'UnilaOke@2023', 'tpst', 3306, '', 0)
+#1 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\app\Controllers\Home.php(221): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(934): App\Controllers\Home->saldo()
+#8 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Fikri ...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\app\Controllers\Home.php(221): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(934): App\Controllers\Home->saldo()
+#7 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Fikri ...')
+#11 {main}
+CRITICAL - 2024-02-06 03:58:02 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `profil`', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(221): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->saldo()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+ERROR - 2024-02-06 03:58:10 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', 'UnilaOke@2023', 'tpst', 3306, '', 0)
+#1 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\app\Controllers\Home.php(221): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(934): App\Controllers\Home->saldo()
+#8 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Fikri ...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\app\Controllers\Home.php(221): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(934): App\Controllers\Home->saldo()
+#7 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Fikri ...')
+#11 {main}
+CRITICAL - 2024-02-06 03:58:10 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `profil`', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(221): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->saldo()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+ERROR - 2024-02-06 03:58:22 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: YES) in C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', 'UnilaOke@2023', 'tpst', 3306, '', 0)
+#1 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\app\Controllers\Home.php(221): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(934): App\Controllers\Home->saldo()
+#8 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#9 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Fikri ...')
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\app\Controllers\Home.php(221): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(934): App\Controllers\Home->saldo()
+#7 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#8 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Fikri ...')
+#11 {main}
+CRITICAL - 2024-02-06 03:58:22 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `profil`', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Home.php(221): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->saldo()
+ 7 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-06 03:58:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-06 04:22:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-06 04:22:20 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\Home.php on line 163.
+ 1 APPPATH\Controllers\Home.php(163): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to access array offset on value of type null', 'APPPATH\\Controllers\\Home.php', 163, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Home->detailKegiatan('pelatihan-budidaya-maggot')
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-06 04:22:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-06 04:22:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-06 04:22:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
