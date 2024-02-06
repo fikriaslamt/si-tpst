@@ -32,12 +32,13 @@ class Tabungan extends BaseController
         $nasabah = new M_nasabah(); // Replace with your nasabah
         $results = $nasabah->searchBykode($kode);
 
-
+        $idNasabah = 0;
         foreach($results as $result){
             $idNasabah = $result['id'];
             $nama = $result['nama'];
             $alamat = $result['alamat'];
         }
+        
 
         $saldo = $tabungan->getSaldo($idNasabah);
 
