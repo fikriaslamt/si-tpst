@@ -35,9 +35,9 @@ class M_kelola_sampah extends Model
         $komposChart = [];
         $maggotChart = [];
 
-        $chartData = $builder->select('YEAR(kelola_sampah.tanggal_update) AS year, MONTH(kelola_sampah.tanggal_update) AS month,SUM(sampah_masuk.total_berat) AS totalMasuk, SUM(kelola_sampah.berat_kompos) AS totalKompos, SUM(kelola_sampah.berat_maggot) AS totalMaggot, SUM(kelola_sampah.tidak_terkelola) AS totalSisa')
+        $chartData = $builder->select('YEAR(sampah_masuk.tanggal_masuk) AS year, MONTH(sampah_masuk.tanggal_masuk) AS month,SUM(sampah_masuk.total_berat) AS totalMasuk, SUM(kelola_sampah.berat_kompos) AS totalKompos, SUM(kelola_sampah.berat_maggot) AS totalMaggot, SUM(kelola_sampah.tidak_terkelola) AS totalSisa')
         ->join('sampah_masuk' ,'kelola_sampah.sampah_masuk_id=sampah_masuk.id')
-        ->groupBy('YEAR(kelola_sampah.tanggal_update), MONTH(kelola_sampah.tanggal_update)')
+        ->groupBy('YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)')
         ->findAll();
   
         foreach ($chartData as $row) {
@@ -76,11 +76,13 @@ class M_kelola_sampah extends Model
         $komposChart = [];
         $maggotChart = [];
 
-        $chartData = $builder->select('YEAR(kelola_sampah.tanggal_update) AS year, MONTH(kelola_sampah.tanggal_update) AS month, SUM(sampah_masuk.total_berat) AS totalMasuk, SUM(kelola_sampah.berat_kompos) AS totalKompos, SUM(kelola_sampah.berat_maggot) AS totalMaggot, SUM(kelola_sampah.tidak_terkelola) AS totalSisa')
+        $chartData = $builder->select('YEAR(sampah_masuk.tanggal_masuk) AS year, MONTH(sampah_masuk.tanggal_masuk) AS month, SUM(sampah_masuk.total_berat) OVER (ORDER BY YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)) AS totalMasuk, SUM(kelola_sampah.berat_kompos) OVER (ORDER BY YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)) AS totalKompos, SUM(kelola_sampah.berat_maggot) OVER (ORDER BY YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)) AS totalMaggot,SUM(kelola_sampah.tidak_terkelola) OVER (ORDER BY YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)) AS totalSisa')
         ->join('sampah_masuk', 'kelola_sampah.sampah_masuk_id = sampah_masuk.id')
-        ->groupBy('YEAR(kelola_sampah.tanggal_update), MONTH(kelola_sampah.tanggal_update), sampah_masuk.id')
+        ->groupBy('YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk), sampah_masuk.id')
         ->findAll();
-  
+
+        // dd($chartData);
+     
         foreach ($chartData as $row) {
             $year = $row['year'];
             $month = $row['month'];
@@ -92,10 +94,9 @@ class M_kelola_sampah extends Model
             $komposChart[$year][$month] = $row['totalKompos'];
             $maggotChart[$year][$month] = $row['totalMaggot'];
            
-
         }
        
-
+       
         return [
             'lastYear' => $lastYear,
             'year' => $years,

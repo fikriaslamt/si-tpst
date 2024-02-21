@@ -38,7 +38,9 @@ class Admin extends BaseController {
 
 
         $dataChartSampah = $sampahTerkelola->getDataPerDate();
+        
         $dataKumulatifChartSampah = $sampahTerkelola->getDataKumulatifPerDate();
+        // dd($dataChartSampah);
 
 
         $timbulan = $sampahMasuk ->getTimbulan();

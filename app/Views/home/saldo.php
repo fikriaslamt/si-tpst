@@ -225,7 +225,7 @@ $(document).ready(function(){
 
                             const total_beratElement = document.createElement('p');
                             total_beratElement.className = 'text-base  leading-4 text-gray-300';
-                            total_beratElement.textContent = item.total_berat +' ' + item.satuan +' / '+ new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(item.total_harga);
+                            total_beratElement.textContent =  Math.round(item.total_berat*100)/100 +' ' + item.satuan +' / '+ new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(item.total_harga);
 
                             totalSetoran += Number(item.total_harga);
                             
