@@ -45,15 +45,11 @@ class M_tabungan extends Model
         ->join('nasabah','tabungan.nasabah_id=nasabah.id')->findAll();
     }
 
-    function getSaldo($id){
+    function getSaldo($id) {
         $builder = $this->table('tabungan');
         $temp = $builder->where('nasabah_id', $id)->findAll();
-        $saldo = 0;
-        foreach($temp as $t){
-            $saldo = $t['saldo'];
-        }
-
-        return  $saldo;
+   
+        return $temp["saldo"];
     }
 
     function getTotalSaldo(){
