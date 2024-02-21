@@ -216,8 +216,8 @@ $(document).ready(function(){
                         document.getElementById("alamat").innerHTML = ": "+response[0].alamat;
                         document.getElementById("hasilsaldo").innerHTML =": " + new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(response[0].saldo);
 
-                        const setoranArray = response[0].setoran;
-                        const penarikanArray = response[0].penarikan;
+                        const setoranArray = response[0].setoran || [];
+                        const penarikanArray = response[0].penarikan || [];
                        
                         const setoranContainer = document.getElementById("detailSetoran"); // Assuming this is the ID of the container where you want to append the setoran data.
                         const penarikanContainer = document.getElementById("detailPenarikan"); // Assuming this is the ID of the container where you want to append the setoran data.
