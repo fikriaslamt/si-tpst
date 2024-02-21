@@ -50,12 +50,12 @@ class M_setoran extends Model
     function getDataById($id){
         $builder = $this->table('setoran');
 
-        $data = $builder->where('setoran.nasabah_id',$id)
-        ->select('setoran.id, nasabah.no_tabungan, admin.nama, sampah.jenis AS jenis, sampah.satuan , SUM(setoran.total_berat) AS total_berat , SUM(setoran.total_harga) AS total_harga')
-        ->join('sampah','setoran.sampah_id=sampah.id')
-        ->join('nasabah','setoran.nasabah_id=nasabah.id')
-        ->join('admin','setoran.admin_id=admin.id')
-        ->groupBy('sampah.jenis')
+        $data = $builder->where('setoran.nasabah_id', $id)
+        ->select('nasabah.no_tabungan, admin.nama, sampah.jenis AS jenis, sampah.satuan , SUM(setoran.total_berat) AS total_berat , SUM(setoran.total_harga) AS total_harga')
+        ->join('sampah', 'setoran.sampah_id = sampah.id')
+        ->join('nasabah', 'setoran.nasabah_id = nasabah.id')
+        ->join('admin', 'setoran.admin_id = admin.id')
+        ->groupBy('nasabah.no_tabungan, admin.nama, sampah.jenis, sampah.satuan')
         ->findAll();
 
         return $data;

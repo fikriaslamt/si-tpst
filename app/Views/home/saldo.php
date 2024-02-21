@@ -64,7 +64,7 @@
             </button>
             <div class="grid grid-flow-col  mt-12 ml-2 mr-8">
                 <p class="mt-2 font-bold text-center">Kode Akses : </p>
-                <input id="kodeAkses" class=" w-1/2 mr-2  appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"  type="number" required>
+                <input id="kodeAkses" name="input" class=" w-1/2 mr-2  appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue-500"  type="number" required>
             </div>
             <button id="searchkode" type="button" class=" w-full p-2.5 mt-7 text-sm font-medium text-white bg-gray-700 rounded-lg border border-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 ">
                    Lihat Saldo
