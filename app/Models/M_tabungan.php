@@ -48,8 +48,13 @@ class M_tabungan extends Model
     function getSaldo($id) {
         $builder = $this->table('tabungan');
         $temp = $builder->where('nasabah_id', $id)->findAll();
-   
-        return $temp["saldo"];
+        $saldo = 0;
+        // Check if there are any results
+        if (!empty($temp)) {
+            // Get the last balance from the results
+            $saldo = end($temp)['saldo'];
+        }
+        return $saldo;
     }
 
     function getTotalSaldo(){
