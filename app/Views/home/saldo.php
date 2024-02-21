@@ -199,13 +199,7 @@ $(document).ready(function(){
                 type: "POST",
                 url: "<?= base_url('Tabungan/verifyKode')?>",
                 data: { searchValue: searchValue },
-                statusCode: {
-                    500: function() {
-                        
-                        $("#formWarning3").removeClass("hidden");
-                        $('#loadingIndicator').addClass('hidden');
-                    }
-                },
+               
                 success: function(response) {
                  
                     if (response.length > 0) {
