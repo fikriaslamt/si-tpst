@@ -193,7 +193,7 @@ $(document).ready(function(){
     $('#searchkode').click(function(){
         $('#loadingIndicator').removeClass('hidden');
         var searchValue = $('#kodeAkses').val().trim(); // Get the search value from the input field
-        console.log(searchValue);
+        
         if (searchValue !== "") {
             $.ajax({
                 type: "POST",
@@ -207,7 +207,7 @@ $(document).ready(function(){
                     }
                 },
                 success: function(response) {
-                 
+                    console.log(response);
                     if (response.length > 0) {
                       
                         $("#searchResultsTable").removeClass("hidden");
