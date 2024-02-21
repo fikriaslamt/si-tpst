@@ -76,27 +76,14 @@ class M_kelola_sampah extends Model
         $komposChart = [];
         $maggotChart = [];
 
-        $masukSubquery = $builder
-        ->select('YEAR(tanggal_masuk) AS year, MONTH(tanggal_masuk) AS month, SUM(total_berat) AS totalMasuk')
-        ->from('sampah_masuk')
-        ->group_by('YEAR(tanggal_masuk), MONTH(tanggal_masuk)')
-        ->get_compiled_select();
+      
     
-    $kelolaSubquery = $builder
-        ->select('YEAR(sm.tanggal_masuk) AS year, MONTH(sm.tanggal_masuk) AS month, SUM(ks.berat_kompos) AS totalKompos, SUM(ks.berat_maggot) AS totalMaggot, SUM(ks.tidak_terkelola) AS totalSisa')
-        ->from('sampah_masuk sm')
-        ->join('kelola_sampah ks', 'ks.sampah_masuk_id = sm.id')
-        ->group_by('YEAR(sm.tanggal_masuk), MONTH(sm.tanggal_masuk)')
-        ->get_compiled_select();
-    
-    $query = $builder
-        ->from("($masukSubquery) AS masuk")
-        ->join("($kelolaSubquery) AS kelola", 'masuk.year = kelola.year AND masuk.month = kelola.month')
-        ->get();
-    
-    $chartData = $query->result();
+        $chartData = $builder->select('YEAR(sampah_masuk.tanggal_masuk) AS year, MONTH(sampah_masuk.tanggal_masuk) AS month, SUM(sampah_masuk.total_berat) OVER (ORDER BY YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)) AS totalMasuk, SUM(kelola_sampah.berat_kompos) OVER (ORDER BY YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)) AS totalKompos, SUM(kelola_sampah.berat_maggot) OVER (ORDER BY YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)) AS totalMaggot,SUM(kelola_sampah.tidak_terkelola) OVER (ORDER BY YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)) AS totalSisa')
+        ->join('sampah_masuk', 'kelola_sampah.sampah_masuk_id = sampah_masuk.id')
+        ->groupBy('YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk), sampah_masuk.id')
+        ->findAll();  
         // dd($chartData);
-     
+    
         foreach ($chartData as $row) {
             $year = $row['year'];
             $month = $row['month'];

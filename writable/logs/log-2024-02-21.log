@@ -203,3 +203,129 @@ INFO - 2024-02-21 04:11:58 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2024-02-21 04:14:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-02-21 04:15:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-02-21 04:16:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-21 04:24:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:24:02 --> Call to undefined method App\Models\M_kelola_sampah::group_by
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Models\M_kelola_sampah.php(82): CodeIgniter\Model->__call('group_by', [...])
+ 2 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:25:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:25:46 --> Call to undefined method App\Models\M_kelola_sampah::get_compiled_select
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Models\M_kelola_sampah.php(83): CodeIgniter\Model->__call('get_compiled_select', [])
+ 2 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:26:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:26:28 --> You cannot use "getCompiledSelect()" in "App\Models\M_kelola_sampah". This is a method of the Query Builder Class.
+in SYSTEMPATH\Model.php on line 858.
+ 1 SYSTEMPATH\Model.php(858): CodeIgniter\Exceptions\ModelException::forMethodNotAvailable('App\\Models\\M_kelola_sampah', 'getCompiledSelect()')
+ 2 SYSTEMPATH\Model.php(838): CodeIgniter\Model->checkBuilderMethod('getCompiledSelect')
+ 3 APPPATH\Models\M_kelola_sampah.php(83): CodeIgniter\Model->__call('getCompiledSelect', [])
+ 4 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 5 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 6 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 7 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:27:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:27:49 --> Object of class CodeIgniter\Database\MySQLi\Result could not be converted to string
+in APPPATH\Models\M_kelola_sampah.php on line 93.
+ 1 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:30:54 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::result()
+in APPPATH\Models\M_kelola_sampah.php on line 102.
+ 1 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-21 04:31:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:31:47 --> Cannot use object of type mysqli as array
+in APPPATH\Models\M_kelola_sampah.php on line 106.
+ 1 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:32:15 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::resultArray()
+in APPPATH\Models\M_kelola_sampah.php on line 102.
+ 1 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:32:29 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::getArrayResult()
+in APPPATH\Models\M_kelola_sampah.php on line 102.
+ 1 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:32:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:32:54 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::getArrayResult()
+in APPPATH\Models\M_kelola_sampah.php on line 100.
+ 1 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:33:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:33:09 --> Cannot use object of type mysqli as array
+in APPPATH\Models\M_kelola_sampah.php on line 106.
+ 1 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:33:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:33:48 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::fetch_array()
+in APPPATH\Models\M_kelola_sampah.php on line 100.
+ 1 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:33:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:33:58 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::fetch_array()
+in APPPATH\Models\M_kelola_sampah.php on line 102.
+ 1 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:36:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-02-21 04:36:15 --> Call to undefined method CodeIgniter\Database\MySQLi\Result::fetch_assoc()
+in APPPATH\Models\M_kelola_sampah.php on line 105.
+ 1 APPPATH\Controllers\Admin.php(42): App\Models\M_kelola_sampah->getDataKumulatifPerDate()
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->dashboard()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-02-21 04:36:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-21 04:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-02-21 04:39:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
