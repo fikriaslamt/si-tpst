@@ -22,7 +22,7 @@
     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative " role="alert">
     <strong class="font-bold">Server</strong>
     <span class="block sm:inline">Error</span>
-    <span class="absolute top-0 bottom-0 right-0 px-4 py-3 ml-2"  data-modal-hide="formWarning2">
+    <span class="absolute top-0 bottom-0 right-0 px-4 py-3 ml-2"  data-modal-hide="formWarning3">
         <svg class="fill-current h-6 w-6 text-red-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"/></svg>
     </span>
     </div>
@@ -207,18 +207,30 @@ $(document).ready(function(){
                     }
                 },
                 success: function(response) {
-                    
+                  
+
+                    console.log("Response:", response);
+                    console.log("Response length:", response.length);
                     if (response.length > 0) {
                       
                         $("#searchResultsTable").removeClass("hidden");
                         $("#detailTransaksi").removeClass("hidden");
+
                         document.getElementById("nama").innerHTML = ": "+response[0].nama;
                         document.getElementById("alamat").innerHTML = ": "+response[0].alamat;
                         document.getElementById("hasilsaldo").innerHTML =": " + new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(response[0].saldo);
 
+
                         const setoranArray = response[0].setoran || [];
                         const penarikanArray = response[0].penarikan || [];
-                        console.log(setoranArray, penarikanArray);
+
+                        // if (setoranArray.length === 0) {
+                        // setoranArray = [];
+                        // }
+                        // if (penarikanArray.length === 0) {
+                        //     penarikanArray = [];
+                        // }
+                      
                         const setoranContainer = document.getElementById("detailSetoran"); // Assuming this is the ID of the container where you want to append the setoran data.
                         const penarikanContainer = document.getElementById("detailPenarikan"); // Assuming this is the ID of the container where you want to append the setoran data.
 
@@ -275,15 +287,16 @@ $(document).ready(function(){
                         document.getElementById("totalPenarikan").innerHTML = new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(totalPenarikan);
                         $("#formModal").addClass("hidden");
                         $('#loadingIndicator').addClass('hidden');
-                    } else {
                         
+                    } else {
+                        console.log("No data found in response");
                         $("#formWarning2").removeClass("hidden");
                         $('#loadingIndicator').addClass('hidden');
                     }
                 }
             });
         } else {
-         
+            console.log("No data found in response");
             $("#formWarning2").removeClass("hidden");
             $('#loadingIndicator').addClass('hidden');
         }

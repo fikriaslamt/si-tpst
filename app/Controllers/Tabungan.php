@@ -27,11 +27,14 @@ class Tabungan extends BaseController
         $tabungan = new M_tabungan(); 
         $setoran = new M_setoran(); 
         $penarikan = new M_penarikan(); 
-        
+     
         // Query the database using your model
         $nasabah = new M_nasabah(); // Replace with your nasabah
         $results = $nasabah->searchBykode($kode);
-
+       
+        $nama = '';
+        $alamat = '';
+       
         $idNasabah = 0;
         foreach($results as $result){
             $idNasabah = $result['id'];
@@ -46,14 +49,15 @@ class Tabungan extends BaseController
         $dataPenarikan = $penarikan->getDataById($idNasabah);
 
       
-        $data = array([
+        $data[0] = [
             'nama' => $nama,
             'alamat' => $alamat,
             'saldo' => $saldo,
             'setoran' => $dataSetoran,
             'penarikan' => $dataPenarikan,
-        ]);
-        dd($data);
+        ];
+        
+        // Return the data as JSON response
         return $this->response->setJSON($data);
     }
     
