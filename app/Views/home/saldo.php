@@ -207,7 +207,7 @@ $(document).ready(function(){
                     }
                 },
                 success: function(response) {
-                    console.log(response);
+                    
                     if (response.length > 0) {
                       
                         $("#searchResultsTable").removeClass("hidden");
@@ -218,7 +218,7 @@ $(document).ready(function(){
 
                         const setoranArray = response[0].setoran || [];
                         const penarikanArray = response[0].penarikan || [];
-                       
+                        console.log(setoranArray, penarikanArray);
                         const setoranContainer = document.getElementById("detailSetoran"); // Assuming this is the ID of the container where you want to append the setoran data.
                         const penarikanContainer = document.getElementById("detailPenarikan"); // Assuming this is the ID of the container where you want to append the setoran data.
 
