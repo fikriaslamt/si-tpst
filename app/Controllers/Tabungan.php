@@ -53,6 +53,7 @@ class Tabungan extends BaseController
             'setoran' => $dataSetoran,
             'penarikan' => $dataPenarikan,
         ]);
+        dd($data);
         return $this->response->setJSON($data);
     }
     
