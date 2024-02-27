@@ -94,7 +94,7 @@ class M_kelola_sampah extends Model
             $chartDataSum[$i]['totalSisa'] += $chartDataSum[$i-1]['totalSisa'];
         }
        
-        dd($chartDataSum);
+        // dd($chartDataSum);
     
         foreach ($chartDataSum as $row) {
             $year = $row['year'];
