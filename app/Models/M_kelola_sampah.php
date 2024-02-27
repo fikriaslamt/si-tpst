@@ -39,6 +39,7 @@ class M_kelola_sampah extends Model
         ->join('sampah_masuk' ,'kelola_sampah.sampah_masuk_id=sampah_masuk.id')
         ->groupBy('YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)')
         ->findAll();
+   
   
         foreach ($chartData as $row) {
             $year = $row['year'];
@@ -76,20 +77,26 @@ class M_kelola_sampah extends Model
         $komposChart = [];
         $maggotChart = [];
 
-      
+
     
-        $chartData = $builder->select('YEAR(sampah_masuk.tanggal_masuk) AS year, 
-        MONTH(sampah_masuk.tanggal_masuk) AS month, 
-        SUM(sampah_masuk.total_berat) AS totalMasuk, 
-        SUM(kelola_sampah.berat_kompos) AS totalKompos, 
-        SUM(kelola_sampah.berat_maggot) AS totalMaggot,
-        SUM(kelola_sampah.tidak_terkelola) AS totalSisa')
-->join('sampah_masuk', 'kelola_sampah.sampah_masuk_id = sampah_masuk.id')
-->groupBy('YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)')
-->findAll();
-        // dd($chartData);
+        $chartData = $builder->select('YEAR(sampah_masuk.tanggal_masuk) AS year, MONTH(sampah_masuk.tanggal_masuk) AS month,SUM(sampah_masuk.total_berat) AS totalMasuk, SUM(kelola_sampah.berat_kompos) AS totalKompos, SUM(kelola_sampah.berat_maggot) AS totalMaggot, SUM(kelola_sampah.tidak_terkelola) AS totalSisa')
+        ->join('sampah_masuk' ,'kelola_sampah.sampah_masuk_id=sampah_masuk.id')
+        ->groupBy('YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)')
+        ->findAll();
+        
+        $chartDataSum = $chartData;
+
+        for ($i = 1; $i < count($chartData); $i++){
+       
+            $chartDataSum[$i]['totalMasuk'] += $chartDataSum[$i-1]['totalMasuk'];
+            $chartDataSum[$i]['totalKompos'] += $chartDataSum[$i-1]['totalKompos'];
+            $chartDataSum[$i]['totalMaggot'] += $chartDataSum[$i-1]['totalMaggot'];
+            $chartDataSum[$i]['totalSisa'] += $chartDataSum[$i-1]['totalSisa'];
+        }
+       
+        dd($chartDataSum);
     
-        foreach ($chartData as $row) {
+        foreach ($chartDataSum as $row) {
             $year = $row['year'];
             $month = $row['month'];
             $years[$year]=$year;
