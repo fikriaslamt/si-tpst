@@ -36,6 +36,7 @@ class M_kelola_sampah extends Model
         $maggotChart = [];
 
         $chartData = $builder->select('YEAR(sampah_masuk.tanggal_masuk) AS year, MONTH(sampah_masuk.tanggal_masuk) AS month,SUM(sampah_masuk.total_berat) AS totalMasuk, SUM(kelola_sampah.berat_kompos) AS totalKompos, SUM(kelola_sampah.berat_maggot) AS totalMaggot, SUM(kelola_sampah.tidak_terkelola) AS totalSisa')
+        ->where('sampah_masuk.status', "Terkelola")
         ->join('sampah_masuk' ,'kelola_sampah.sampah_masuk_id=sampah_masuk.id')
         ->groupBy('YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)')
         ->findAll();
@@ -80,6 +81,7 @@ class M_kelola_sampah extends Model
 
     
         $chartData = $builder->select('YEAR(sampah_masuk.tanggal_masuk) AS year, MONTH(sampah_masuk.tanggal_masuk) AS month,SUM(sampah_masuk.total_berat) AS totalMasuk, SUM(kelola_sampah.berat_kompos) AS totalKompos, SUM(kelola_sampah.berat_maggot) AS totalMaggot, SUM(kelola_sampah.tidak_terkelola) AS totalSisa')
+        ->where('sampah_masuk.status', "Terkelola")
         ->join('sampah_masuk' ,'kelola_sampah.sampah_masuk_id=sampah_masuk.id')
         ->groupBy('YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)')
         ->findAll();
