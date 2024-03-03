@@ -3,6 +3,8 @@
 namespace App\Controllers;
 use App\Models\M_nasabah;
 use App\Models\M_tabungan;
+use App\Models\M_setoran;
+use App\Models\M_penarikan;
 
 class DataNasabah extends BaseController
 {   
@@ -79,10 +81,29 @@ class DataNasabah extends BaseController
     public function deleteDataNasabah($id)
     {   
         $nasabah = new M_nasabah();
+        $setoran = new M_setoran();
+        $penarikan = new M_penarikan();
         $tabungan = new M_tabungan();
+
+        $oldDataSetoran = $setoran->getImageByUserId($id);
+        foreach ($oldDataSetoran as $oldImgSetoran ) {
+            $oldImage = $oldImgSetoran['image_bukti'];
+            if(file_exists("uploads/buktiSetoran/".$oldImage)){
+                unlink("uploads/buktiSetoran/".$oldImage);
+            }
+        }
+        $oldDataPenarikan = $penarikan->getImageByUserId($id);
+        foreach ($oldDataPenarikan as $oldImgPenarikan ) {
+            $oldImage = $oldImgPenarikan['image_bukti'];
+            if(file_exists("uploads/buktiPenarikan/".$oldImage)){
+                unlink("uploads/buktiPenarikan/".$oldImage);
+            }
+        }
 
         $nasabah->delete($id);
         $tabungan->where('nasabah_id',$id)->delete();
+        $setoran->deleteByUserId($id);
+        $penarikan->deleteByUserId($id);
 
         session()->setFlashdata('error', "Data Berhasil Dihapus");
         return redirect()->to(base_url('admin/dataNasabah'));

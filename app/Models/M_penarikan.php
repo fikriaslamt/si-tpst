@@ -59,4 +59,22 @@ class M_penarikan extends Model
 
         return $data;
     }
+
+    function getImageByUserId($id){
+        $builder = $this->table('penarikan');
+
+        $data = $builder->where('penarikan.nasabah_id', $id)
+        ->select('penarikan.image_bukti')
+        ->join('nasabah','penarikan.nasabah_id=nasabah.id')
+        ->join('admin','penarikan.admin_id=admin.id')
+        ->findAll();
+
+        return $data;
+    }
+
+    function deleteByUserId($id){
+        $builder = $this->table('penarikan');
+
+        $builder->where('penarikan.nasabah_id', $id)->delete();
+    }
 }

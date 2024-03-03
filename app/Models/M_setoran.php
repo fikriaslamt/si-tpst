@@ -60,4 +60,23 @@ class M_setoran extends Model
 
         return $data;
     }
+
+    function getImageByUserId($id){
+        $builder = $this->table('setoran');
+
+        $data = $builder->where('setoran.nasabah_id', $id)
+        ->select('setoran.image_bukti')
+        ->join('sampah', 'setoran.sampah_id = sampah.id')
+        ->join('nasabah', 'setoran.nasabah_id = nasabah.id')
+        ->join('admin', 'setoran.admin_id = admin.id')
+        ->findAll();
+
+        return $data;
+    }
+    function deleteByUserId($id){
+        $builder = $this->table('setoran');
+
+        $builder->where('setoran.nasabah_id', $id)->delete();
+
+    }
 }
