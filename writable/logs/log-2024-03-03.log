@@ -162,3 +162,72 @@ GROUP BY YEAR(sampah_masuk.tanggal_masuk), MONTH(sampah_masuk.tanggal_masuk)', [
 INFO - 2024-03-03 03:59:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-03-03 04:04:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2024-03-03 04:04:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:27:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2024-03-03 04:27:35 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'admintpst_admintpst'@'localhost' (using password: YES) in C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'admintpst_admin...', 'UnilaOke@2023', 'admintpst_db_tp...', 3306, '', 0)
+#1 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(tota...', Array, false)
+#4 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\app\Models\M_produk.php(51): CodeIgniter\BaseModel->findAll()
+#7 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\app\Controllers\Admin.php(479): App\Models\M_produk->getTotal()
+#8 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(934): App\Controllers\Admin->produk()
+#9 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#10 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Fikri ...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(tota...', Array, false)
+#3 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\app\Models\M_produk.php(51): CodeIgniter\BaseModel->findAll()
+#6 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\app\Controllers\Admin.php(479): App\Models\M_produk->getTotal()
+#7 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(934): App\Controllers\Admin->produk()
+#8 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 C:\Users\Fikri Aslam\Desktop\KULIAH\Project\sistem-informasi-tpst\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Fikri ...')
+#12 {main}
+CRITICAL - 2024-03-03 04:27:35 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(573): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT SUM(total_penjualan) as total, SUM(nominal_penjualan) as nominal
+FROM `produk`', [], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\M_produk.php(51): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\Admin.php(479): App\Models\M_produk->getTotal()
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Admin->produk()
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-03-03 04:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:28:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:29:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-03-03 04:29:04 --> Undefined index: penarikan
+in APPPATH\Controllers\Export.php on line 313.
+ 1 APPPATH\Controllers\Export.php(313): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index: penarikan', 'APPPATH\\Controllers\\Export.php', 313, [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Export->exportDataTabungan()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Export))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('FCPATH\\index.php')
+INFO - 2024-03-03 04:30:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:30:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:30:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:31:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:31:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:32:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-03-03 04:32:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

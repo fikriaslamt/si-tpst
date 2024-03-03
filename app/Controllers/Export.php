@@ -300,7 +300,7 @@ class Export extends BaseController {
 		$sheet->setCellValue('A1', 'No Tabungan');
 		$sheet->setCellValue('B1', 'Nama');
 		$sheet->setCellValue('C1', 'Saldo');
-		$sheet->setCellValue('D1', 'Penarikan');
+		$sheet->setCellValue('D1', 'Kredit');
 
 
         $count = 2;
@@ -310,7 +310,7 @@ class Export extends BaseController {
 			$sheet->setCellValue('A' . $count, $row['no_tabungan']);
 			$sheet->setCellValue('B' . $count, $row['nama']);
 			$sheet->setCellValue('C' . $count, $row['saldo']);
-			$sheet->setCellValue('D' . $count, $row['penarikan']);
+			$sheet->setCellValue('D' . $count, $row['kredit']);
 
 
 			$count++;
@@ -573,7 +573,7 @@ class Export extends BaseController {
 			$sheet->setCellValue('A' . $count, $number);
 			$sheet->setCellValue('B' . $count, $row['tanggal_update']);
 			$sheet->setCellValue('C' . $count, $row['jenis_produk']);
-			$sheet->setCellValue('D' . $count, $row['sisa_stok']);
+			$sheet->setCellValue('D' . $count, $row['stok']);
 			$sheet->setCellValue('E' . $count, $row['total_penjualan']);
 			$sheet->setCellValue('F' . $count, number_format($row['nominal_penjualan'],2,',','.'));
 
