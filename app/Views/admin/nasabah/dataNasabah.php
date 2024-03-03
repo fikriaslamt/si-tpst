@@ -93,6 +93,7 @@
                                         data-nota="<?= $data["no_tabungan"] ?>"
                                         data-nama="<?= $data["nama"] ?>"
                                         data-alamat="<?= $data["alamat"] ?>"
+                                        data-kode="<?= $data["kode"] ?>"
                                         class="bg-yellow-500 btn-sm rounded-0"
                                         type="button"
                                         data-toggle="edit-modal"
@@ -168,6 +169,10 @@
                     <div>
                         <label for="alamat" class="block mb-2 text-sm font-medium text-blue-900">Alamat</label>
                         <input type="text" name="alamat" id="alamat" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                    </div>
+                    <div>
+                        <label for="kode" class="block mb-2 text-sm font-medium text-blue-900">Kode Akses</label>
+                        <input type="text" name="kode" id="kode" pattern="[a-zA-Z0-9]+" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
                     </div>
                     <button type="submit" class="disable-on-edit w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Simpan</button>
                 </form>
@@ -251,6 +256,7 @@
     const editNotabungan = editForm.querySelector('[name="nota"]');
     const editNamaInput = editForm.querySelector('[name="nama"]');
     const editAlamatInput = editForm.querySelector('[name="alamat"]');
+    const editKodeInput = editForm.querySelector('[name="kode"]');
 
     const deleteButtons = document.querySelectorAll('[data-modal-toggle="delete-modal"]');
     const deleteLink = document.getElementById('delete-link');
@@ -261,12 +267,14 @@
             const dataNotabungan = this.getAttribute('data-nota');
             const dataNama = this.getAttribute('data-nama');
             const dataAlamat = this.getAttribute('data-alamat');
+            const dataKode = this.getAttribute('data-kode');
             const editUrl = `<?= base_url('DataNasabah/editDataNasabah/') ?>${dataId}`;
 
             editForm.action = editUrl;
             editNotabungan.value = dataNotabungan;
             editNamaInput.value = dataNama;
             editAlamatInput.value = dataAlamat;
+            editKodeInput.value = dataKode;
         });
     });
 

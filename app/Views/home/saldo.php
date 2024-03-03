@@ -185,20 +185,17 @@ $(document).ready(function(){
         $('#' + targetModalId).addClass('hidden');
     });
 
-    $('[data-modal-hide]').click(function() {
-        var targetModalId = $(this).attr('data-modal-hide');
-        $('#' + targetModalId).addClass('hidden');
-    });
 
     $('#searchkode').click(function(){
         $('#loadingIndicator').removeClass('hidden');
+        var searchValue2 = $('#searchInput').val().trim(); //
         var searchValue = $('#kodeAkses').val().trim(); // Get the search value from the input field
         
         if (searchValue !== "") {
             $.ajax({
                 type: "POST",
                 url: "<?= base_url('Tabungan/verifyKode')?>",
-                data: { searchValue: searchValue },
+                data: { searchValue: searchValue,searchValue2: searchValue2},
                 statusCode: {
                     500: function() {
                         
@@ -207,12 +204,9 @@ $(document).ready(function(){
                     }
                 },
                 success: function(response) {
-                  
-
-                    console.log("Response:", response);
-                    console.log("Response length:", response.length);
-                    if (response.length > 0) {
-                      
+    
+                    if (response[0].id != "") {
+                     
                         $("#searchResultsTable").removeClass("hidden");
                         $("#detailTransaksi").removeClass("hidden");
 
@@ -289,14 +283,14 @@ $(document).ready(function(){
                         $('#loadingIndicator').addClass('hidden');
                         
                     } else {
-                        console.log("No data found in response");
+                        
                         $("#formWarning2").removeClass("hidden");
                         $('#loadingIndicator').addClass('hidden');
                     }
                 }
             });
         } else {
-            console.log("No data found in response");
+         
             $("#formWarning2").removeClass("hidden");
             $('#loadingIndicator').addClass('hidden');
         }

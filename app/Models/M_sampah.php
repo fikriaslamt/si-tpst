@@ -32,4 +32,15 @@ class M_sampah extends Model
         $builder = $this->table('sampah');
         return $builder->findAll();
     }
+
+    function getDataWithPage($num){
+        $builder = $this->table('sampah');
+
+        $data =  $builder->paginate($num);
+     
+        return [
+            'data' => $data,
+            'pager' => $this->pager,
+        ];
+    }
 }

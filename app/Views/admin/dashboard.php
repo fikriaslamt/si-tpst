@@ -21,7 +21,7 @@
                 <p>TIMBULAN SAMPAH</p>
               </div>
        
-              <a href="<?=base_url('Admin/dataSampah')?>" class="small-box-footer">
+              <a href="<?=base_url('admin/sampah/data-sampah')?>" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -38,7 +38,7 @@
               <div class="icon">
                 <i class="ion ion-stats-bars"></i>
               </div>
-              <a href="<?=base_url('Admin/riwayatTransaksi')?>" class="small-box-footer">
+              <a href="<?=base_url('admin/nasabah/riwayat-transaksi')?>" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -49,12 +49,12 @@
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3><?= $totalKonten;?></h3>
-                <p>KONTEN PUBLIKASI</p>
+                <p>KONTEN</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
               </div>
-              <a href="<?=base_url('Admin/konten')?>" class="small-box-footer">
+              <a href="<?=base_url('admin/konten/kegiatan')?>" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -70,7 +70,7 @@
               <div class="icon">
               <i class="ion ion-person-add"></i>
               </div>
-              <a href="<?=base_url('Admin/dataNasabah')?>" class="small-box-footer">
+              <a href="<?=base_url('admin/nasabah/data-nasabah')?>" class="small-box-footer">
                 More info <i class="fas fa-arrow-circle-right"></i>
               </a>
             </div>
@@ -180,7 +180,7 @@
                     <td class="text-center"><?= $i;$i++;?></td>
                     <td><?= $data["tanggal"] ?></td>
                     <td><?= $data["jenis_transaksi"] ?></td>
-                    <td>Rp. <?= $data["jumlah"] ?></td>
+                    <td>Rp. <?= number_format($data["jumlah"],2,',','.');?></td>
                   </tr>
                   <?php endforeach;?>
                  

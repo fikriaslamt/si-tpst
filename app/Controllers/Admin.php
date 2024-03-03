@@ -31,6 +31,7 @@ class Admin extends BaseController {
         $sampahMasuk= new M_sampah_masuk();
         $setoran= new M_setoran();
         $penarikan= new M_penarikan();
+        $kegiatan = new M_konten_kegiatan();
         $konten = new M_konten_publikasi();
         $riwayat = new M_riwayat_transaksi();
         $sampahTerkelola = new M_kelola_sampah();
@@ -53,6 +54,7 @@ class Admin extends BaseController {
 
         $totalSetoran = $setoran->countAllResults();
         $totalPenarikan = $penarikan->countAllResults();
+        $totalKegiatan = $kegiatan->countAllResults();
         $totalKonten = $konten->countAllResults();
         $totalNasabah = $nasabah->countAllResults();
 
@@ -87,7 +89,7 @@ class Admin extends BaseController {
             'totalNasabah' => $totalNasabah,
             'timbulan' => $timbulan,
             'totalTransaksi' => $totalSetoran+$totalPenarikan,
-            'totalKonten' => $totalKonten,
+            'totalKonten' => $totalKonten+$totalKegiatan,
         ];
 
         $admin = session("name");

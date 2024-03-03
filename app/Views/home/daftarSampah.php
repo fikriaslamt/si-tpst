@@ -3,10 +3,7 @@
 
 
 
-
-
-
-<div class="relative overflow-x-auto mt-20">
+<div class="relative overflow-x-auto mt-12 ">
     <table class="w-full text-sm text-left  ">
         <thead class="text-xs text-white uppercase border-b border-gray-700 bg-gray-700">
             <tr>
@@ -24,16 +21,24 @@
         <?php foreach ($data as $data) : ?>
             <tr class="bg-white border-b  border-gray-700">
           
-                <td class="px-6 py-4">
+                <td class="px-6 py-3">
                 <?= $data['jenis'];?>
                 </td>
-                <td class="px-6 py-4">
-                <?= $data['harga_nasabah'];?>
+                <td class="px-6 py-3"> 
+                    Rp. <?= number_format($data['harga_nasabah'],2,',','.'); ?>
                 </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
     </table>
+</div>
+
+<div class="mt-2 float-left">
+    <i>Total entries :  <?= $pager->getTotal(); ?> Data</i>
+</div> 
+
+<div class="mt-2 float-right">
+    <?= $pager->links('default','pagination')?>
 </div>
 
 </div>

@@ -24,14 +24,15 @@ class Tabungan extends BaseController
 
     public function verifyKode(){
         $kode = $this->request->getPost('searchValue');
+        $no = $this->request->getPost('searchValue2');
         $tabungan = new M_tabungan(); 
         $setoran = new M_setoran(); 
         $penarikan = new M_penarikan(); 
      
         // Query the database using your model
         $nasabah = new M_nasabah(); // Replace with your nasabah
-        $results = $nasabah->searchBykode($kode);
-       
+        $results = $nasabah->searchBykode($kode,$no);
+     
         $nama = '';
         $alamat = '';
        
@@ -50,11 +51,12 @@ class Tabungan extends BaseController
 
       
         $data[0] = [
+            'id' => $idNasabah,
             'nama' => $nama,
             'alamat' => $alamat,
             'saldo' => $saldo,
             'setoran' => $dataSetoran,
-            'penarikan' => $dataPenarikan,
+            'penarikan' => $dataPenarikan
         ];
         
         // Return the data as JSON response

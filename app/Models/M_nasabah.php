@@ -29,9 +29,10 @@ class M_nasabah extends Model
     }
 
 
-    function searchByKode($id){
+    function searchByKode($id,$no){
         $builder = $this->table('nasabah');
-        return $builder->where('kode', $id)->findAll();
+        $data = $builder->where('kode', $id)->where('no_tabungan', $no)->findAll();
+        return $data;
     }
 
     function getTotalNasabah(){

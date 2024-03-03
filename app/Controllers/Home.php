@@ -231,7 +231,8 @@ class Home extends BaseController
     {  
         $sampah = new M_sampah();
 
-        $data['data'] = $sampah->findAll();
+        $data = $sampah->getDataWithPage(10);
+
         $header['title']='Daftar Sampah';
 
         echo view('partials/header',$header);

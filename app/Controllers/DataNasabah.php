@@ -29,7 +29,6 @@ class DataNasabah extends BaseController
         $alamat = $this->request->getVar('alamat');
 
        
-
         $nasabah->insert([
             'no_tabungan' => $nota,
             'nama' => $nama,
@@ -63,11 +62,13 @@ class DataNasabah extends BaseController
         $nota = $this->request->getPost('nota');
         $nama = $this->request->getPost('nama');
         $alamat = $this->request->getPost('alamat');
+        $kode = $this->request->getPost('kode');
 
         $nasabah->update($id,[
             'no_tabungan' => $nota,
             'nama' => $nama,
             'alamat' => $alamat,
+            'kode' => $kode,
         ]);
 
         session()->setFlashdata('error', "Data Berhasil Diubah");
