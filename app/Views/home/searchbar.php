@@ -35,7 +35,7 @@
    
   </table>
 </div>
-    <h2 class="font-bold text-green-900 text-2xl lg:w-2/3 md:w-2/3 mb-5">Belum Bergabung Menjadi Nasabah ? <span><a href="https://www.instagram.com/direct/t/17849222612945190"><button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">DAFTAR</button></a>
+    <h2 class="font-bold text-green-900 text-2xl lg:w-2/3 md:w-2/3 mb-5">Belum Bergabung Menjadi Nasabah ? <span><a href="https://bit.ly/FormDaftarBankSampah"><button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">DAFTAR</button></a>
     </span></h2>
 </div>
 

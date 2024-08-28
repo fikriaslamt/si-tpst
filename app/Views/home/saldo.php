@@ -127,7 +127,7 @@
 </div>
     <h2 class="font-bold text-green-900 lg:text-xl sm:text-l mb-12">Belum Bergabung Menjadi Nasabah ? 
         <span>
-            <a href="https://api.whatsapp.com/send/?phone=62<?=substr($profil[0]['whatsapp'],1);?>" target="_blank" class="ml-2 relative inline-block px-4 py-2 font-medium group">
+            <a href="https://bit.ly/FormDaftarBankSampah" target="_blank" class="ml-2 relative inline-block px-4 py-2 font-medium group">
                 <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-gray-700 group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
                 <span class="absolute inset-0 w-full h-full bg-white border-2 border-gray-500 group-hover:bg-gray-700"></span>
                 <span class="relative text-gray-500 group-hover:text-white">Daftar</span>

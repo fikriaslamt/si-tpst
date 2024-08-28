@@ -95,8 +95,8 @@
                 BANK SAMPAH UNILA
               </h1>
               
-
-              <a class="mx-auto sm:mx-auto mb-20" href="https://api.whatsapp.com/send/?phone=62<?=substr($profil[0]['whatsapp'],1);?>" target="_blank">
+              <!-- https://api.whatsapp.com/send/?phone=62<?=substr($profil[0]['whatsapp'],1);?> -->
+              <a class="mx-auto sm:mx-auto mb-20" href="https://bit.ly/FormDaftarBankSampah" target="_blank">
                 <button class="drop-shadow-2xl animate-bounce mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold
                   rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline
                   transform transition hover:scale-105 duration-300 ease-in-out">
