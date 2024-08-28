@@ -8,13 +8,14 @@ class M_riwayat_transaksi extends Model
 {
     protected $table = "riwayat_transaksi";
     protected $primaryKey           = 'id';
-    protected $allowedFields        = ['id','tanggal','jenis_transaksi','jumlah','admin_id'];
+    protected $allowedFields        = ['id','id_transaksi','tanggal','jenis_transaksi','jumlah','admin_id'];
     
 
-    function addRiwayat($jenis,$tanggal,$jumlah,$admin){
+    function addRiwayat($idTransaksi,$jenis,$tanggal,$jumlah,$admin){
         $builder = $this->table('riwayat_Transaksi');
 
         $builder->insert([
+            'id_transaksi' => $idTransaksi,
             'tanggal' => $tanggal,
             'jenis_transaksi' => $jenis,
             'jumlah' => $jumlah,

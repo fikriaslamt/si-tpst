@@ -54,7 +54,7 @@ class DataLimbah extends BaseController
             $limbah->insert($data);
 
 //riwayat transaksi
-            $riwayat->addRiwayat("Limbah",$tanggal,$harga,$admin);
+            $riwayat->addRiwayat("","Limbah",$tanggal,$harga,$admin);
         }
 
 

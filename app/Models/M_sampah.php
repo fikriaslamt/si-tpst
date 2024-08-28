@@ -43,4 +43,9 @@ class M_sampah extends Model
             'pager' => $this->pager,
         ];
     }
+
+    function searchByValue($id){
+        $builder = $this->table('sampah');
+        return $builder->where('id', $id)->findAll();
+    }
 }

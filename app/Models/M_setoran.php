@@ -22,7 +22,7 @@ class M_setoran extends Model
             $builder->where('setoran.tanggal >=', $startDate)->where('setoran.tanggal <=', $endDate);
         }
 
-        $data = $builder->select('setoran.id, setoran.tanggal, nasabah.no_tabungan, admin.nama, sampah.jenis, sampah.satuan , setoran.total_berat , setoran.total_harga , setoran.image_bukti')
+        $data = $builder->select('setoran.id, setoran.id_transaksi, setoran.tanggal, nasabah.no_tabungan, admin.nama, sampah.jenis, sampah.satuan , setoran.total_berat , setoran.total_harga , setoran.image_bukti')
         ->join('sampah','setoran.sampah_id=sampah.id')
         ->join('nasabah','setoran.nasabah_id=nasabah.id')
         ->join('admin','setoran.admin_id=admin.id')
@@ -77,6 +77,12 @@ class M_setoran extends Model
         $builder = $this->table('setoran');
 
         $builder->where('setoran.nasabah_id', $id)->delete();
+
+    }
+
+    function getByTxId($id){
+        $builder = $this->table('setoran');
+        return $builder->where('setoran.id_transaksi', $id)->findAll();
 
     }
 }

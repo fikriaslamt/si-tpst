@@ -11,6 +11,18 @@ use App\Models\M_sampah;
 class Tabungan extends BaseController
 {   
 
+    public function getSatuan(){
+        $searchValue = $this->request->getPost('valueInput');
+       
+        // Query the database using your model
+        $sampah = new M_sampah(); // Replace with your tabungan
+        $results = $sampah->searchByValue($searchValue);
+       
+        // Return the results as JSON
+        return $this->response->setJSON($results);
+       
+    }
+
     public function searchNasabah(){
         $searchValue = $this->request->getPost('searchValue');
 
@@ -120,7 +132,7 @@ class Tabungan extends BaseController
             $setoran->insert($data);
 
 //riwayat transaksi
-            $riwayat->addRiwayat("Setoran",$tanggal,$harga,$admin);
+            $riwayat->addRiwayat($uuid,"Setoran",$tanggal,$harga,$admin);
         }
 
 
@@ -142,6 +154,7 @@ class Tabungan extends BaseController
         return redirect()->to(base_url('admin/tabungan'));
 
     }
+
 
     public function tambahPenarikan()
     {   
@@ -189,13 +202,54 @@ class Tabungan extends BaseController
         ]);
 
 //riwayat transaksi
-        $riwayat->addRiwayat("Penarikan",$tanggal,$totalPenarikan,$admin);
+        $riwayat->addRiwayat("","Penarikan",$tanggal,$totalPenarikan,$admin);
 
         session()->setFlashdata('error', "Penarikan Berhasil");
         return redirect()->to(base_url('admin/tabungan'));
 
     }
 
+    public function cancelSetoran($id){
+    
+        $setoran = new M_setoran();
+        $riwayat = new M_riwayat_transaksi();
+        $tabungan = new M_tabungan();
+        
+        $dataSetoran = $setoran->getByTxId($id);
+        
+        $image = $dataSetoran[0]['image_bukti'];
+        $idNasabah = $dataSetoran[0]['nasabah_id'];
+
+        $totalDebit = 0;
+        foreach ($dataSetoran as $data ){
+            $totalDebit += $data['total_harga'];
+        }
+
+    
+        //tabungan
+        $dataTabungan = $tabungan->where('nasabah_id',$idNasabah)->first();
+        $debitBaru = $dataTabungan['debit'] - $totalDebit;
+        $saldoBaru = $dataTabungan['saldo'] - $totalDebit;
+        
+
+        $data2 = [
+            'saldo' => $saldoBaru,
+            'debit' => $debitBaru,
+        ];
+
+        $tabungan->update($idNasabah,$data2);
+
+
+        if(file_exists("uploads/buktiSetoran/".$image)){
+            unlink("uploads/buktiSetoran/".$image);
+        }
+
+        $setoran->where('id_transaksi',$id)->delete();
+        $riwayat ->where('id_transaksi',$id)->delete();
+
+        session()->setFlashdata('error', "Data Berhasil Dihapus");
+        return redirect()->to(base_url('admin/nasabah/riwayat-transaksi'));
+    }
 
 
     // public function editTabungan($id)

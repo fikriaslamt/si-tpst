@@ -216,7 +216,7 @@
           <p class="text-xs mb-4 mt-4 ml-2 font-bold text-red-500">Sisa Tidak Terkelola : <span id="sisaTidakKelola"></span></p>
 
 
-            <button type="submit" class="w-full text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm  px-5 py-2.5 text-center mr-2">
+            <button type="submit" class="disable-on-pembagian w-full text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm  px-5 py-2.5 text-center mr-2">
               Update
             </button>
          
@@ -252,7 +252,7 @@
             <input type="number" step="0.01" name="total_berat" id="total_berat" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
           </div>
 
-          <button type="submit" class="w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Simpan</button>
+          <button type="submit" id="btnSimpanKelola" class="w-full text-white bg-blue-500 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Simpan</button>
         </form>
       </div>
     </div>
@@ -410,20 +410,29 @@
   });
 
   function inputTerkelola(){
+
+    const btnSimpanKelola = document.querySelector(".disable-on-pembagian[type='submit']");
     const dataTotalBerat = beratDataModal;
     let kompos = kelolaKomposInput.value;
     let maggot = kelolaMaggotInput.value;
     kompos = parseFloat(kompos);
     maggot = parseFloat(maggot);
 
-    totalKompos = kompos;
-    totalMaggot = maggot;
+
 
     let sisaKelola = dataTotalBerat - kompos - maggot;
-    totalSisaKelola = sisaKelola;
-    console.log(totalSisaKelola);
 
-    sisaTidakKelolaElement.textContent = sisaKelola == 0 ? "" : sisaKelola.toFixed(2); // Set sisa tidak kelola
+    if(sisaKelola < 0){ 
+      btnSimpanKelola.setAttribute("disabled", "disabled");
+      sisaTidakKelolaElement.textContent = "cannot negative value"; // Set sisa tidak kelola
+
+    }else{
+      btnSimpanKelola.removeAttribute('disabled');
+      sisaTidakKelolaElement.textContent = sisaKelola == 0 ? 0 : sisaKelola.toFixed(2); // Set sisa tidak kelola
+
+    }
+
+
 
   }
 

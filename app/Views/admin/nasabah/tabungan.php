@@ -126,18 +126,19 @@
                           <div class="flex flex-row items-center">
 
 
-                            <select id="input" name="addmore[][input]" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <select id="valueInput0" name="addmore[][input]" onchange="searchInputValue(0)" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                               <?php foreach ($dataSampah as $dataSampah) : ?>
-                                <option value="<?= $dataSampah["id"]; ?>"><?= $dataSampah["jenis"]; ?></option>
+                                <option  value="<?= $dataSampah["id"]; ?>"><?= $dataSampah["jenis"]; ?></option>
                               <?php endforeach; ?>
 
                             </select>
 
                             <input type="number" step="0.01" id="sampah" name="add[][sampah]" min="0" onkeyup="if(this.value<0)this.value=0" class=" ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
 
-                            <p id="satuan" class="block mb-2 text-sm font-bold text-blue-900 ml-2">Jumlah</p>
+                            <div class="text-blue-700 text-bold text-xs ml-2" id="inputvalueResult0"><?= $dataSatuan;?></div>
+                            <!-- <p id="satuan" class="block mb-2 text-sm font-bold text-blue-900 ml-2">Jumlah</p> -->
 
-
+                           
                           </div>
                         </div>
                       </td>
@@ -283,8 +284,11 @@
 
 
 <script>
+ 
+
   function searchDatabase() {
     var searchValue = document.getElementById("nomor").value;
+    
     var submitButton = document.querySelector(".disable-on-no-tabungan[type='submit']");
 
     if (searchValue.trim() !== "") {
@@ -312,6 +316,7 @@
       submitButton.removeAttribute("disabled"); // Enable the submit button
     }
   }
+
 
   function searchDatabase2() {
     var searchValue = document.getElementById("nomor2").value;
@@ -347,6 +352,33 @@
 
 
 <script type="text/javascript">
+  var value = "";
+function searchInputValue(index)
+  {
+    var valueInput = document.getElementById("valueInput"+index);
+    var text = valueInput.options[valueInput.selectedIndex].value;
+    console.log(text);
+    $.ajax({
+        type: "POST",
+        url: "<?= base_url('Tabungan/getSatuan') ?>",
+        data: {
+          valueInput: text,
+        },
+        success: function(response) {
+         
+          console.log(response[0].satuan);
+          
+           value = response[0].satuan;
+         
+          document.getElementById("inputvalueResult"+index).innerHTML = value;
+          
+         
+        }
+      });
+  }
+
+
+
   var dataSampah = <?php echo json_encode($sampah); ?>;
   $(document).ready(function() {
     var counter = 1; // Use a different variable name for the loop counter
@@ -356,11 +388,13 @@
       var options = '';
       for (var i = 0; i < dataSampah.length; i++) {
         options += '<option value="'+dataSampah[i].id+'">' + dataSampah[i].jenis + '</option>';
-
+        satuan = dataSampah[i].satuan;
       }
       // $('#satuan').append(dataSampah[i].satuan);
-      $('#dynamic_field').append('<tr id="row' + counter + '" class="dynamic-added"><td> <div class="mt-2 flex flex-col"><div class="flex flex-row items-center"><select id="input"  name="addmore[][input]" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">' + options + '</select><input type="number" step="0.01" name="add[][sampah]" id="sampah" min="0" onkeyup="if(this.value<0)this.value=0" class=" ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" ><p class="block mb-2 text-sm font-bold text-blue-900 ml-2">Jumlah</p></div></div></td><td><button type="button" name="remove" id="' + counter + '" class="btn btn-danger btn_remove bg-red-700 hover:bg-red-500 ml-2 rounded-lg"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></td></tr>');
+      $('#dynamic_field').append('<tr id="row' + counter + '" class="dynamic-added"><td> <div class="mt-2 flex flex-col"><div class="flex flex-row items-center"><select id="valueInput' + counter + '"  name="addmore[][input]" onchange="searchInputValue('+counter+')" min="0" onkeyup="if(this.value<0)this.value=0" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">' + options + '</select><input type="number" step="0.01" name="add[][sampah]" id="sampah" min="0" onkeyup="if(this.value<0)this.value=0" class=" ml-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" ><div class="inputvalueResult"> <div class="text-blue-700 text-bold text-xs ml-2" id="inputvalueResult'+counter+'"><?= $dataSatuan;?></div></div></div></div></td><td><button type="button" name="remove" id="' + counter + '" class="btn btn-danger btn_remove bg-red-700 hover:bg-red-500 ml-2 rounded-lg"><svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button></td></tr>');
     });
+
+
 
     $(document).on('click', '.btn_remove', function() {
       var button_id = $(this).attr("id");

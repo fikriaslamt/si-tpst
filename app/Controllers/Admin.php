@@ -295,7 +295,7 @@ class Admin extends BaseController {
         $endDate = $this->request->getPost('end_date');
 
         $dataSetoran = $setoran->getPaginated(10,$keyword,$startDate,$endDate);
-
+        
 
         $data = [
             'data' => $dataSetoran['data'],
@@ -382,6 +382,8 @@ class Admin extends BaseController {
 
         $sampah = new M_sampah();
         $dataSampah = $sampah->findAll();
+    
+        $dataSatuan = $dataSampah[0]["satuan"];
 
         $temp=array();
         foreach ($dataSampah as $data){
@@ -402,6 +404,7 @@ class Admin extends BaseController {
         $dataTabungan = $tabungan->getPaginated(10,$keyword);
 
         $data = [
+            'dataSatuan' => $dataSatuan,
             'data' => $dataTabungan['data'],
             'dataSampah' => $dataSampah,
             'sampah' => $temp,
@@ -427,7 +430,6 @@ class Admin extends BaseController {
     public function transaksiProduk(){
 
         
-
         $produk = new M_penjualan_produk();
 
         $startDate = $this->request->getPost('start_date');
