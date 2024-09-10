@@ -228,7 +228,7 @@
 
             <div class="px-6 py-6 lg:px-8">
                 <h3 class="mb-5 text-lg font-normal text-blue-900 ">Tambah Data</h3>
-                <form class="space-y-6" action="<?= base_url('Daftarlimbah/tambahDaftarLimbah')?>" method="POST">
+                <form class="space-y-6" action="<?= base_url('DaftarLimbah/tambahDaftarLimbah')?>" method="POST">
                     <div>
                         <label for="jenis" class="block mb-2 text-sm font-medium text-blue-900 ">Jenis Limbah</label>
                         <input type="text" name="jenis" id="jenis" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " required>
